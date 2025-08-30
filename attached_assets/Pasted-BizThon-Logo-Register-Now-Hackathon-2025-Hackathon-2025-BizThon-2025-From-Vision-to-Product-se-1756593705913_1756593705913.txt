@@ -1,0 +1,148 @@
+BizThon Logo
+Register Now
+Hackathon 2025
+Hackathon 2025
+BizThon 2025
+From Vision to Product: seamless, scalable decentralization starts here
+
+Yellow Network Hackathon 2025 | Powered by BizThon
+From Vision to Product: seamless, scalable decentralization starts here
+
+Join the Yellow Network Hackathon 2025, Hosted by BizThon, and contribute to the future of decentralized finance (DeFi). This global event brings together innovators and developers to explore state-of-the-art solutions that leverage the power of Yellow Network. It’s time to build the next wave of cross-chain decentralized applications (dApps).
+
+Calendar IconEvent Timeline : July 14 – Setember 5, 2025
+Prize Pool : $22,000
+Submit your idea
+Why Participate ?
+Build with cutting-edge technology
+Access to grants and fundings
+Prizes and recognition
+$100K+ in perks & fast-track
+access to TDeFi Acceleration
+Access to global events and many more...
+Learn More
+Schedule & Timelines
+WORKSHOP 1
+Launch fast or die trying: how to win fast, launch loud and go viral after the hack
+Date: 23rd July 2025
+Time: 7:30 pm IST
+Speaker:
+Speaker
+Katherine Stefanovych
+(Growth Manager at Yellow )
+WORKSHOP 2
+High Performance Apps with State Channels to learn How to Build Efficient Web3 Products with Yellow SDK
+Date: 7th August 2025
+Time: 7:30 pm IST
+Speaker:
+Speaker
+Andrew
+(Tech Lead, Yellow)
+Speaker
+Maksim Naichuk
+(Head of Engineering, Yellow)
+WORKSHOP 3
+Deep Dive into Yellow Protocol & Smart Contracts
+Date: 13th August 2025
+Time: 7:30 pm IST
+Speaker:
+Speaker
+Nikita Sazonov
+(Lead Blockchain Developer, Yellow )
+Speaker
+Anton Pushkarev
+(Lead Software Engineer, Yellow)
+WORKSHOP 4
+How to turn ideas into fundable products
+Date: 21st August 2025
+Time: 7:30 pm IST
+Speaker:
+Speaker
+Jitesh Damani
+(Business Development Lead at Yellow)
+WORKSHOP 5
+From Idea to Live: How Builders Ship dApps with Yellow SDK
+Date: 28th August 2025
+Time: 7:30 pm IST
+Speaker:
+Speaker
+Metehan Çalişkan
+(Blockchain Developer)
+←
+→
+Problem Statement
+About the Yellow SDK & the Nitrolite Protocol
+The Nitrolite Protocol is a chain-agnostic, high-performance development toolkit built by Yellow to simplify and accelerate the creation of Web3 apps. At its core are ERC-7824 state channels, which allow developers to move interactions off-chain while maintaining security, auditability, and final settlement on-chain.
+
+Instead of forcing every action through expensive, slow blockchain calls, Nitrolite abstracts away the complexity — enabling real-time, gasless user experiences that feel like Web2, but are trustless and verifiable.
+
+What you’ll be building?
+At this hackathon, your mission is to integrate the Yellow SDK to build scalable Web3 products where state channels are used to:
+
+Handle frequent user interactions (e.g., gameplay, payments, bidding) off-chain
+Create gasless, low-latency, and chain-abstracted UX
+Show real-world value in DeFi, gaming, fintech, AI, prediction markets, or anything else that benefits from speed, scale, and simplicity
+To qualify, projects must include
+Technical Documentation (PDF/PPT)
+Demo Video (2-5 min)
+Active Project URL (if applicable)
+Code Repository (GitHub, GitLab, etc.)
+Fast track selection
+Submit your idea early to receive quick feedback and more time to refine your project.
+High-impact solutions using the real Yellow & Nitrolite SDK will gain priority consideration.
+Evaluation Criteria
+Projects will be assessed based on the following key factors:
+Use the Nitrolite SDK for off-chain logic - (ERC-7824)
+Creativity & Innovation - Does the project introduce fresh and original ideas?
+Technical Execution - Is the implementation robust, functional, and efficient?
+Real-World Utility - Does the solution address a significant problem effectively?
+Scalability & Adoption - Can the project expand beyond the hackathon and reach wider adoption?
+Clear Demonstration of how Yellow tech improves cost, speed, or UX
+Timeline & Participation
+1. The Hackthon will pre-launch in a series of Yellow Network remote workshops
+2. July 14th - September 5th, 2025: Ongoing Idea Submission & MVP Development
+Submit your project proposal through the official BizThon portal.
+Early submissions receive faster feedback and mentoring.
+Shortlisted teams advance to MVP development, refining their projects with expert guidance.
+3. September 24th-25th in India || 29th-30th in Singapore : Winner Announcement & Showcasing at the Onsite panel during Eth Global Delhi and TOKEN2049 Singapore.
+Shortlisted teams pitch their projects live to the expert panel.
+Winning teams gain exposure in the Yellow Network and the Side Events.
+Flowers
+Tools, Resources & Help Desk
+1. Workshops
+Participate in our “Build to Win” workshops, covering Yellow Network’s core technologies, SDK integration, and project structure.
+
+2. Documentation
+Access detailed guidelines and technical documentation at Yellow Docs || ERC 7824 || ClearNode || ERC-7824 Package || Nitrolite SDK
+
+3. Community Support:
+Join our developer community on Telegram and get help from mentors and fellow hackers.
+
+Ready to shape the future of
+decentralized trading?
+Submit your project now and be part of the Yellow
+Network Hackathon 2025. Together, we’ll build the future of decentralized finance.
+
+Submit your idea
+Frequently Asked Questions
+1. Who can participate in the hackathon?
+Anyone passionate about blockchain development, including developers, designers, and Web3 enthusiasts, can participate. Prior experience in blockchain is recommended but not mandatory.
+2. Is there any registration fee?
+3. Can I participate solo, or do I need a team?
+4. Will we receive problem statements in advance?
+5. What are the judging criteria?
+6. What are the major deadlines for this hackathon?
+7. Can I register for both online and onsite hackathons?
+8. What kind of support will be available during the hackathon?
+9. Who can I contact for further queries?
+10. How will the prize distribution work?
+11. What is the prize pool for the India Edition?
+12. What is the prize pool for the Singapore Edition?
+13. Can I directly join the on-site India and Singapore editions?
+Copyrights © 2025 Design & Developed by ITH Technologies
+
+Terms & Conditions
+|
+Privacy Policy
+BizThon
+discord

@@ -1,0 +1,1636 @@
+### 4. Oracle Integration & Backend Services
+
+Create `src/services/oracleService.ts`:
+
+```typescript
+import { EventEmitter } from 'events';
+
+export interface OracleData {
+  eventId: string;
+  timestamp: number;
+  value: any;
+  source: string;
+  confidence: number;
+}
+
+export interface PriceData {
+  symbol: string;
+  price: number;
+  change24h: number;
+  timestamp: number;
+}
+
+export class OracleService extends EventEmitter {
+  private ws: WebSocket | null = null;
+  private priceData = new Map<string, PriceData>();
+  private reconnectInterval = 5000;
+  private maxReconnectAttempts = 5;
+  private reconnectAttempts = 0;
+
+  constructor(private wsUrl: string) {
+    super();
+  }
+
+  async connect(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      try {
+        this.ws = new WebSocket(this.wsUrl);
+
+        this.ws.onopen = () => {
+          console.log('Connected to Oracle WebSocket');
+          this.reconnectAttempts = 0;
+          this.subscribeToFeeds();
+          resolve();
+        };
+
+        this.ws.onmessage = (event) => {
+          this.handleMessage(event.data);
+        };
+
+        this.ws.onclose = () => {
+          console.log('Oracle WebSocket connection closed');
+          this.attemptReconnect();
+        };
+
+        this.ws.onerror = (error) => {
+          console.error('Oracle WebSocket error:', error);
+          reject(error);
+        };
+
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  private handleMessage(data: string): void {
+    try {
+      const message = JSON.parse(data);
+
+      switch (message.type) {
+        case 'PRICE_UPDATE':
+          this.handlePriceUpdate(message.data);
+          break;
+        case 'SPORTS_UPDATE':
+          this.handleSportsUpdate(message.data);
+          break;
+        case 'WEATHER_UPDATE':
+          this.handleWeatherUpdate(message.data);
+          break;
+        case 'EVENT_RESULT':
+          this.handleEventResult(message.data);
+          break;
+        default:
+          console.log('Unknown oracle message type:', message.type);
+      }
+    } catch (error) {
+      console.error('Error parsing oracle message:', error);
+    }
+  }
+
+  private handlePriceUpdate(data: PriceData): void {
+    this.priceData.set(data.symbol, data);
+    this.emit('priceUpdate', data);
+
+    // Check for prediction events that should be resolved
+    this.checkPriceBasedEvents(data);
+  }
+
+  private handleSportsUpdate(data: any): void {
+    this.emit('sportsUpdate', data);
+  }
+
+  private handleWeatherUpdate(data: any): void {
+    this.emit('weatherUpdate', data);
+  }
+
+  private handleEventResult(data: { eventId: string; result: string; confidence: number }): void {
+    this.emit('eventResult', data);
+  }
+
+  private subscribeToFeeds(): void {
+    if (!this.ws) return;
+
+    // Subscribe to crypto price feeds
+    this.ws.send(JSON.stringify({
+      type: 'SUBSCRIBE',
+      feeds: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'MATIC/USD']
+    }));
+
+    // Subscribe to sports events
+    this.ws.send(JSON.stringify({
+      type: 'SUBSCRIBE_SPORTS',
+      leagues: ['NBA', 'NFL', 'Premier League']
+    }));
+  }
+
+  private checkPriceBasedEvents(priceData: PriceData): void {
+    // Example: Check if Bitcoin crossed $50,000
+    if (priceData.symbol === 'BTC' && priceData.price >= 50000) {
+      this.emit('eventResult', {
+        eventId: 'btc_price_1h',
+        result: 'above_50k',
+        confidence: 0.95
+      });
+    } else if (priceData.symbol === 'BTC' && priceData.price < 50000) {
+      this.emit('eventResult', {
+        eventId: 'btc_price_1h',
+        result: 'below_50k',
+        confidence: 0.95
+      });
+    }
+
+    // Check ETH movement predictions
+    if (priceData.symbol === 'ETH') {
+      const change = priceData.change24h;
+      let result = 'flat';
+      
+      if (change > 5) result = 'up_5';
+      else if (change > 1) result = 'up_1_5';
+      else if (change < -5) result = 'down_5';
+      else if (change < -1) result = 'down_1_5';
+
+      this.emit('eventResult', {
+        eventId: 'eth_movement',
+        result,
+        confidence: 0.9
+      });
+    }
+  }
+
+  private attemptReconnect(): void {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+      console.error('Max reconnection attempts reached');
+      return;
+    }
+
+    this.reconnectAttempts++;
+    setTimeout(() => {
+      console.log(`Attempting to reconnect (${this.reconnectAttempts}/${this.maxReconnectAttempts})`);
+      this.connect().catch(console.error);
+    }, this.reconnectInterval);
+  }
+
+  // Get current price data
+  getPriceData(symbol: string): PriceData | undefined {
+    return this.priceData.get(symbol);
+  }
+
+  // Get all price data
+  getAllPriceData(): Map<string, PriceData> {
+    return new Map(this.priceData);
+  }
+
+  disconnect(): void {
+    if (this.ws) {
+      this.ws.close();
+      this.ws = null;
+    }
+  }
+}
+
+// Mock Oracle Backend Server (Node.js)
+// Create `backend/oracleServer.js`:
+export const createMockOracleServer = () => `
+const WebSocket = require('ws');
+const axios = require('axios');
+
+class MockOracleServer {
+  constructor(port = 3001) {
+    this.wss = new WebSocket.Server({ port });
+    this.clients = new Set();
+    this.priceData = new Map();
+    
+    this.setupServer();
+    this.startDataFeeds();
+    
+    console.log(\`Mock Oracle Server running on port \${port}\`);
+  }
+
+  setupServer() {
+    this.wss.on('connection', (ws) => {
+      console.log('New client connected to oracle');
+      this.clients.add(ws);
+
+      ws.on('message', (message# Yellow Network Prediction Marketplace Implementation Guide
+
+## Executive Summary
+
+This comprehensive guide will walk you through building a real-time prediction tournament platform using **Yellow Network's Nitrolite Protocol** and **ERC-7824 state channels**. The platform leverages state channels for instant, gasless predictions while settling final payouts on-chain, creating an optimal user experience for competitive prediction markets.
+
+## Table of Contents
+
+1. [Architecture Overview](#architecture-overview)
+2. [Yellow Network & ERC-7824 Deep Dive](#yellow-network--erc-7824-deep-dive)
+3. [Project Setup & Dependencies](#project-setup--dependencies)
+4. [Core Implementation](#core-implementation)
+5. [State Channel Integration](#state-channel-integration)
+6. [Real-time Features](#real-time-features)
+7. [Tournament Logic](#tournament-logic)
+8. [Oracle Integration](#oracle-integration)
+9. [UI/UX Implementation](#uiux-implementation)
+10. [Testing & Deployment](#testing--deployment)
+11. [Advanced Features](#advanced-features)
+
+## Architecture Overview
+
+### System Components
+
+```mermaid
+graph TB
+    UI[React Frontend] --> SDK[Nitrolite SDK]
+    SDK --> ClearNode[Yellow ClearNode]
+    ClearNode --> StateChannels[ERC-7824 State Channels]
+    StateChannels --> Blockchain[EVM Blockchain]
+    
+    Oracle[Oracle Service] --> Backend[Node.js Backend]
+    Backend --> DB[(Database)]
+    Backend --> WS[WebSocket Server]
+    
+    UI --> WS
+    UI --> Backend
+```
+
+### State Channel Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant ClearNode
+    participant StateChannel
+    participant Blockchain
+    
+    User->>Frontend: Submit Prediction
+    Frontend->>ClearNode: Off-chain Transaction
+    ClearNode->>StateChannel: Update State
+    StateChannel->>StateChannel: Validate & Sign
+    StateChannel-->>Frontend: Instant Confirmation
+    
+    Note over StateChannel: Accumulate Predictions Off-chain
+    
+    StateChannel->>Blockchain: Final Settlement
+    Blockchain-->>User: Payout Distribution
+```
+
+## Yellow Network & ERC-7824 Deep Dive
+
+### What is Yellow Network?
+
+Yellow Network is a Layer-3 peer-to-peer mesh network that uses state channel technology to securely exchange liquidity and facilitate trading, clearing, settlement, and compliance. The Nitrolite Protocol is a chain-agnostic, high-performance development toolkit built by Yellow to simplify and accelerate the creation of Web3 apps.
+
+### Key Benefits for Prediction Markets
+
+1. **Instant Finality**: Off-chain operations mean no waiting for block confirmations
+2. **Minimal Gas Fees**: On-chain gas is primarily for channel opening and settlement
+3. **High Throughput**: Capable of handling thousands of transactions per second
+4. **Real-time UX**: Enabling real-time, gasless user experiences that feel like Web2, but are trustless and verifiable
+
+### ERC-7824 State Channels
+
+State Channels allow participants to perform off-chain transactions while maintaining the security guarantees of the Ethereum blockchain, enhancing scalability and reducing transaction costs for decentralized applications.
+
+## Project Setup & Dependencies
+
+### Prerequisites
+
+- Node.js 16 or later
+- NPM, Yarn, or PNPM
+- MetaMask or compatible wallet
+- Channel setup: Create a channel from your account at apps.yellow.com
+
+### Installation
+
+```bash
+# Create new React app
+npx create-react-app prediction-marketplace --template typescript
+cd prediction-marketplace
+
+# Install Yellow Network SDK
+npm install @erc7824/nitrolite
+
+# Install additional dependencies
+npm install ethers viem wagmi @tanstack/react-query
+npm install ws socket.io-client
+npm install recharts lucide-react
+npm install @headlessui/react @tailwindcss/ui
+npm install react-hot-toast react-hook-form
+
+# Development dependencies
+npm install --save-dev @types/ws tailwindcss
+```
+
+### Environment Configuration
+
+Create `.env` file:
+
+```env
+# Yellow Network Configuration
+REACT_APP_CLEARNODE_URL=wss://clearnet.yellow.com/ws
+REACT_APP_YELLOW_APP_URL=https://apps.yellow.com
+
+# Blockchain Configuration
+REACT_APP_CHAIN_ID=137  # Polygon Mainnet
+REACT_APP_RPC_URL=https://polygon-rpc.com
+
+# Oracle Configuration  
+REACT_APP_ORACLE_WS_URL=ws://localhost:3001
+REACT_APP_ORACLE_API_URL=http://localhost:3001/api
+
+# Application Configuration
+REACT_APP_DEFAULT_TOURNAMENT_FEE=1000000  # 1 USDC (6 decimals)
+REACT_APP_MIN_PREDICTION_AMOUNT=100000    # 0.1 USDC
+```
+
+## Core Implementation
+
+### 1. Nitrolite SDK Integration
+
+Create `src/services/nitrolite.ts`:
+
+```typescript
+import { 
+  NitroliteClient, 
+  createAuthRequestMessage,
+  createAuthVerifyMessage,
+  createEIP712AuthMessageSigner,
+  createAppSessionMessage,
+  createCloseAppSessionMessage,
+  createGetLedgerBalancesMessage,
+  parseRPCResponse,
+  RPCMethod,
+  MessageSigner
+} from '@erc7824/nitrolite';
+import { ethers } from 'ethers';
+import { Address } from 'viem';
+
+export interface PredictionAllocation {
+  participant: Address;
+  asset: string;
+  amount: string;
+}
+
+export interface PredictionSession {
+  appSessionId: string;
+  participants: Address[];
+  tournamentId: string;
+  status: 'active' | 'closed';
+}
+
+export class PredictionMarketNitrolite {
+  private client: NitroliteClient;
+  private ws: WebSocket | null = null;
+  private stateWallet: ethers.Wallet;
+  private isAuthenticated = false;
+  private messageHandlers = new Map<string, (data: any) => void>();
+
+  constructor(stateWallet: ethers.Wallet) {
+    this.stateWallet = stateWallet;
+    this.client = new NitroliteClient({
+      stateWallet: stateWallet,
+      clearNodeUrl: process.env.REACT_APP_CLEARNODE_URL!,
+    });
+  }
+
+  // Message signer for off-chain operations
+  private messageSigner: MessageSigner = async (payload) => {
+    try {
+      const message = JSON.stringify(payload);
+      const digestHex = ethers.id(message);
+      const messageBytes = ethers.getBytes(digestHex);
+      const { serialized: signature } = this.stateWallet.signingKey.sign(messageBytes);
+      return signature;
+    } catch (error) {
+      console.error("Error signing message:", error);
+      throw error;
+    }
+  };
+
+  // Connect to ClearNode
+  async connect(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.ws = new WebSocket(process.env.REACT_APP_CLEARNODE_URL!);
+
+      this.ws.onopen = async () => {
+        try {
+          await this.authenticate();
+          this.setupMessageHandler();
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+      };
+
+      this.ws.onerror = (error) => {
+        reject(new Error(`WebSocket connection failed: ${error}`));
+      };
+
+      this.ws.onclose = () => {
+        this.isAuthenticated = false;
+        console.log('WebSocket connection closed');
+      };
+    });
+  }
+
+  // Authentication flow
+  private async authenticate(): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        // Create auth request
+        const authRequest = await createAuthRequestMessage({
+          wallet: this.stateWallet.address,
+          participant: this.stateWallet.address,
+          app_name: 'Prediction Marketplace',
+          expire: Math.floor(Date.now() / 1000) + 3600,
+          scope: 'console',
+          application: '0x0000000000000000000000000000000000000000',
+          allowances: [],
+        });
+
+        // Set up auth flow handler
+        const authHandler = async (event: MessageEvent) => {
+          try {
+            const message = parseRPCResponse(event.data);
+
+            switch (message.method) {
+              case RPCMethod.AuthChallenge:
+                // Create EIP-712 signer
+                const eip712Signer = createEIP712AuthMessageSigner(
+                  this.stateWallet,
+                  {
+                    scope: 'console',
+                    application: '0x0000000000000000000000000000000000000000',
+                    participant: this.stateWallet.address,
+                    expire: Math.floor(Date.now() / 1000) + 3600,
+                    allowances: [],
+                  },
+                  { name: 'Prediction Marketplace' }
+                );
+
+                const authVerify = await createAuthVerifyMessage(
+                  eip712Signer,
+                  message
+                );
+
+                this.ws!.send(authVerify);
+                break;
+
+              case RPCMethod.AuthVerify:
+                this.ws!.removeEventListener('message', authHandler);
+                if (message.params.success) {
+                  this.isAuthenticated = true;
+                  resolve();
+                } else {
+                  reject(new Error('Authentication failed'));
+                }
+                break;
+
+              case RPCMethod.Error:
+                this.ws!.removeEventListener('message', authHandler);
+                reject(new Error(`Auth error: ${message.params.error}`));
+                break;
+            }
+          } catch (error) {
+            this.ws!.removeEventListener('message', authHandler);
+            reject(error);
+          }
+        };
+
+        this.ws!.addEventListener('message', authHandler);
+        this.ws!.send(authRequest);
+
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  // Setup message handling
+  private setupMessageHandler(): void {
+    this.ws!.onmessage = (event) => {
+      try {
+        const message = parseRPCResponse(event.data);
+        const handler = this.messageHandlers.get(message.method);
+        if (handler) {
+          handler(message);
+        }
+      } catch (error) {
+        console.error('Error handling message:', error);
+      }
+    };
+  }
+
+  // Create tournament session
+  async createTournamentSession(
+    tournamentId: string,
+    participants: Address[],
+    entryFee: string
+  ): Promise<PredictionSession> {
+    if (!this.isAuthenticated || !this.ws) {
+      throw new Error('Not connected or authenticated');
+    }
+
+    return new Promise(async (resolve, reject) => {
+      try {
+        // Define app session parameters
+        const appDefinition = {
+          protocol: 'prediction_tournament_v1',
+          participants: participants,
+          weights: participants.map(() => Math.floor(100 / participants.length)),
+          quorum: 100,
+          challenge: 0,
+          nonce: Date.now(),
+        };
+
+        // Define initial allocations
+        const allocations: PredictionAllocation[] = participants.map(participant => ({
+          participant,
+          asset: 'usdc',
+          amount: entryFee,
+        }));
+
+        // Create session
+        const sessionMessage = await createAppSessionMessage(
+          this.messageSigner,
+          [{
+            definition: appDefinition,
+            allocations: allocations,
+          }]
+        );
+
+        // Handle response
+        const responseHandler = (message: any) => {
+          if (message.method === RPCMethod.CreateAppSession) {
+            this.messageHandlers.delete(RPCMethod.CreateAppSession);
+            
+            const appSessionId = message.params.app_session_id;
+            if (appSessionId) {
+              resolve({
+                appSessionId,
+                participants,
+                tournamentId,
+                status: 'active',
+              });
+            } else {
+              reject(new Error('Failed to create app session'));
+            }
+          }
+        };
+
+        this.messageHandlers.set(RPCMethod.CreateAppSession, responseHandler);
+        this.ws.send(sessionMessage);
+
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  // Submit prediction
+  async submitPrediction(
+    sessionId: string,
+    predictionData: {
+      eventId: string;
+      prediction: any;
+      confidence: number;
+      timestamp: number;
+    }
+  ): Promise<void> {
+    // In a real implementation, this would update the state channel
+    // For now, we'll simulate with a signed message
+    const predictionMessage = {
+      type: 'SUBMIT_PREDICTION',
+      sessionId,
+      ...predictionData,
+      signature: await this.messageSigner(predictionData),
+    };
+
+    // Broadcast to other participants via WebSocket
+    if (this.ws && this.isAuthenticated) {
+      this.ws.send(JSON.stringify(predictionMessage));
+    }
+  }
+
+  // Get balance information
+  async getBalance(): Promise<Array<{ asset: string; amount: string }>> {
+    if (!this.isAuthenticated || !this.ws) {
+      throw new Error('Not connected or authenticated');
+    }
+
+    return new Promise(async (resolve, reject) => {
+      try {
+        const balanceMessage = await createGetLedgerBalancesMessage(
+          this.messageSigner,
+          this.stateWallet.address
+        );
+
+        const responseHandler = (message: any) => {
+          if (message.method === RPCMethod.GetLedgerBalances) {
+            this.messageHandlers.delete(RPCMethod.GetLedgerBalances);
+            resolve(message.params || []);
+          }
+        };
+
+        this.messageHandlers.set(RPCMethod.GetLedgerBalances, responseHandler);
+        this.ws.send(balanceMessage);
+
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  // Close tournament session
+  async closeTournamentSession(
+    sessionId: string,
+    finalAllocations: PredictionAllocation[]
+  ): Promise<void> {
+    if (!this.isAuthenticated || !this.ws) {
+      throw new Error('Not connected or authenticated');
+    }
+
+    return new Promise(async (resolve, reject) => {
+      try {
+        const closeMessage = await createCloseAppSessionMessage(
+          this.messageSigner,
+          [{
+            app_session_id: sessionId,
+            allocations: finalAllocations,
+          }]
+        );
+
+        const responseHandler = (message: any) => {
+          if (message.method === RPCMethod.CloseAppSession) {
+            this.messageHandlers.delete(RPCMethod.CloseAppSession);
+            resolve();
+          }
+        };
+
+        this.messageHandlers.set(RPCMethod.CloseAppSession, responseHandler);
+        this.ws.send(closeMessage);
+
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  // Disconnect
+  disconnect(): void {
+    if (this.ws) {
+      this.ws.close();
+      this.ws = null;
+      this.isAuthenticated = false;
+    }
+  }
+}
+```
+
+### 2. Tournament Management System
+
+Create `src/services/tournamentManager.ts`:
+
+```typescript
+import { PredictionMarketNitrolite, PredictionSession } from './nitrolite';
+import { ethers } from 'ethers';
+
+export interface Tournament {
+  id: string;
+  name: string;
+  description: string;
+  entryFee: string;
+  maxParticipants: number;
+  startTime: number;
+  endTime: number;
+  events: TournamentEvent[];
+  participants: string[];
+  status: 'upcoming' | 'active' | 'finished';
+  session?: PredictionSession;
+}
+
+export interface TournamentEvent {
+  id: string;
+  title: string;
+  description: string;
+  category: 'crypto' | 'sports' | 'weather' | 'news';
+  startTime: number;
+  endTime: number;
+  options: EventOption[];
+  result?: string;
+}
+
+export interface EventOption {
+  id: string;
+  text: string;
+  odds?: number;
+}
+
+export interface Prediction {
+  id: string;
+  userId: string;
+  tournamentId: string;
+  eventId: string;
+  optionId: string;
+  confidence: number;
+  timestamp: number;
+  points?: number;
+}
+
+export class TournamentManager {
+  private nitrolite: PredictionMarketNitrolite;
+  private tournaments = new Map<string, Tournament>();
+  private predictions = new Map<string, Prediction[]>();
+  private eventListeners = new Map<string, Function[]>();
+
+  constructor(stateWallet: ethers.Wallet) {
+    this.nitrolite = new PredictionMarketNitrolite(stateWallet);
+  }
+
+  async initialize(): Promise<void> {
+    await this.nitrolite.connect();
+    this.loadSampleTournaments();
+  }
+
+  // Create a new tournament
+  async createTournament(tournamentData: Omit<Tournament, 'id' | 'participants' | 'status'>): Promise<Tournament> {
+    const tournament: Tournament = {
+      id: `tournament_${Date.now()}`,
+      participants: [],
+      status: 'upcoming',
+      ...tournamentData,
+    };
+
+    this.tournaments.set(tournament.id, tournament);
+    this.predictions.set(tournament.id, []);
+
+    this.emit('tournamentCreated', tournament);
+    return tournament;
+  }
+
+  // Join a tournament
+  async joinTournament(tournamentId: string, userAddress: string): Promise<void> {
+    const tournament = this.tournaments.get(tournamentId);
+    if (!tournament) throw new Error('Tournament not found');
+
+    if (tournament.participants.length >= tournament.maxParticipants) {
+      throw new Error('Tournament is full');
+    }
+
+    if (tournament.participants.includes(userAddress)) {
+      throw new Error('Already joined tournament');
+    }
+
+    tournament.participants.push(userAddress);
+
+    // If tournament is full, create state channel session
+    if (tournament.participants.length === tournament.maxParticipants) {
+      tournament.session = await this.nitrolite.createTournamentSession(
+        tournamentId,
+        tournament.participants as any,
+        tournament.entryFee
+      );
+      tournament.status = 'active';
+      this.emit('tournamentStarted', tournament);
+    }
+
+    this.emit('tournamentJoined', { tournament, userAddress });
+  }
+
+  // Submit a prediction
+  async submitPrediction(
+    userId: string,
+    tournamentId: string,
+    eventId: string,
+    optionId: string,
+    confidence: number
+  ): Promise<Prediction> {
+    const tournament = this.tournaments.get(tournamentId);
+    if (!tournament) throw new Error('Tournament not found');
+    if (!tournament.participants.includes(userId)) {
+      throw new Error('Not a tournament participant');
+    }
+
+    const event = tournament.events.find(e => e.id === eventId);
+    if (!event) throw new Error('Event not found');
+
+    const prediction: Prediction = {
+      id: `prediction_${Date.now()}`,
+      userId,
+      tournamentId,
+      eventId,
+      optionId,
+      confidence,
+      timestamp: Date.now(),
+    };
+
+    // Get existing predictions for tournament
+    const tournamentPredictions = this.predictions.get(tournamentId) || [];
+    
+    // Remove any existing prediction for this user/event combination
+    const filteredPredictions = tournamentPredictions.filter(
+      p => !(p.userId === userId && p.eventId === eventId)
+    );
+    
+    filteredPredictions.push(prediction);
+    this.predictions.set(tournamentId, filteredPredictions);
+
+    // Submit to state channel
+    if (tournament.session) {
+      await this.nitrolite.submitPrediction(tournament.session.appSessionId, {
+        eventId,
+        prediction: { optionId, confidence },
+        confidence,
+        timestamp: prediction.timestamp,
+      });
+    }
+
+    this.emit('predictionSubmitted', prediction);
+    return prediction;
+  }
+
+  // Get tournament predictions
+  getTournamentPredictions(tournamentId: string): Prediction[] {
+    return this.predictions.get(tournamentId) || [];
+  }
+
+  // Get user predictions for a tournament
+  getUserPredictions(userId: string, tournamentId: string): Prediction[] {
+    const predictions = this.predictions.get(tournamentId) || [];
+    return predictions.filter(p => p.userId === userId);
+  }
+
+  // Calculate scores when event results come in
+  async processEventResult(tournamentId: string, eventId: string, correctOptionId: string): Promise<void> {
+    const tournament = this.tournaments.get(tournamentId);
+    if (!tournament) return;
+
+    const event = tournament.events.find(e => e.id === eventId);
+    if (!event) return;
+
+    event.result = correctOptionId;
+
+    // Update prediction scores
+    const predictions = this.predictions.get(tournamentId) || [];
+    predictions.forEach(prediction => {
+      if (prediction.eventId === eventId) {
+        if (prediction.optionId === correctOptionId) {
+          // Base points for correct prediction + bonus for confidence
+          prediction.points = 100 + (prediction.confidence * 50);
+        } else {
+          prediction.points = 0;
+        }
+      }
+    });
+
+    this.emit('eventResultProcessed', { tournament, event, predictions });
+    
+    // Check if tournament is complete
+    const allEventsCompleted = tournament.events.every(e => e.result);
+    if (allEventsCompleted) {
+      await this.completeTournament(tournamentId);
+    }
+  }
+
+  // Complete tournament and distribute rewards
+  private async completeTournament(tournamentId: string): Promise<void> {
+    const tournament = this.tournaments.get(tournamentId);
+    if (!tournament) return;
+
+    tournament.status = 'finished';
+
+    // Calculate final scores
+    const predictions = this.predictions.get(tournamentId) || [];
+    const userScores = new Map<string, number>();
+
+    predictions.forEach(prediction => {
+      if (prediction.points !== undefined) {
+        const currentScore = userScores.get(prediction.userId) || 0;
+        userScores.set(prediction.userId, currentScore + prediction.points);
+      }
+    });
+
+    // Sort by score (descending)
+    const rankings = Array.from(userScores.entries())
+      .sort(([, a], [, b]) => b - a)
+      .map(([userId, score], index) => ({ userId, score, rank: index + 1 }));
+
+    // Calculate reward distribution
+    const totalPool = parseFloat(tournament.entryFee) * tournament.participants.length;
+    const rewardDistribution = this.calculateRewards(rankings, totalPool);
+
+    // Close state channel with final allocations
+    if (tournament.session) {
+      const finalAllocations = tournament.participants.map(participant => {
+        const reward = rewardDistribution.find(r => r.userId === participant);
+        return {
+          participant: participant as any,
+          asset: 'usdc',
+          amount: reward ? reward.amount.toString() : '0',
+        };
+      });
+
+      await this.nitrolite.closeTournamentSession(tournament.session.appSessionId, finalAllocations);
+    }
+
+    this.emit('tournamentCompleted', { tournament, rankings, rewardDistribution });
+  }
+
+  // Calculate reward distribution based on rankings
+  private calculateRewards(rankings: Array<{ userId: string; score: number; rank: number }>, totalPool: number) {
+    const rewards: Array<{ userId: string; amount: number; percentage: number }> = [];
+    
+    // Simple distribution: 50% to 1st, 30% to 2nd, 20% to 3rd, 0% to others
+    const distribution = [0.5, 0.3, 0.2];
+    
+    rankings.forEach((ranking, index) => {
+      const percentage = distribution[index] || 0;
+      const amount = totalPool * percentage;
+      rewards.push({
+        userId: ranking.userId,
+        amount,
+        percentage: percentage * 100,
+      });
+    });
+
+    return rewards;
+  }
+
+  // Load sample tournaments
+  private loadSampleTournaments(): void {
+    const sampleTournaments: Array<Omit<Tournament, 'id' | 'participants' | 'status'>> = [
+      {
+        name: 'Crypto Price Predictions',
+        description: 'Predict the price movements of major cryptocurrencies',
+        entryFee: '1000000', // 1 USDC
+        maxParticipants: 10,
+        startTime: Date.now() + 3600000, // 1 hour from now
+        endTime: Date.now() + 7200000, // 2 hours from now
+        events: [
+          {
+            id: 'btc_price_1h',
+            title: 'Bitcoin Price in 1 Hour',
+            description: 'Will Bitcoin be above or below $50,000 in 1 hour?',
+            category: 'crypto',
+            startTime: Date.now(),
+            endTime: Date.now() + 3600000,
+            options: [
+              { id: 'above_50k', text: 'Above $50,000' },
+              { id: 'below_50k', text: 'Below $50,000' },
+            ],
+          },
+          {
+            id: 'eth_movement',
+            title: 'Ethereum Movement',
+            description: 'What will happen to ETH price in the next hour?',
+            category: 'crypto',
+            startTime: Date.now(),
+            endTime: Date.now() + 3600000,
+            options: [
+              { id: 'up_5', text: 'Up >5%' },
+              { id: 'up_1_5', text: 'Up 1-5%' },
+              { id: 'flat', text: 'Flat ±1%' },
+              { id: 'down_1_5', text: 'Down 1-5%' },
+              { id: 'down_5', text: 'Down >5%' },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Sports Predictions',
+        description: 'Predict outcomes of upcoming sports events',
+        entryFee: '500000', // 0.5 USDC
+        maxParticipants: 8,
+        startTime: Date.now() + 1800000, // 30 minutes from now
+        endTime: Date.now() + 5400000, // 90 minutes from now
+        events: [
+          {
+            id: 'next_goal',
+            title: 'Next Goal Scorer',
+            description: 'Who will score the next goal in the match?',
+            category: 'sports',
+            startTime: Date.now(),
+            endTime: Date.now() + 5400000,
+            options: [
+              { id: 'player_a', text: 'Player A' },
+              { id: 'player_b', text: 'Player B' },
+              { id: 'other', text: 'Other Player' },
+              { id: 'no_goal', text: 'No Goal' },
+            ],
+          },
+        ],
+      },
+    ];
+
+    sampleTournaments.forEach(async (data) => {
+      await this.createTournament(data);
+    });
+  }
+
+  // Event system
+  private emit(event: string, data: any): void {
+    const listeners = this.eventListeners.get(event) || [];
+    listeners.forEach(listener => listener(data));
+  }
+
+  on(event: string, listener: Function): void {
+    const listeners = this.eventListeners.get(event) || [];
+    listeners.push(listener);
+    this.eventListeners.set(event, listeners);
+  }
+
+  off(event: string, listener: Function): void {
+    const listeners = this.eventListeners.get(event) || [];
+    const index = listeners.indexOf(listener);
+    if (index > -1) {
+      listeners.splice(index, 1);
+      this.eventListeners.set(event, listeners);
+    }
+  }
+
+  // Getters
+  getAllTournaments(): Tournament[] {
+    return Array.from(this.tournaments.values());
+  }
+
+  getTournament(id: string): Tournament | undefined {
+    return this.tournaments.get(id);
+  }
+
+  getActiveTournaments(): Tournament[] {
+    return this.getAllTournaments().filter(t => t.status === 'active');
+  }
+
+  getUpcomingTournaments(): Tournament[] {
+    return this.getAllTournaments().filter(t => t.status === 'upcoming');
+  }
+
+  // Cleanup
+  disconnect(): void {
+    this.nitrolite.disconnect();
+  }
+}
+```
+
+### 3. React Integration & UI Components
+
+Create `src/components/PredictionMarketplace.tsx`:
+
+```tsx
+import React, { useState, useEffect, useCallback } from 'react';
+import { ethers } from 'ethers';
+import { TournamentManager, Tournament, TournamentEvent, Prediction } from '../services/tournamentManager';
+import { Trophy, Clock, Users, DollarSign, TrendingUp, Star } from 'lucide-react';
+
+interface PredictionMarketplaceProps {
+  wallet: ethers.Wallet;
+  userAddress: string;
+}
+
+export const PredictionMarketplace: React.FC<PredictionMarketplaceProps> = ({ wallet, userAddress }) => {
+  const [tournamentManager, setTournamentManager] = useState<TournamentManager | null>(null);
+  const [tournaments, setTournaments] = useState<Tournament[]>([]);
+  const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null);
+  const [userPredictions, setUserPredictions] = useState<Prediction[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected');
+
+  // Initialize tournament manager
+  useEffect(() => {
+    const initManager = async () => {
+      try {
+        setConnectionStatus('connecting');
+        const manager = new TournamentManager(wallet);
+        await manager.initialize();
+        
+        setTournamentManager(manager);
+        setTournaments(manager.getAllTournaments());
+        setConnectionStatus('connected');
+
+        // Set up event listeners
+        manager.on('tournamentCreated', (tournament: Tournament) => {
+          setTournaments(prev => [...prev, tournament]);
+        });
+
+        manager.on('tournamentJoined', ({ tournament }: { tournament: Tournament }) => {
+          setTournaments(prev => prev.map(t => t.id === tournament.id ? tournament : t));
+        });
+
+        manager.on('tournamentStarted', (tournament: Tournament) => {
+          setTournaments(prev => prev.map(t => t.id === tournament.id ? tournament : t));
+        });
+
+        manager.on('predictionSubmitted', (prediction: Prediction) => {
+          if (prediction.userId === userAddress) {
+            setUserPredictions(prev => [...prev.filter(p => !(p.eventId === prediction.eventId && p.tournamentId === prediction.tournamentId)), prediction]);
+          }
+        });
+
+        manager.on('tournamentCompleted', ({ tournament }: { tournament: Tournament }) => {
+          setTournaments(prev => prev.map(t => t.id === tournament.id ? tournament : t));
+        });
+
+      } catch (error) {
+        console.error('Failed to initialize tournament manager:', error);
+        setConnectionStatus('disconnected');
+      }
+    };
+
+    if (wallet && userAddress) {
+      initManager();
+    }
+
+    return () => {
+      tournamentManager?.disconnect();
+    };
+  }, [wallet, userAddress]);
+
+  // Join tournament
+  const handleJoinTournament = async (tournamentId: string) => {
+    if (!tournamentManager) return;
+    
+    setLoading(true);
+    try {
+      await tournamentManager.joinTournament(tournamentId, userAddress);
+    } catch (error) {
+      console.error('Failed to join tournament:', error);
+      alert('Failed to join tournament: ' + (error as Error).message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Submit prediction
+  const handleSubmitPrediction = async (eventId: string, optionId: string, confidence: number) => {
+    if (!tournamentManager || !selectedTournament) return;
+
+    setLoading(true);
+    try {
+      await tournamentManager.submitPrediction(
+        userAddress,
+        selectedTournament.id,
+        eventId,
+        optionId,
+        confidence
+      );
+    } catch (error) {
+      console.error('Failed to submit prediction:', error);
+      alert('Failed to submit prediction: ' + (error as Error).message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Format time remaining
+  const formatTimeRemaining = (endTime: number): string => {
+    const now = Date.now();
+    const remaining = endTime - now;
+    
+    if (remaining <= 0) return 'Ended';
+    
+    const hours = Math.floor(remaining / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    
+    if (hours > 0) return `${hours}h ${minutes}m`;
+    return `${minutes}m`;
+  };
+
+  // Get user's prediction for an event
+  const getUserPrediction = (eventId: string): Prediction | undefined => {
+    return userPredictions.find(p => p.eventId === eventId);
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto p-6 space-y-6">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
+        <h1 className="text-3xl font-bold mb-2">Prediction Tournament Platform</h1>
+        <p className="text-blue-100 mb-4">Powered by Yellow Network State Channels</p>
+        
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
+            <div className={`w-3 h-3 rounded-full ${
+              connectionStatus === 'connected' ? 'bg-green-400' : 
+              connectionStatus === 'connecting' ? 'bg-yellow-400' : 'bg-red-400'
+            }`} />
+            <span className="capitalize">{connectionStatus}</span>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Users className="w-4 h-4" />
+            <span>{tournaments.filter(t => t.participants.includes(userAddress)).length} Joined</span>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Trophy className="w-4 h-4" />
+            <span>{tournaments.filter(t => t.status === 'finished').length} Completed</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tournament List */}
+      {!selectedTournament && (
+        <div className="grid gap-6">
+          <h2 className="text-2xl font-semibold">Available Tournaments</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tournaments.map((tournament) => (
+              <TournamentCard
+                key={tournament.id}
+                tournament={tournament}
+                userAddress={userAddress}
+                onJoin={handleJoinTournament}
+                onSelect={() => setSelectedTournament(tournament)}
+                loading={loading}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Tournament Detail */}
+      {selectedTournament && (
+        <TournamentDetail
+          tournament={selectedTournament}
+          tournamentManager={tournamentManager}
+          userAddress={userAddress}
+          userPredictions={userPredictions}
+          onBack={() => setSelectedTournament(null)}
+          onSubmitPrediction={handleSubmitPrediction}
+          loading={loading}
+        />
+      )}
+    </div>
+  );
+};
+
+// Tournament Card Component
+interface TournamentCardProps {
+  tournament: Tournament;
+  userAddress: string;
+  onJoin: (tournamentId: string) => void;
+  onSelect: () => void;
+  loading: boolean;
+}
+
+const TournamentCard: React.FC<TournamentCardProps> = ({ 
+  tournament, 
+  userAddress, 
+  onJoin, 
+  onSelect, 
+  loading 
+}) => {
+  const isParticipant = tournament.participants.includes(userAddress);
+  const isFull = tournament.participants.length >= tournament.maxParticipants;
+  const timeRemaining = formatTimeRemaining(tournament.endTime);
+  
+  const getStatusColor = () => {
+    switch (tournament.status) {
+      case 'upcoming': return 'bg-blue-100 text-blue-800';
+      case 'active': return 'bg-green-100 text-green-800';
+      case 'finished': return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 p-6 hover:border-blue-300 transition-colors">
+      <div className="flex justify-between items-start mb-4">
+        <h3 className="text-lg font-semibold text-gray-900">{tournament.name}</h3>
+        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor()}`}>
+          {tournament.status}
+        </span>
+      </div>
+      
+      <p className="text-gray-600 mb-4 text-sm">{tournament.description}</p>
+      
+      <div className="space-y-2 mb-4">
+        <div className="flex items-center justify-between text-sm">
+          <span className="flex items-center space-x-1">
+            <DollarSign className="w-4 h-4" />
+            <span>Entry Fee</span>
+          </span>
+          <span className="font-medium">{(parseFloat(tournament.entryFee) / 1000000).toFixed(2)} USDC</span>
+        </div>
+        
+        <div className="flex items-center justify-between text-sm">
+          <span className="flex items-center space-x-1">
+            <Users className="w-4 h-4" />
+            <span>Participants</span>
+          </span>
+          <span className="font-medium">{tournament.participants.length}/{tournament.maxParticipants}</span>
+        </div>
+        
+        <div className="flex items-center justify-between text-sm">
+          <span className="flex items-center space-x-1">
+            <Clock className="w-4 h-4" />
+            <span>Time Left</span>
+          </span>
+          <span className="font-medium">{timeRemaining}</span>
+        </div>
+        
+        <div className="flex items-center justify-between text-sm">
+          <span className="flex items-center space-x-1">
+            <Star className="w-4 h-4" />
+            <span>Events</span>
+          </span>
+          <span className="font-medium">{tournament.events.length}</span>
+        </div>
+      </div>
+      
+      <div className="flex space-x-2">
+        <button
+          onClick={onSelect}
+          className="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition-colors text-sm font-medium"
+        >
+          View Details
+        </button>
+        
+        {!isParticipant && tournament.status === 'upcoming' && !isFull && (
+          <button
+            onClick={() => onJoin(tournament.id)}
+            disabled={loading}
+            className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:opacity-50 transition-colors text-sm font-medium"
+          >
+            {loading ? 'Joining...' : 'Join'}
+          </button>
+        )}
+        
+        {isParticipant && (
+          <span className="flex-1 bg-green-100 text-green-800 py-2 px-4 rounded-md text-center text-sm font-medium">
+            Joined
+          </span>
+        )}
+        
+        {isFull && !isParticipant && (
+          <span className="flex-1 bg-gray-100 text-gray-500 py-2 px-4 rounded-md text-center text-sm font-medium">
+            Full
+          </span>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// Tournament Detail Component
+interface TournamentDetailProps {
+  tournament: Tournament;
+  tournamentManager: TournamentManager | null;
+  userAddress: string;
+  userPredictions: Prediction[];
+  onBack: () => void;
+  onSubmitPrediction: (eventId: string, optionId: string, confidence: number) => void;
+  loading: boolean;
+}
+
+const TournamentDetail: React.FC<TournamentDetailProps> = ({
+  tournament,
+  tournamentManager,
+  userAddress,
+  userPredictions,
+  onBack,
+  onSubmitPrediction,
+  loading
+}) => {
+  const [selectedEvent, setSelectedEvent] = useState<TournamentEvent | null>(null);
+  const [selectedOption, setSelectedOption] = useState<string>('');
+  const [confidence, setConfidence] = useState<number>(50);
+
+  const isParticipant = tournament.participants.includes(userAddress);
+  const getUserPrediction = (eventId: string) => 
+    userPredictions.find(p => p.eventId === eventId && p.tournamentId === tournament.id);
+
+  const handlePredictionSubmit = () => {
+    if (!selectedEvent || !selectedOption) return;
+    
+    onSubmitPrediction(selectedEvent.id, selectedOption, confidence);
+    setSelectedEvent(null);
+    setSelectedOption('');
+    setConfidence(50);
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <button
+          onClick={onBack}
+          className="flex items-center space-x-2 text-gray-600 hover:text-gray-800"
+        >
+          <span>←</span>
+          <span>Back to Tournaments</span>
+        </button>
+        
+        <div className="flex items-center space-x-4">
+          <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+            tournament.status === 'upcoming' ? 'bg-blue-100 text-blue-800' :
+            tournament.status === 'active' ? 'bg-green-100 text-green-800' :
+            'bg-gray-100 text-gray-800'
+          }`}>
+            {tournament.status}
+          </span>
+        </div>
+      </div>
+
+      {/* Tournament Info */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">{tournament.name}</h1>
+        <p className="text-gray-600 mb-4">{tournament.description}</p>
+        
+        <div className="grid md:grid-cols-4 gap-4">
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="flex items-center space-x-2 text-gray-600 mb-1">
+              <DollarSign className="w-4 h-4" />
+              <span className="text-sm">Entry Fee</span>
+            </div>
+            <p className="text-lg font-semibold">{(parseFloat(tournament.entryFee) / 1000000).toFixed(2)} USDC</p>
+          </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="flex items-center space-x-2 text-gray-600 mb-1">
+              <Users className="w-4 h-4" />
+              <span className="text-sm">Participants</span>
+            </div>
+            <p className="text-lg font-semibold">{tournament.participants.length}/{tournament.maxParticipants}</p>
+          </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="flex items-center space-x-2 text-gray-600 mb-1">
+              <Trophy className="w-4 h-4" />
+              <span className="text-sm">Prize Pool</span>
+            </div>
+            <p className="text-lg font-semibold">
+              {((parseFloat(tournament.entryFee) * tournament.participants.length) / 1000000).toFixed(2)} USDC
+            </p>
+          </div>
+          
+          <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="flex items-center space-x-2 text-gray-600 mb-1">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm">Time Left</span>
+            </div>
+            <p className="text-lg font-semibold">{formatTimeRemaining(tournament.endTime)}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Events */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h2 className="text-xl font-semibold mb-4">Prediction Events</h2>
+        
+        <div className="space-y-4">
+          {tournament.events.map((event) => {
+            const userPrediction = getUserPrediction(event.id);
+            const isEventActive = Date.now() < event.endTime;
+            
+            return (
+              <div key={event.id} className="border border-gray-200 rounded-lg p-4">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <h3 className="font-semibold text-gray-900">{event.title}</h3>
+                    <p className="text-gray-600 text-sm">{event.description}</p>
+                  </div>
+                  
+                  <div className="text-right text-sm text-gray-500">
+                    <p>Ends: {formatTimeRemaining(event.endTime)}</p>
+                    <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${
+                      event.category === 'crypto' ? 'bg-orange-100 text-orange-800' :
+                      event.category === 'sports' ? 'bg-green-100 text-green-800' :
+                      event.category === 'weather' ? 'bg-blue-100 text-blue-800' :
+                      'bg-purple-100 text-purple-800'
+                    }`}>
+                      {event.category}
+                    </span>
+                  </div>
+                </div>
+                
+                {userPrediction ? (
+                  <div className="bg-green-50 border border-green-200 rounded-md p-3">
+                    <p className="text-green-800 text-sm font-medium">✓ Your Prediction</p>
+                    <p className="text-green-700 text-sm">
+                      Option: {event.options.find(o => o.id === userPrediction.optionId)?.text}
+                    </p>
+                    <p className="text-green-700 text-sm">Confidence: {userPrediction.confidence}%</p>
+                    {userPrediction.points !== undefined && (
+                      <p className="text-green-700 text-sm font-semibold">Points: {userPrediction.points}</p>
+                    )}
+                  </div>
+                ) : isParticipant && isEventActive ? (
+                  <div className="flex flex-wrap gap-2">
+                    {event.options.map((option) => (
+                      <button
+                        key={option.id}
+                        onClick={() => {
+                          setSelectedEvent(event);
+                          setSelectedOption(option.id);
+                        }}
+                        className="px-3 py-2 border border-blue-300 text-blue-700 rounded-md hover:bg-blue-50 text-sm"
+                      >
+                        {option.text}
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-gray-500 text-sm">
+                    {!isParticipant ? 'Join tournament to predict' : 'Event ended'}
+                  </div>
+                )}
+                
+                {event.result && (
+                  <div className="mt-3 bg-gray-50 border border-gray-200 rounded-md p-3">
+                    <p className="text-gray-800 text-sm font-medium">Result</p>
+                    <p className="text-gray-700 text-sm">
+                      {event.options.find(o => o.id === event.result)?.text}
+                    </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Prediction Modal */}
+      {selectedEvent && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <h3 className="text-lg font-semibold mb-4">Make Prediction</h3>
+            
+            <div className="mb-4">
+              <h4 className="font-medium text-gray-900 mb-2">{selectedEvent.title}</h4>
+              <p className="text-gray-600 text-sm mb-3">{selectedEvent.description}</p>
+              
+              <div className="space-y-2">
+                {selectedEvent.options.map((option) => (
+                  <label key={option.id} className="flex items-center space-x-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="prediction"
+                      value={option.id}
+                      checked={selectedOption === option.id}
+                      onChange={(e) => setSelectedOption(e.target.value)}
+                      className="text-blue-600"
+                    />
+                    <span>{option.text}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Confidence Level: {confidence}%
+              </label>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value={confidence}
+                onChange={(e) => setConfidence(parseInt(e.target.value))}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-gray-500 mt-1">
+                <span>Low</span>
+                <span>High</span>
+              </div>
+            </div>
+            
+            <div className="flex space-x-3">
+              <button
+                onClick={() => {
+                  setSelectedEvent(null);
+                  setSelectedOption('');
+                  setConfidence(50);
+                }}
+                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handlePredictionSubmit}
+                disabled={!selectedOption || loading}
+                className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+              >
+                {loading ? 'Submitting...' : 'Submit Prediction'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Helper function
+function formatTimeRemaining(endTime: number): string {
+  const now = Date.now();
+  const remaining = endTime - now;
+  
+  if (remaining <= 0) return 'Ended';
+  
+  const hours = Math.floor(remaining / 3600000);
+  const minutes = Math.floor((remaining % 3600000) / 60000);
+  
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
+```
