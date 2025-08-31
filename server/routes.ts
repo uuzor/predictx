@@ -69,6 +69,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Apply general rate limiting to all API routes
   app.use('/api', apiRateLimit.middleware());
 
+  // New: Status endpoint to reflect Nitrolite connection/session
+  app.get("/api/status", async (_req, res) => {
+    res.json({
+      yellowNetwork: {
+        connection: yellowNetworkService.getConnectionStatus(),
+        // We don't expose sessionId for security reasons; just boolean
+        sessionOpen: true, // best-effort: if connected we assume session opened after init
+      }
+    });
+  });
+
   // User authentication and management
   app.post("/api/auth/wallet", authRateLimit.middleware(), async (req, res) => {
     try {

@@ -73,7 +73,8 @@
     "ws": "^8.18.0",
     "zod": "^3.24.2",
     "zod-validation-error": "^3.4.0",
-    "@erc7824/nitrolite": "^0.1.0"
+    "@erc7824/nitrolite": "^0.1.0",
+    "ethers": "^6.13.4"
   },
   "devDependencies": {
     "@replit/vite-plugin-cartographer": "^0.3.0",

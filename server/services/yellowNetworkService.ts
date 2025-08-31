@@ -8,6 +8,7 @@ import {
   createCloseAppSessionMessage,
   type MessageSigner,
 } from '@erc7824/nitrolite';
+import { Wallet, getBytes } from 'ethers';
 
 interface PredictionData {
   userId: string;
@@ -37,26 +38,41 @@ export class YellowNetworkService {
 
   private pending = new Map<string, { resolve: (v: any) => void; reject: (e: any) => void }>();
 
-  // EIP-712 signer using a server-held private key
-  private signer: MessageSigner = {
-    address: (process.env.YELLOW_WALLET_ADDRESS || '').toLowerCase(),
-    async signMessage(message: string): Promise<string> {
-      // For production, replace with a proper EIP-712 signer implementation using the provided private key.
-      // Here we keep a placeholder that throws if no key is configured.
-      const pk = process.env.YELLOW_SIGNER_PRIVATE_KEY;
-      if (!pk) {
-        throw new Error('YELLOW_SIGNER_PRIVATE_KEY is not set');
-      }
-      // You would use a library like ethers to sign:
-      // const wallet = new ethers.Wallet(pk);
-      // return await wallet.signMessage(ethers.getBytes(message));
-      // Placeholder to avoid importing ethers in this patch:
-      return '0x' + Buffer.from(`signed:${message}`).toString('hex').slice(0, 130).padEnd(130, '0');
-    },
-  };
+  // EIP-712/plain message signer using server-held private key
+  private signer: MessageSigner;
 
   constructor() {
+    // Initialize signer with ethers Wallet
+    const pk = process.env.YELLOW_SIGNER_PRIVATE_KEY;
+    if (!pk || !/^0x[0-9a-fA-F]{64}$/.test(pk)) {
+      console.error('Invalid or missing YELLOW_SIGNER_PRIVATE_KEY. It must be a 32-byte 0x-hex string.');
+    }
+    const wallet = pk ? new Wallet(pk) : null;
+    this.signer = {
+      address: (process.env.YELLOW_WALLET_ADDRESS || wallet?.address || '').toLowerCase(),
+      async signMessage(message: string): Promise<string> {
+        if (!wallet) throw new Error('Wallet not initialized. Set YELLOW_SIGNER_PRIVATE_KEY.');
+        // ClearNode challenge may be raw string; if it's EIP-712 typed data, adapt here.
+        return await wallet.signMessage(getBytes(message));
+      },
+    };
+
     this.connect();
+
+    // Graceful shutdown to close session
+    process.once('SIGINT', () => this.shutdown());
+    process.once('SIGTERM', () => this.shutdown());
+  }
+
+  private async shutdown() {
+    try {
+      await this.closeAppSession();
+    } catch (e) {
+      console.warn('Error during session close on shutdown:', e);
+    }
+    try {
+      this.ws?.close();
+    } catch {}
   }
 
   private connect() {
@@ -67,6 +83,7 @@ export class YellowNetworkService {
         this.isConnected = true;
         console.log('Connected to ClearNode');
         try {
+          this.validateEnv();
           await this.authenticate();
           await this.openAppSession();
         } catch (e) {
@@ -92,6 +109,23 @@ export class YellowNetworkService {
     } catch (error) {
       console.error('Failed to connect to ClearNode:', error);
       setTimeout(() => this.connect(), 5000);
+    }
+  }
+
+  private validateEnv() {
+    const required = [
+      'YELLOW_WALLET_ADDRESS',
+      'YELLOW_PARTICIPANT_ADDRESS',
+      'YELLOW_APPLICATION_ADDRESS',
+      'YELLOW_SIGNER_PRIVATE_KEY',
+    ];
+    const missing = required.filter((k) => !process.env[k]);
+    if (missing.length) {
+      throw new Error(`Missing required env vars: ${missing.join(', ')}`);
+    }
+    const pk = process.env.YELLOW_SIGNER_PRIVATE_KEY!;
+    if (!/^0x[0-9a-fA-F]{64}$/.test(pk)) {
+      throw new Error('YELLOW_SIGNER_PRIVATE_KEY must be a 32-byte 0x-hex string');
     }
   }
 
@@ -182,7 +216,7 @@ export class YellowNetworkService {
     const participant = process.env.YELLOW_PARTICIPANT_ADDRESS || '';
     const application = process.env.YELLOW_APPLICATION_ADDRESS || '';
 
-    const { id, method, params } = createAppSessionMessage(
+    const { method, params } = createAppSessionMessage(
       {
         wallet,
         participant,
