@@ -194,7 +194,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Create prediction with base price metadata
       const prediction = await storage.createPrediction({
         ...predictionData,
-        // extend schema if needed to store priceAtSubmission as metadata in future
+        priceAtSubmission: priceAtSubmission.toFixed(8),
       });
 
       // Submit to Yellow Network state channel using versioned app payload (server-side)
@@ -367,10 +367,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
               break;
               
             case 'direction':
-              // Requires base price at submission; as a fallback, treat as incorrect if missing
-              // If you add priceAtSubmission to storage, read it here.
-              // For now, no base price persisted -> cannot judge direction deterministically
-              isCorrect = false;
+              // Requires base price at submission; if present use it
+              if (prediction.priceAtSubmission) {
+                const base = parseFloat(prediction.priceAtSubmission);
+                isCorrect = currentPrice > base; // direction "up" assumed by business rules; adjust if storing "direction"
+                if (prediction.direction === 'down') {
+                  isCorrect = currentPrice < base;
+                }
+              } else {
+                isCorrect = false;
+              }
               break;
               
             case 'above_below':

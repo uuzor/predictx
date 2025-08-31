@@ -36,6 +36,8 @@ export const predictions = pgTable("predictions", {
   direction: text("direction"), // "up", "down"
   timeFrame: integer("time_frame"), // in minutes
   expiresAt: timestamp("expires_at").notNull(),
+  // New: persist base price at submission for deterministic settlement
+  priceAtSubmission: decimal("price_at_submission", { precision: 18, scale: 8 }),
   actualPrice: decimal("actual_price", { precision: 18, scale: 8 }),
   isCorrect: boolean("is_correct"),
   reward: decimal("reward", { precision: 18, scale: 8 }).default("0.00000000"),
