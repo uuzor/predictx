@@ -74,8 +74,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({
       yellowNetwork: {
         connection: yellowNetworkService.getConnectionStatus(),
-        // We don't expose sessionId for security reasons; just boolean
-        sessionOpen: true, // best-effort: if connected we assume session opened after init
+        sessionOpen: yellowNetworkService.getSessionOpen(),
+        lastRpcTimestamp: yellowNetworkService.getLastRpcTimestamp(),
       }
     });
   });

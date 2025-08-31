@@ -35,6 +35,8 @@ export class YellowNetworkService {
   // Nitrolite session state
   private sessionId: string | null = null;
   private authToken: string | null = null;
+  private sessionOpen = false;
+  private lastRpcTimestamp: number | null = null;
 
   private pending = new Map<string, { resolve: (v: any) => void; reject: (e: any) => void }>();
 
@@ -142,6 +144,7 @@ export class YellowNetworkService {
     return new Promise<T>((resolve, reject) => {
       this.pending.set(id, { resolve, reject });
       this.send(req);
+      this.lastRpcTimestamp = Date.now();
       setTimeout(() => {
         if (this.pending.has(id)) {
           this.pending.get(id)?.reject(new Error(`${method} timeout`));
@@ -231,6 +234,7 @@ export class YellowNetworkService {
     const sessionId = resp?.result?.sessionId ?? resp?.params?.sessionId;
     if (!sessionId) throw new Error('Failed to open app session');
     this.sessionId = sessionId;
+    this.sessionOpen = true;
     console.log('Nitrolite app session opened:', sessionId);
   }
 
@@ -250,6 +254,7 @@ export class YellowNetworkService {
       console.warn('Close session failed:', e);
     } finally {
       this.sessionId = null;
+      this.sessionOpen = false;
     }
   }
 
@@ -321,6 +326,14 @@ export class YellowNetworkService {
       default:
         return 'disconnected';
     }
+  }
+
+  getSessionOpen(): boolean {
+    return this.sessionOpen;
+  }
+
+  getLastRpcTimestamp(): number | null {
+    return this.lastRpcTimestamp;
   }
 }
 
