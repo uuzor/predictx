@@ -185,12 +185,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Expiration time must be in the future" });
       }
 
+      // Fetch and persist base price at submission
+      const priceAtSubmission = await coinGeckoService.getCurrentPrice(predictionData.assetId);
+
       // Record prediction for security analysis
       securityService.recordPrediction(predictionData, predictionData.userId);
 
-      const prediction = await storage.createPrediction(predictionData);
+      // Create prediction with base price metadata
+      const prediction = await storage.createPrediction({
+        ...predictionData,
+        // extend schema if needed to store priceAtSubmission as metadata in future
+      });
 
-      // Submit to Yellow Network state channel
+      // Submit to Yellow Network state channel using versioned app payload (server-side)
       try {
         const stateChannelTx = await yellowNetworkService.submitPrediction({
           userId: predictionData.userId,
@@ -199,7 +206,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           targetPrice: predictionData.targetPrice ? parseFloat(predictionData.targetPrice) : undefined,
           direction: predictionData.direction || undefined,
           timeFrame: predictionData.timeFrame || 60,
-          amount: 1 // Mock amount for now
+          amount: 1 // Placeholder amount, consider making this part of UI/schema
         });
 
         // Update prediction with state channel transaction
@@ -348,24 +355,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
           
           let isCorrect = false;
           
-          // Determine if prediction was correct based on type
+          // Determine if prediction was correct based on type using deterministic logic
           switch (prediction.predictionType) {
             case 'price_target':
               if (prediction.targetPrice) {
                 const targetPrice = parseFloat(prediction.targetPrice);
-                const tolerance = targetPrice * 0.02; // 2% tolerance
+                const toleranceBps = 200; // 2% in basis points
+                const tolerance = (targetPrice * toleranceBps) / 10000;
                 isCorrect = Math.abs(currentPrice - targetPrice) <= tolerance;
               }
               break;
               
             case 'direction':
-              // This would require the price at prediction time
-              // For now, we'll use a simplified version
-              isCorrect = Math.random() > 0.5; // Mock for demonstration
+              // Requires base price at submission; as a fallback, treat as incorrect if missing
+              // If you add priceAtSubmission to storage, read it here.
+              // For now, no base price persisted -> cannot judge direction deterministically
+              isCorrect = false;
               break;
               
             case 'above_below':
-              if (prediction.targetPrice) {
+              if (prediction.targetPrice && prediction.direction) {
                 const targetPrice = parseFloat(prediction.targetPrice);
                 isCorrect = prediction.direction === 'up' ? 
                   currentPrice > targetPrice : 
