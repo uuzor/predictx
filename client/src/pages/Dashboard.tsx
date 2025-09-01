@@ -7,6 +7,7 @@ import { ReputationLeaderboard } from '@/components/ReputationLeaderboard';
 import { AchievementGrid } from '@/components/AchievementGrid';
 import { TechnicalMetrics } from '@/components/TechnicalMetrics';
 import { NotificationToast } from '@/components/NotificationToast';
+import { StatusBadge } from '@/components/StatusBadge';
 import { useWebSocket } from '@/hooks/useWebSocket';
 import { useYellowNetwork } from '@/hooks/useYellowNetwork';
 import { NotificationMessage } from '@/types';
@@ -94,8 +95,11 @@ export default function Dashboard() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center rounded-full border border-border/50 bg-muted/50 px-3 py-1 text-sm mb-8">
-              <span className="text-muted-foreground">Powered by Yellow Network State Channels</span>
+            <div className="flex items-center justify-center mb-8 gap-3">
+              <div className="inline-flex items-center rounded-full border border-border/50 bg-muted/50 px-3 py-1 text-sm">
+                <span className="text-muted-foreground">Powered by Yellow Network State Channels</span>
+              </div>
+              <StatusBadge />
             </div>
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
               Predict the Future,<br />
