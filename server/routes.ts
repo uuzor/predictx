@@ -7,6 +7,7 @@ import { coinGeckoService } from "./services/coinGeckoService";
 import { yellowNetworkService } from "./services/yellowNetworkService";
 import { tournamentService } from "./services/tournamentService";
 import { securityService } from "./services/securityService";
+import { watchdogService } from "./services/watchdog";
 import { log, stream } from "./services/logger";
 import { generalRateLimit, predictionRateLimit, authRateLimit, apiRateLimit } from "./middleware/rateLimiter";
 import { insertUserSchema, insertPredictionSchema, insertTournamentParticipantSchema } from "@shared/schema";
@@ -114,6 +115,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     log.api.request('GET', '/api/status', { status: status.yellowNetwork.connection });
 
     res.json(status);
+  });
+
+  // Watchdog monitoring endpoints
+  app.get("/api/watchdog/status", async (_req, res) => {
+    const watchdogStatus = watchdogService.getStatus();
+    const healthScore = watchdogService.getHealthScore();
+
+    res.json({
+      ...watchdogStatus,
+      healthScore,
+      healthGrade: healthScore >= 90 ? 'A' : healthScore >= 75 ? 'B' : healthScore >= 60 ? 'C' : 'D',
+    });
+  });
+
+  app.get("/api/watchdog/audit-log", async (req, res) => {
+    const limit = parseInt(req.query.limit as string) || 100;
+    const auditLog = watchdogService.getAuditLog(limit);
+
+    res.json(auditLog);
+  });
+
+  app.post("/api/watchdog/start", async (_req, res) => {
+    watchdogService.start();
+    res.json({ status: 'started', message: 'Watchdog service started' });
+  });
+
+  app.post("/api/watchdog/stop", async (_req, res) => {
+    watchdogService.stop();
+    res.json({ status: 'stopped', message: 'Watchdog service stopped' });
   });
 
   // User authentication and management
@@ -621,6 +651,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Oracle monitoring error:", error);
     }
   }, 120000); // Check every 2 minutes
+
+  // Start watchdog service for Yellow Network monitoring
+  watchdogService.start();
+  log.info('🐕 Watchdog service started - monitoring Yellow Network health');
 
   return httpServer;
 }

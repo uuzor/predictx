@@ -9,6 +9,8 @@ import {
   type MessageSigner,
 } from '@erc7824/nitrolite';
 import { Wallet, getBytes } from 'ethers';
+import { sessionStateManager } from './sessionStateManager.js';
+import { log } from './logger.js';
 
 interface PredictionData {
   userId: string;
@@ -76,6 +78,10 @@ export class YellowNetworkService {
   private circuitOpen = false;
   private circuitBreakerTimeout: NodeJS.Timeout | null = null;
 
+  // Session monitoring
+  private sessionTimeout = parseInt(process.env.YELLOW_SESSION_TIMEOUT || '300000'); // 5 minutes default
+  private sessionMonitorInterval: NodeJS.Timeout | null = null;
+
   // EIP-712/plain message signer using server-held private key
   private signer: MessageSigner;
 
@@ -96,6 +102,7 @@ export class YellowNetworkService {
     };
 
     this.connect();
+    this.initSessionMonitoring();
 
     // Graceful shutdown to close session
     process.once('SIGINT', () => this.shutdown());
@@ -103,14 +110,77 @@ export class YellowNetworkService {
   }
 
   private async shutdown() {
+    log.yellowNetwork.info('Shutting down Yellow Network service');
+
+    // Stop session monitoring
+    if (this.sessionMonitorInterval) {
+      clearInterval(this.sessionMonitorInterval);
+    }
+
     try {
+      // Save session state before closing
+      if (this.sessionId && this.sessionOpen) {
+        const state = sessionStateManager.createInitialState(this.sessionId);
+        const closedState = sessionStateManager.closeSession(state);
+        await sessionStateManager.saveState(closedState);
+        log.yellowNetwork.info('Session state saved', { sessionId: this.sessionId });
+      }
+
       await this.closeAppSession();
     } catch (e) {
-      console.warn('Error during session close on shutdown:', e);
+      log.yellowNetwork.error('Error during session close on shutdown', e as Error);
     }
+
     try {
       this.ws?.close();
     } catch {}
+  }
+
+  /**
+   * Initialize session monitoring to detect timeouts and recover
+   */
+  private initSessionMonitoring() {
+    // Check session every 60 seconds
+    this.sessionMonitorInterval = setInterval(async () => {
+      try {
+        const state = await sessionStateManager.loadState();
+
+        if (state && sessionStateManager.isSessionTimedOut(state, this.sessionTimeout)) {
+          log.yellowNetwork.warn('Session timeout detected, attempting recovery', {
+            sessionId: state.sessionId,
+            inactiveTime: Date.now() - state.lastActivity,
+          });
+
+          // Close old session and open new one
+          await this.recoverSession();
+        }
+      } catch (error) {
+        log.yellowNetwork.error('Session monitoring error', error as Error);
+      }
+    }, 60000); // Check every minute
+  }
+
+  /**
+   * Recover session after timeout or failure
+   */
+  private async recoverSession() {
+    try {
+      // Close existing session if open
+      if (this.sessionOpen) {
+        await this.closeAppSession();
+      }
+
+      // Wait a bit before reopening
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Open new session
+      if (this.isConnected) {
+        await this.openAppSession();
+        log.yellowNetwork.info('Session recovered successfully');
+      }
+    } catch (error) {
+      log.yellowNetwork.error('Session recovery failed', error as Error);
+    }
   }
 
   private connect() {
