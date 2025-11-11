@@ -1,11 +1,13 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { WebSocketServer, WebSocket } from "ws";
+import morgan from "morgan";
 import { storage } from "./storage";
 import { coinGeckoService } from "./services/coinGeckoService";
 import { yellowNetworkService } from "./services/yellowNetworkService";
 import { tournamentService } from "./services/tournamentService";
 import { securityService } from "./services/securityService";
+import { log, stream } from "./services/logger";
 import { generalRateLimit, predictionRateLimit, authRateLimit, apiRateLimit } from "./middleware/rateLimiter";
 import { insertUserSchema, insertPredictionSchema, insertTournamentParticipantSchema } from "@shared/schema";
 
@@ -66,32 +68,81 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   };
 
+  // HTTP Request logging
+  app.use(
+    morgan(':method :url :status :res[content-length] - :response-time ms', { stream })
+  );
+
   // Apply general rate limiting to all API routes
   app.use('/api', apiRateLimit.middleware());
 
-  // New: Status endpoint to reflect Nitrolite connection/session
+  // Health check endpoint (no rate limiting)
+  app.get("/health", async (_req, res) => {
+    const health = {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      yellowNetwork: yellowNetworkService.getHealthStatus(),
+      database: 'connected', // Could add actual DB health check
+      memory: {
+        used: process.memoryUsage().heapUsed,
+        total: process.memoryUsage().heapTotal,
+        percentage: ((process.memoryUsage().heapUsed / process.memoryUsage().heapTotal) * 100).toFixed(2) + '%',
+      },
+      cpu: process.cpuUsage(),
+    };
+
+    const isHealthy =
+      health.yellowNetwork.connected &&
+      !health.yellowNetwork.circuitOpen;
+
+    res.status(isHealthy ? 200 : 503).json(health);
+  });
+
+  // Detailed Yellow Network status endpoint
   app.get("/api/status", async (_req, res) => {
-    res.json({
+    const status = {
       yellowNetwork: {
         connection: yellowNetworkService.getConnectionStatus(),
         sessionOpen: yellowNetworkService.getSessionOpen(),
         lastRpcTimestamp: yellowNetworkService.getLastRpcTimestamp(),
-      }
-    });
+        health: yellowNetworkService.getHealthStatus(),
+      },
+      timestamp: new Date().toISOString(),
+    };
+
+    log.api.request('GET', '/api/status', { status: status.yellowNetwork.connection });
+
+    res.json(status);
   });
 
   // User authentication and management
   app.post("/api/auth/wallet", authRateLimit.middleware(), async (req, res) => {
     try {
-      const { walletAddress, signature } = req.body;
-      
+      const { walletAddress, signature, message } = req.body;
+
       if (!walletAddress) {
         return res.status(400).json({ error: "Wallet address is required" });
       }
 
+      // Optional: Verify signature if provided
+      if (signature && message) {
+        try {
+          const { Wallet } = await import('ethers');
+          const recoveredAddress = Wallet.verifyMessage(message, signature);
+
+          if (recoveredAddress.toLowerCase() !== walletAddress.toLowerCase()) {
+            return res.status(401).json({ error: "Invalid signature" });
+          }
+        } catch (error) {
+          console.error("Signature verification error:", error);
+          return res.status(401).json({ error: "Signature verification failed" });
+        }
+      }
+
       // Check if user exists
       let user = await storage.getUserByWallet(walletAddress);
-      
+
       if (!user) {
         // Create new user
         const userData = insertUserSchema.parse({
@@ -99,11 +150,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
           username: `user_${walletAddress.slice(-6)}`
         });
         user = await storage.createUser(userData);
+        console.log(`✓ New user created: ${user.username} (${walletAddress})`);
+      } else {
+        console.log(`✓ User authenticated: ${user.username} (${walletAddress})`);
       }
 
       res.json({ user });
     } catch (error) {
-      console.error("Wallet authentication error:", error);
+      console.error("✗ Wallet authentication error:", error);
       res.status(500).json({ error: "Authentication failed" });
     }
   });
@@ -211,16 +265,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
         // Update prediction with state channel transaction
         await storage.updatePrediction(prediction.id, { stateChannelTx });
-        
-        broadcast('prediction_submitted', { 
-          predictionId: prediction.id, 
+
+        broadcast('prediction_submitted', {
+          predictionId: prediction.id,
           userId: predictionData.userId,
-          stateChannelTx 
+          stateChannelTx
         });
 
-      } catch (stateChannelError) {
-        console.error("State channel submission error:", stateChannelError);
-        // Continue without state channel for now
+      } catch (stateChannelError: any) {
+        console.error("✗ State channel submission error:", stateChannelError);
+
+        // Check if it's a circuit breaker or critical error
+        if (stateChannelError.message?.includes('Circuit breaker')) {
+          // Mark prediction for retry but don't fail the request
+          await storage.updatePrediction(prediction.id, {
+            stateChannelTx: 'pending_retry'
+          });
+          console.warn('⚠ Prediction saved but Yellow Network unavailable - will retry');
+        } else if (process.env.ENABLE_YELLOW_NETWORK === 'false') {
+          // Yellow Network disabled - continue without it
+          console.log('ℹ Yellow Network disabled - prediction saved locally only');
+        } else {
+          // Non-critical error - log but continue
+          console.warn('⚠ State channel submission failed but prediction saved locally');
+        }
       }
 
       res.json(prediction);
