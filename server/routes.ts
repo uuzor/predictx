@@ -8,9 +8,10 @@ import { yellowNetworkService } from "./services/yellowNetworkService";
 import { tournamentService } from "./services/tournamentService";
 import { securityService } from "./services/securityService";
 import { watchdogService } from "./services/watchdog";
+import { challengeService } from "./services/challengeService";
 import { log, stream } from "./services/logger";
 import { generalRateLimit, predictionRateLimit, authRateLimit, apiRateLimit } from "./middleware/rateLimiter";
-import { insertUserSchema, insertPredictionSchema, insertTournamentParticipantSchema } from "@shared/schema";
+import { insertUserSchema, insertPredictionSchema, insertChallengeSchema, insertTournamentParticipantSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);
@@ -338,6 +339,143 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Challenge endpoints
+  // Create challenge
+  app.post("/api/challenges", generalRateLimit.middleware(), async (req, res) => {
+    try {
+      const { challengerId, challengerUsername, opponentId, assetId, predictionType, amount, timeFrame, isPublic, challengerPrediction } = req.body;
+
+      if (!challengerId || !challengerUsername || !assetId || !predictionType || !amount || !timeFrame || !challengerPrediction) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+
+      const challenge = await challengeService.createChallenge({
+        challengerId,
+        challengerUsername,
+        opponentId,
+        assetId,
+        predictionType,
+        amount: parseFloat(amount),
+        timeFrame: parseInt(timeFrame),
+        isPublic,
+        challengerPrediction
+      });
+
+      broadcast('challenge_created', challenge);
+
+      res.json(challenge);
+    } catch (error) {
+      console.error("Challenge creation error:", error);
+      res.status(500).json({ error: "Failed to create challenge" });
+    }
+  });
+
+  // Get user challenges
+  app.get("/api/challenges/user/:userId", async (req, res) => {
+    try {
+      const challenges = await storage.getUserChallenges(req.params.userId);
+      res.json(challenges);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch challenges" });
+    }
+  });
+
+  // Get open challenges
+  app.get("/api/challenges/open", async (req, res) => {
+    try {
+      const challenges = await storage.getOpenChallenges();
+      res.json(challenges);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch open challenges" });
+    }
+  });
+
+  // Accept challenge
+  app.post("/api/challenges/:id/accept", generalRateLimit.middleware(), async (req, res) => {
+    try {
+      const { userId, username, prediction } = req.body;
+
+      if (!userId || !username || !prediction) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+
+      const challenge = await challengeService.acceptChallenge({
+        challengeId: req.params.id,
+        opponentId: userId,
+        opponentUsername: username,
+        opponentPrediction: prediction
+      });
+
+      broadcast('challenge_accepted', { challengeId: challenge.id, opponentId: userId, opponentUsername: username });
+
+      res.json(challenge);
+    } catch (error: any) {
+      console.error("Challenge acceptance error:", error);
+      res.status(400).json({ error: error.message || "Failed to accept challenge" });
+    }
+  });
+
+  // Cancel challenge
+  app.post("/api/challenges/:id/cancel", generalRateLimit.middleware(), async (req, res) => {
+    try {
+      const { userId } = req.body;
+
+      if (!userId) {
+        return res.status(400).json({ error: "Missing userId" });
+      }
+
+      const challenge = await challengeService.cancelChallenge(req.params.id, userId);
+
+      broadcast('challenge_cancelled', { challengeId: challenge.id });
+
+      res.json(challenge);
+    } catch (error: any) {
+      console.error("Challenge cancellation error:", error);
+      res.status(400).json({ error: error.message || "Failed to cancel challenge" });
+    }
+  });
+
+  // Get challenge stats
+  app.get("/api/challenges/stats/:userId", async (req, res) => {
+    try {
+      const stats = await storage.getChallengeStats(req.params.userId);
+
+      // Calculate win rate
+      const winRate = stats.totalChallenges > 0
+        ? (stats.won / stats.totalChallenges) * 100
+        : 0;
+
+      res.json({
+        ...stats,
+        winRate: parseFloat(winRate.toFixed(1))
+      });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch challenge stats" });
+    }
+  });
+
+  // Get challenge leaderboard
+  app.get("/api/challenges/leaderboard", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const leaderboard = await challengeService.getChallengeLeaderboard(limit);
+      res.json(leaderboard);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch challenge leaderboard" });
+    }
+  });
+
+  // Get recent challenge activity
+  app.get("/api/challenges/recent", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 20;
+      const activity = await challengeService.getRecentActivity(limit);
+      res.json(activity);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch recent activity" });
+    }
+  });
+
   // Get active tournaments
   app.get("/api/tournaments", async (req, res) => {
     try {
@@ -534,6 +672,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       for (const tournament of activeTournaments) {
         await tournamentService.updateTournamentScores(tournament.id);
         await tournamentService.checkTournamentCompletion(tournament.id);
+      }
+
+      // Settle expired challenges
+      const activeChallenges = await storage.getActiveChallenges();
+      for (const challenge of activeChallenges) {
+        if (challenge.expiresAt <= now && challenge.status === 'accepted') {
+          try {
+            const settledChallenge = await challengeService.settleChallenge(challenge.id);
+            broadcast('challenge_settled', {
+              challengeId: settledChallenge.id,
+              winnerId: settledChallenge.winnerId,
+              challengerCorrect: settledChallenge.challengerCorrect,
+              opponentCorrect: settledChallenge.opponentCorrect,
+              priceAtExpiry: settledChallenge.priceAtExpiry
+            });
+          } catch (error) {
+            console.error(`Challenge settlement error for ${challenge.id}:`, error);
+          }
+        } else if (challenge.expiresAt <= now && challenge.status === 'pending') {
+          // Cancel pending challenges that expired
+          try {
+            await storage.updateChallenge(challenge.id, {
+              status: 'cancelled',
+              settledAt: now
+            });
+            broadcast('challenge_expired', { challengeId: challenge.id });
+          } catch (error) {
+            console.error(`Challenge cancellation error for ${challenge.id}:`, error);
+          }
+        }
       }
 
     } catch (error) {

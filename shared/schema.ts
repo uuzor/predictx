@@ -14,6 +14,9 @@ export const users = pgTable("users", {
   currentStreak: integer("current_streak").default(0),
   maxStreak: integer("max_streak").default(0),
   totalRewards: decimal("total_rewards", { precision: 18, scale: 8 }).default("0.00000000"),
+  challengesWon: integer("challenges_won").default(0),
+  challengesLost: integer("challenges_lost").default(0),
+  challengesDrawn: integer("challenges_drawn").default(0),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -31,6 +34,7 @@ export const predictions = pgTable("predictions", {
   userId: varchar("user_id").references(() => users.id).notNull(),
   assetId: varchar("asset_id").references(() => cryptoAssets.id).notNull(),
   tournamentId: varchar("tournament_id").references(() => tournaments.id),
+  challengeId: varchar("challenge_id"),
   predictionType: text("prediction_type").notNull(), // "price_target", "direction", "above_below"
   targetPrice: decimal("target_price", { precision: 18, scale: 8 }),
   direction: text("direction"), // "up", "down"
@@ -44,6 +48,32 @@ export const predictions = pgTable("predictions", {
   stateChannelTx: text("state_channel_tx"), // Yellow Network transaction hash
   createdAt: timestamp("created_at").defaultNow(),
   settledAt: timestamp("settled_at"),
+});
+
+export const challenges = pgTable("challenges", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  challengerId: varchar("challenger_id").references(() => users.id).notNull(),
+  challengerUsername: text("challenger_username").notNull(),
+  opponentId: varchar("opponent_id").references(() => users.id),
+  opponentUsername: text("opponent_username"),
+  assetId: varchar("asset_id").references(() => cryptoAssets.id).notNull(),
+  predictionType: text("prediction_type").notNull(), // "price_target", "direction", "above_below"
+  amount: decimal("amount", { precision: 18, scale: 8 }).notNull(),
+  timeFrame: integer("time_frame").notNull(), // in minutes
+  status: text("status").notNull().default("pending"), // "pending", "accepted", "completed", "cancelled"
+  challengerPrediction: text("challenger_prediction"), // JSON encoded prediction
+  opponentPrediction: text("opponent_prediction"), // JSON encoded prediction
+  winnerId: varchar("winner_id").references(() => users.id),
+  priceAtStart: decimal("price_at_start", { precision: 18, scale: 8 }),
+  priceAtExpiry: decimal("price_at_expiry", { precision: 18, scale: 8 }),
+  challengerCorrect: boolean("challenger_correct"),
+  opponentCorrect: boolean("opponent_correct"),
+  isPublic: boolean("is_public").default(true), // If false, only specific opponent can accept
+  expiresAt: timestamp("expires_at").notNull(),
+  acceptedAt: timestamp("accepted_at"),
+  createdAt: timestamp("created_at").defaultNow(),
+  settledAt: timestamp("settled_at"),
+  stateChannelTx: text("state_channel_tx"), // Yellow Network transaction hash
 });
 
 export const tournaments = pgTable("tournaments", {
@@ -148,6 +178,13 @@ export const insertPredictionSchema = createInsertSchema(predictions).omit({
   settledAt: true,
 });
 
+export const insertChallengeSchema = createInsertSchema(challenges).omit({
+  id: true,
+  createdAt: true,
+  acceptedAt: true,
+  settledAt: true,
+});
+
 export const insertTournamentSchema = createInsertSchema(tournaments).omit({
   id: true,
   createdAt: true,
@@ -187,6 +224,9 @@ export type InsertCryptoAsset = z.infer<typeof insertCryptoAssetSchema>;
 
 export type Prediction = typeof predictions.$inferSelect;
 export type InsertPrediction = z.infer<typeof insertPredictionSchema>;
+
+export type Challenge = typeof challenges.$inferSelect;
+export type InsertChallenge = z.infer<typeof insertChallengeSchema>;
 
 export type Tournament = typeof tournaments.$inferSelect;
 export type InsertTournament = z.infer<typeof insertTournamentSchema>;
