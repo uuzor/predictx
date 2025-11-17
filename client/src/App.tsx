@@ -10,6 +10,7 @@ import Security from "@/pages/Security";
 import Profile from "@/pages/Profile";
 import Markets from "@/pages/Markets";
 import Challenges from "@/pages/Challenges";
+import Tournaments from "@/pages/Tournaments";
 import TournamentDetail from "@/pages/TournamentDetail";
 import SystemStatus from "@/pages/SystemStatus";
 import Leaderboard from "@/pages/Leaderboard";
@@ -21,7 +22,7 @@ function Router() {
       <Route path="/" component={Dashboard} />
       <Route path="/markets" component={Markets} />
       <Route path="/tournaments/:id" component={TournamentDetail} />
-      <Route path="/tournaments" component={Dashboard} />
+      <Route path="/tournaments" component={Tournaments} />
       <Route path="/challenges" component={Challenges} />
       <Route path="/leaderboard" component={Leaderboard} />
       <Route path="/profile/:userId" component={Profile} />
