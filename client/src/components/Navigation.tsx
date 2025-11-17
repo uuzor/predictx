@@ -20,9 +20,14 @@ export function Navigation() {
               </div>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/">
-                <span className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors cursor-pointer">
+              <Link href="/markets">
+                <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
                   Markets
+                </span>
+              </Link>
+              <Link href="/challenges">
+                <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                  Challenges
                 </span>
               </Link>
               <Link href="/tournaments">
@@ -35,13 +40,13 @@ export function Navigation() {
                   Leaderboard
                 </span>
               </Link>
-              <Link href="/security">
+              <Link href="/status">
                 <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-                  Security
+                  Status
                 </span>
               </Link>
               <a
-                href="https://erc7824.org"
+                href="https://docs.yellow.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
