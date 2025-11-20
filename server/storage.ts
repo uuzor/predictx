@@ -1,10 +1,12 @@
-import { 
-  type User, 
+import {
+  type User,
   type InsertUser,
   type CryptoAsset,
   type InsertCryptoAsset,
   type Prediction,
   type InsertPrediction,
+  type Challenge,
+  type InsertChallenge,
   type Tournament,
   type InsertTournament,
   type TournamentParticipant,
@@ -34,6 +36,16 @@ export interface IStorage {
   updatePrediction(id: string, updates: Partial<Prediction>): Promise<Prediction | undefined>;
   getActivePredictions(): Promise<Prediction[]>;
 
+  // Challenge operations
+  getChallenge(id: string): Promise<Challenge | undefined>;
+  getUserChallenges(userId: string): Promise<Challenge[]>;
+  getOpenChallenges(): Promise<Challenge[]>;
+  createChallenge(challenge: InsertChallenge): Promise<Challenge>;
+  acceptChallenge(challengeId: string, opponentId: string, opponentUsername: string, opponentPrediction: string): Promise<Challenge | undefined>;
+  updateChallenge(id: string, updates: Partial<Challenge>): Promise<Challenge | undefined>;
+  getActiveChallenges(): Promise<Challenge[]>;
+  getChallengeStats(userId: string): Promise<{ totalChallenges: number, won: number, lost: number, draws: number }>;
+
   // Tournament operations
   getTournament(id: string): Promise<Tournament | undefined>;
   getAllTournaments(): Promise<Tournament[]>;
@@ -60,6 +72,7 @@ export class MemStorage implements IStorage {
   private users: Map<string, User> = new Map();
   private cryptoAssets: Map<string, CryptoAsset> = new Map();
   private predictions: Map<string, Prediction> = new Map();
+  private challenges: Map<string, Challenge> = new Map();
   private tournaments: Map<string, Tournament> = new Map();
   private tournamentParticipants: Map<string, TournamentParticipant> = new Map();
   private achievements: Map<string, Achievement> = new Map();
@@ -158,8 +171,8 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = randomUUID();
-    const user: User = { 
-      ...insertUser, 
+    const user: User = {
+      ...insertUser,
       id,
       level: 1,
       reputation: "0.00",
@@ -168,6 +181,9 @@ export class MemStorage implements IStorage {
       currentStreak: 0,
       maxStreak: 0,
       totalRewards: "0.00000000",
+      challengesWon: 0,
+      challengesLost: 0,
+      challengesDrawn: 0,
       createdAt: new Date()
     };
     this.users.set(id, user);
@@ -237,9 +253,112 @@ export class MemStorage implements IStorage {
 
   async getActivePredictions(): Promise<Prediction[]> {
     const now = new Date();
-    return Array.from(this.predictions.values()).filter(p => 
+    return Array.from(this.predictions.values()).filter(p =>
       p.expiresAt > now && p.isCorrect === null
     );
+  }
+
+  // Challenge operations
+  async getChallenge(id: string): Promise<Challenge | undefined> {
+    return this.challenges.get(id);
+  }
+
+  async getUserChallenges(userId: string): Promise<Challenge[]> {
+    return Array.from(this.challenges.values()).filter(c =>
+      c.challengerId === userId || c.opponentId === userId
+    );
+  }
+
+  async getOpenChallenges(): Promise<Challenge[]> {
+    return Array.from(this.challenges.values()).filter(c =>
+      c.status === "pending" && c.isPublic === true
+    );
+  }
+
+  async createChallenge(insertChallenge: InsertChallenge): Promise<Challenge> {
+    const id = randomUUID();
+    const challenge: Challenge = {
+      ...insertChallenge,
+      id,
+      opponentId: insertChallenge.opponentId || null,
+      opponentUsername: insertChallenge.opponentUsername || null,
+      status: "pending",
+      challengerPrediction: insertChallenge.challengerPrediction || null,
+      opponentPrediction: null,
+      winnerId: null,
+      priceAtStart: insertChallenge.priceAtStart || null,
+      priceAtExpiry: null,
+      challengerCorrect: null,
+      opponentCorrect: null,
+      isPublic: insertChallenge.isPublic ?? true,
+      acceptedAt: null,
+      settledAt: null,
+      stateChannelTx: null,
+      createdAt: new Date()
+    };
+    this.challenges.set(id, challenge);
+    return challenge;
+  }
+
+  async acceptChallenge(
+    challengeId: string,
+    opponentId: string,
+    opponentUsername: string,
+    opponentPrediction: string
+  ): Promise<Challenge | undefined> {
+    const challenge = this.challenges.get(challengeId);
+    if (!challenge) return undefined;
+
+    const updatedChallenge: Challenge = {
+      ...challenge,
+      opponentId,
+      opponentUsername,
+      opponentPrediction,
+      status: "accepted",
+      acceptedAt: new Date()
+    };
+
+    this.challenges.set(challengeId, updatedChallenge);
+    return updatedChallenge;
+  }
+
+  async updateChallenge(id: string, updates: Partial<Challenge>): Promise<Challenge | undefined> {
+    const challenge = this.challenges.get(id);
+    if (!challenge) return undefined;
+
+    const updatedChallenge = { ...challenge, ...updates };
+    this.challenges.set(id, updatedChallenge);
+    return updatedChallenge;
+  }
+
+  async getActiveChallenges(): Promise<Challenge[]> {
+    const now = new Date();
+    return Array.from(this.challenges.values()).filter(c =>
+      (c.status === "pending" || c.status === "accepted") && c.expiresAt > now
+    );
+  }
+
+  async getChallengeStats(userId: string): Promise<{
+    totalChallenges: number,
+    won: number,
+    lost: number,
+    draws: number
+  }> {
+    const userChallenges = await this.getUserChallenges(userId);
+    const completedChallenges = userChallenges.filter(c => c.status === "completed");
+
+    const won = completedChallenges.filter(c => c.winnerId === userId).length;
+    const lost = completedChallenges.filter(c =>
+      c.winnerId !== null && c.winnerId !== userId
+    ).length;
+    const draws = completedChallenges.filter(c => c.winnerId === null).length;
+
+    return {
+      totalChallenges: completedChallenges.length,
+      won,
+      lost,
+      draws
+    };
   }
 
   // Tournament operations

@@ -1,13 +1,17 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { WebSocketServer, WebSocket } from "ws";
+import morgan from "morgan";
 import { storage } from "./storage";
 import { coinGeckoService } from "./services/coinGeckoService";
 import { yellowNetworkService } from "./services/yellowNetworkService";
 import { tournamentService } from "./services/tournamentService";
 import { securityService } from "./services/securityService";
+import { watchdogService } from "./services/watchdog";
+import { challengeService } from "./services/challengeService";
+import { log, stream } from "./services/logger";
 import { generalRateLimit, predictionRateLimit, authRateLimit, apiRateLimit } from "./middleware/rateLimiter";
-import { insertUserSchema, insertPredictionSchema, insertTournamentParticipantSchema } from "@shared/schema";
+import { insertUserSchema, insertPredictionSchema, insertChallengeSchema, insertTournamentParticipantSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);
@@ -66,32 +70,110 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   };
 
+  // HTTP Request logging
+  app.use(
+    morgan(':method :url :status :res[content-length] - :response-time ms', { stream })
+  );
+
   // Apply general rate limiting to all API routes
   app.use('/api', apiRateLimit.middleware());
 
-  // New: Status endpoint to reflect Nitrolite connection/session
+  // Health check endpoint (no rate limiting)
+  app.get("/health", async (_req, res) => {
+    const health = {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      yellowNetwork: yellowNetworkService.getHealthStatus(),
+      database: 'connected', // Could add actual DB health check
+      memory: {
+        used: process.memoryUsage().heapUsed,
+        total: process.memoryUsage().heapTotal,
+        percentage: ((process.memoryUsage().heapUsed / process.memoryUsage().heapTotal) * 100).toFixed(2) + '%',
+      },
+      cpu: process.cpuUsage(),
+    };
+
+    const isHealthy =
+      health.yellowNetwork.connected &&
+      !health.yellowNetwork.circuitOpen;
+
+    res.status(isHealthy ? 200 : 503).json(health);
+  });
+
+  // Detailed Yellow Network status endpoint
   app.get("/api/status", async (_req, res) => {
-    res.json({
+    const status = {
       yellowNetwork: {
         connection: yellowNetworkService.getConnectionStatus(),
         sessionOpen: yellowNetworkService.getSessionOpen(),
         lastRpcTimestamp: yellowNetworkService.getLastRpcTimestamp(),
-      }
+        health: yellowNetworkService.getHealthStatus(),
+      },
+      timestamp: new Date().toISOString(),
+    };
+
+    log.api.request('GET', '/api/status', { status: status.yellowNetwork.connection });
+
+    res.json(status);
+  });
+
+  // Watchdog monitoring endpoints
+  app.get("/api/watchdog/status", async (_req, res) => {
+    const watchdogStatus = watchdogService.getStatus();
+    const healthScore = watchdogService.getHealthScore();
+
+    res.json({
+      ...watchdogStatus,
+      healthScore,
+      healthGrade: healthScore >= 90 ? 'A' : healthScore >= 75 ? 'B' : healthScore >= 60 ? 'C' : 'D',
     });
+  });
+
+  app.get("/api/watchdog/audit-log", async (req, res) => {
+    const limit = parseInt(req.query.limit as string) || 100;
+    const auditLog = watchdogService.getAuditLog(limit);
+
+    res.json(auditLog);
+  });
+
+  app.post("/api/watchdog/start", async (_req, res) => {
+    watchdogService.start();
+    res.json({ status: 'started', message: 'Watchdog service started' });
+  });
+
+  app.post("/api/watchdog/stop", async (_req, res) => {
+    watchdogService.stop();
+    res.json({ status: 'stopped', message: 'Watchdog service stopped' });
   });
 
   // User authentication and management
   app.post("/api/auth/wallet", authRateLimit.middleware(), async (req, res) => {
     try {
-      const { walletAddress, signature } = req.body;
-      
+      const { walletAddress, signature, message } = req.body;
+
       if (!walletAddress) {
         return res.status(400).json({ error: "Wallet address is required" });
       }
 
+      // Optional: Verify signature if provided
+      if (signature && message) {
+        try {
+          const { Wallet } = await import('ethers');
+          const recoveredAddress = Wallet.verifyMessage(message, signature);
+
+          if (recoveredAddress.toLowerCase() !== walletAddress.toLowerCase()) {
+            return res.status(401).json({ error: "Invalid signature" });
+          }
+        } catch (error) {
+          console.error("Signature verification error:", error);
+          return res.status(401).json({ error: "Signature verification failed" });
+        }
+      }
+
       // Check if user exists
       let user = await storage.getUserByWallet(walletAddress);
-      
+
       if (!user) {
         // Create new user
         const userData = insertUserSchema.parse({
@@ -99,11 +181,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
           username: `user_${walletAddress.slice(-6)}`
         });
         user = await storage.createUser(userData);
+        console.log(`✓ New user created: ${user.username} (${walletAddress})`);
+      } else {
+        console.log(`✓ User authenticated: ${user.username} (${walletAddress})`);
       }
 
       res.json({ user });
     } catch (error) {
-      console.error("Wallet authentication error:", error);
+      console.error("✗ Wallet authentication error:", error);
       res.status(500).json({ error: "Authentication failed" });
     }
   });
@@ -211,16 +296,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
         // Update prediction with state channel transaction
         await storage.updatePrediction(prediction.id, { stateChannelTx });
-        
-        broadcast('prediction_submitted', { 
-          predictionId: prediction.id, 
+
+        broadcast('prediction_submitted', {
+          predictionId: prediction.id,
           userId: predictionData.userId,
-          stateChannelTx 
+          stateChannelTx
         });
 
-      } catch (stateChannelError) {
-        console.error("State channel submission error:", stateChannelError);
-        // Continue without state channel for now
+      } catch (stateChannelError: any) {
+        console.error("✗ State channel submission error:", stateChannelError);
+
+        // Check if it's a circuit breaker or critical error
+        if (stateChannelError.message?.includes('Circuit breaker')) {
+          // Mark prediction for retry but don't fail the request
+          await storage.updatePrediction(prediction.id, {
+            stateChannelTx: 'pending_retry'
+          });
+          console.warn('⚠ Prediction saved but Yellow Network unavailable - will retry');
+        } else if (process.env.ENABLE_YELLOW_NETWORK === 'false') {
+          // Yellow Network disabled - continue without it
+          console.log('ℹ Yellow Network disabled - prediction saved locally only');
+        } else {
+          // Non-critical error - log but continue
+          console.warn('⚠ State channel submission failed but prediction saved locally');
+        }
       }
 
       res.json(prediction);
@@ -237,6 +336,143 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(predictions);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch predictions" });
+    }
+  });
+
+  // Challenge endpoints
+  // Create challenge
+  app.post("/api/challenges", generalRateLimit.middleware(), async (req, res) => {
+    try {
+      const { challengerId, challengerUsername, opponentId, assetId, predictionType, amount, timeFrame, isPublic, challengerPrediction } = req.body;
+
+      if (!challengerId || !challengerUsername || !assetId || !predictionType || !amount || !timeFrame || !challengerPrediction) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+
+      const challenge = await challengeService.createChallenge({
+        challengerId,
+        challengerUsername,
+        opponentId,
+        assetId,
+        predictionType,
+        amount: parseFloat(amount),
+        timeFrame: parseInt(timeFrame),
+        isPublic,
+        challengerPrediction
+      });
+
+      broadcast('challenge_created', challenge);
+
+      res.json(challenge);
+    } catch (error) {
+      console.error("Challenge creation error:", error);
+      res.status(500).json({ error: "Failed to create challenge" });
+    }
+  });
+
+  // Get user challenges
+  app.get("/api/challenges/user/:userId", async (req, res) => {
+    try {
+      const challenges = await storage.getUserChallenges(req.params.userId);
+      res.json(challenges);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch challenges" });
+    }
+  });
+
+  // Get open challenges
+  app.get("/api/challenges/open", async (req, res) => {
+    try {
+      const challenges = await storage.getOpenChallenges();
+      res.json(challenges);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch open challenges" });
+    }
+  });
+
+  // Accept challenge
+  app.post("/api/challenges/:id/accept", generalRateLimit.middleware(), async (req, res) => {
+    try {
+      const { userId, username, prediction } = req.body;
+
+      if (!userId || !username || !prediction) {
+        return res.status(400).json({ error: "Missing required fields" });
+      }
+
+      const challenge = await challengeService.acceptChallenge({
+        challengeId: req.params.id,
+        opponentId: userId,
+        opponentUsername: username,
+        opponentPrediction: prediction
+      });
+
+      broadcast('challenge_accepted', { challengeId: challenge.id, opponentId: userId, opponentUsername: username });
+
+      res.json(challenge);
+    } catch (error: any) {
+      console.error("Challenge acceptance error:", error);
+      res.status(400).json({ error: error.message || "Failed to accept challenge" });
+    }
+  });
+
+  // Cancel challenge
+  app.post("/api/challenges/:id/cancel", generalRateLimit.middleware(), async (req, res) => {
+    try {
+      const { userId } = req.body;
+
+      if (!userId) {
+        return res.status(400).json({ error: "Missing userId" });
+      }
+
+      const challenge = await challengeService.cancelChallenge(req.params.id, userId);
+
+      broadcast('challenge_cancelled', { challengeId: challenge.id });
+
+      res.json(challenge);
+    } catch (error: any) {
+      console.error("Challenge cancellation error:", error);
+      res.status(400).json({ error: error.message || "Failed to cancel challenge" });
+    }
+  });
+
+  // Get challenge stats
+  app.get("/api/challenges/stats/:userId", async (req, res) => {
+    try {
+      const stats = await storage.getChallengeStats(req.params.userId);
+
+      // Calculate win rate
+      const winRate = stats.totalChallenges > 0
+        ? (stats.won / stats.totalChallenges) * 100
+        : 0;
+
+      res.json({
+        ...stats,
+        winRate: parseFloat(winRate.toFixed(1))
+      });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch challenge stats" });
+    }
+  });
+
+  // Get challenge leaderboard
+  app.get("/api/challenges/leaderboard", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const leaderboard = await challengeService.getChallengeLeaderboard(limit);
+      res.json(leaderboard);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch challenge leaderboard" });
+    }
+  });
+
+  // Get recent challenge activity
+  app.get("/api/challenges/recent", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 20;
+      const activity = await challengeService.getRecentActivity(limit);
+      res.json(activity);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch recent activity" });
     }
   });
 
@@ -438,6 +674,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
         await tournamentService.checkTournamentCompletion(tournament.id);
       }
 
+      // Settle expired challenges
+      const activeChallenges = await storage.getActiveChallenges();
+      for (const challenge of activeChallenges) {
+        if (challenge.expiresAt <= now && challenge.status === 'accepted') {
+          try {
+            const settledChallenge = await challengeService.settleChallenge(challenge.id);
+            broadcast('challenge_settled', {
+              challengeId: settledChallenge.id,
+              winnerId: settledChallenge.winnerId,
+              challengerCorrect: settledChallenge.challengerCorrect,
+              opponentCorrect: settledChallenge.opponentCorrect,
+              priceAtExpiry: settledChallenge.priceAtExpiry
+            });
+          } catch (error) {
+            console.error(`Challenge settlement error for ${challenge.id}:`, error);
+          }
+        } else if (challenge.expiresAt <= now && challenge.status === 'pending') {
+          // Cancel pending challenges that expired
+          try {
+            await storage.updateChallenge(challenge.id, {
+              status: 'cancelled',
+              settledAt: now
+            });
+            broadcast('challenge_expired', { challengeId: challenge.id });
+          } catch (error) {
+            console.error(`Challenge cancellation error for ${challenge.id}:`, error);
+          }
+        }
+      }
+
     } catch (error) {
       console.error("Background task error:", error);
     }
@@ -553,6 +819,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Oracle monitoring error:", error);
     }
   }, 120000); // Check every 2 minutes
+
+  // Start watchdog service for Yellow Network monitoring
+  watchdogService.start();
+  log.info('🐕 Watchdog service started - monitoring Yellow Network health');
 
   return httpServer;
 }

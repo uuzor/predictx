@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
 import { useYellowNetwork } from '@/hooks/useYellowNetwork';
-import { WalletConnection } from './WalletConnection';
+import { WalletConnect } from './WalletConnect';
 
 export function Navigation() {
   const { status } = useYellowNetwork();
@@ -20,9 +20,14 @@ export function Navigation() {
               </div>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/">
-                <span className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors cursor-pointer">
+              <Link href="/markets">
+                <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
                   Markets
+                </span>
+              </Link>
+              <Link href="/challenges">
+                <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                  Challenges
                 </span>
               </Link>
               <Link href="/tournaments">
@@ -35,14 +40,14 @@ export function Navigation() {
                   Leaderboard
                 </span>
               </Link>
-              <Link href="/security">
+              <Link href="/status">
                 <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-                  Security
+                  Status
                 </span>
               </Link>
-              <a 
-                href="https://erc7824.org" 
-                target="_blank" 
+              <a
+                href="https://docs.yellow.org"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -54,14 +59,14 @@ export function Navigation() {
             {/* Network Status */}
             <div className="hidden sm:flex items-center space-x-2 text-sm text-muted-foreground bg-muted/50 rounded-full px-3 py-1">
               <div className={`w-2 h-2 rounded-full ${
-                status === 'connected' ? 'bg-green-500 pulse-dot' : 
-                status === 'connecting' ? 'bg-yellow-500 pulse-dot' : 
+                status === 'connected' ? 'bg-green-500 pulse-dot' :
+                status === 'connecting' ? 'bg-yellow-500 pulse-dot' :
                 'bg-red-500'
               }`}></div>
               <span className="text-xs font-medium">Yellow Network</span>
             </div>
-            
-            <WalletConnection />
+
+            <WalletConnect />
           </div>
         </div>
       </div>

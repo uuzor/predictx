@@ -9,6 +9,8 @@ import {
   type MessageSigner,
 } from '@erc7824/nitrolite';
 import { Wallet, getBytes } from 'ethers';
+import { sessionStateManager } from './sessionStateManager.js';
+import { log } from './logger.js';
 
 interface PredictionData {
   userId: string;
@@ -27,6 +29,20 @@ type RPCRequest = {
   params?: Record<string, JSONValue>;
 };
 
+interface RetryConfig {
+  maxRetries: number;
+  initialDelay: number;
+  maxDelay: number;
+  backoffMultiplier: number;
+}
+
+interface QueuedRequest {
+  request: RPCRequest;
+  resolve: (v: any) => void;
+  reject: (e: any) => void;
+  retryCount: number;
+}
+
 export class YellowNetworkService {
   private clearNodeUrl = process.env.CLEARNODE_URL || 'wss://clearnode.yellow.network/ws';
   private ws: WebSocket | null = null;
@@ -38,7 +54,33 @@ export class YellowNetworkService {
   private sessionOpen = false;
   private lastRpcTimestamp: number | null = null;
 
-  private pending = new Map<string, { resolve: (v: any) => void; reject: (e: any) => void }>();
+  private pending = new Map<string, { resolve: (v: any) => void; reject: (e: any) => void; timeout: NodeJS.Timeout }>();
+  private requestQueue: QueuedRequest[] = [];
+
+  // Retry configuration
+  private retryConfig: RetryConfig = {
+    maxRetries: 3,
+    initialDelay: 2000,
+    maxDelay: 16000,
+    backoffMultiplier: 2,
+  };
+
+  // Reconnection state
+  private reconnectAttempts = 0;
+  private maxReconnectAttempts = 10;
+  private reconnectTimeout: NodeJS.Timeout | null = null;
+  private isReconnecting = false;
+
+  // Circuit breaker state
+  private failureCount = 0;
+  private circuitBreakerThreshold = 5;
+  private circuitBreakerResetTime = 60000; // 1 minute
+  private circuitOpen = false;
+  private circuitBreakerTimeout: NodeJS.Timeout | null = null;
+
+  // Session monitoring
+  private sessionTimeout = parseInt(process.env.YELLOW_SESSION_TIMEOUT || '300000'); // 5 minutes default
+  private sessionMonitorInterval: NodeJS.Timeout | null = null;
 
   // EIP-712/plain message signer using server-held private key
   private signer: MessageSigner;
@@ -60,6 +102,7 @@ export class YellowNetworkService {
     };
 
     this.connect();
+    this.initSessionMonitoring();
 
     // Graceful shutdown to close session
     process.once('SIGINT', () => this.shutdown());
@@ -67,50 +110,232 @@ export class YellowNetworkService {
   }
 
   private async shutdown() {
+    log.yellowNetwork.info('Shutting down Yellow Network service');
+
+    // Stop session monitoring
+    if (this.sessionMonitorInterval) {
+      clearInterval(this.sessionMonitorInterval);
+    }
+
     try {
+      // Save session state before closing
+      if (this.sessionId && this.sessionOpen) {
+        const state = sessionStateManager.createInitialState(this.sessionId);
+        const closedState = sessionStateManager.closeSession(state);
+        await sessionStateManager.saveState(closedState);
+        log.yellowNetwork.info('Session state saved', { sessionId: this.sessionId });
+      }
+
       await this.closeAppSession();
     } catch (e) {
-      console.warn('Error during session close on shutdown:', e);
+      log.yellowNetwork.error('Error during session close on shutdown', e as Error);
     }
+
     try {
       this.ws?.close();
     } catch {}
   }
 
+  /**
+   * Initialize session monitoring to detect timeouts and recover
+   */
+  private initSessionMonitoring() {
+    // Check session every 60 seconds
+    this.sessionMonitorInterval = setInterval(async () => {
+      try {
+        const state = await sessionStateManager.loadState();
+
+        if (state && sessionStateManager.isSessionTimedOut(state, this.sessionTimeout)) {
+          log.yellowNetwork.warn('Session timeout detected, attempting recovery', {
+            sessionId: state.sessionId,
+            inactiveTime: Date.now() - state.lastActivity,
+          });
+
+          // Close old session and open new one
+          await this.recoverSession();
+        }
+      } catch (error) {
+        log.yellowNetwork.error('Session monitoring error', error as Error);
+      }
+    }, 60000); // Check every minute
+  }
+
+  /**
+   * Recover session after timeout or failure
+   */
+  private async recoverSession() {
+    try {
+      // Close existing session if open
+      if (this.sessionOpen) {
+        await this.closeAppSession();
+      }
+
+      // Wait a bit before reopening
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Open new session
+      if (this.isConnected) {
+        await this.openAppSession();
+        log.yellowNetwork.info('Session recovered successfully');
+      }
+    } catch (error) {
+      log.yellowNetwork.error('Session recovery failed', error as Error);
+    }
+  }
+
   private connect() {
     try {
+      // Prevent multiple concurrent connection attempts
+      if (this.isReconnecting) {
+        console.log('Already reconnecting, skipping duplicate connection attempt');
+        return;
+      }
+
+      this.isReconnecting = true;
       this.ws = new WebSocket(this.clearNodeUrl);
 
       this.ws.onopen = async () => {
         this.isConnected = true;
-        console.log('Connected to ClearNode');
+        this.reconnectAttempts = 0;
+        this.isReconnecting = false;
+        console.log('✓ Connected to ClearNode');
+
         try {
           this.validateEnv();
           await this.authenticate();
           await this.openAppSession();
+
+          // Process any queued requests
+          await this.processRequestQueue();
+
+          // Reset circuit breaker on successful connection
+          this.resetCircuitBreaker();
         } catch (e) {
-          console.error('Nitrolite init failed:', e);
+          console.error('✗ Nitrolite initialization failed:', e);
+          this.incrementFailureCount();
         }
       };
 
       this.ws.onmessage = (event) => {
-        this.handleIncoming(event.data.toString());
+        try {
+          this.handleIncoming(event.data.toString());
+        } catch (error) {
+          console.error('✗ Error handling incoming message:', error);
+        }
       };
 
       this.ws.onerror = (error) => {
-        console.error('ClearNode WebSocket error:', error);
+        console.error('✗ ClearNode WebSocket error:', error);
+        this.incrementFailureCount();
       };
 
       this.ws.onclose = () => {
-        console.log('ClearNode connection closed');
+        console.log('⚠ ClearNode connection closed');
         this.isConnected = false;
         this.sessionId = null;
         this.authToken = null;
-        setTimeout(() => this.connect(), 5000);
+        this.sessionOpen = false;
+        this.isReconnecting = false;
+
+        // Clear all pending requests with error
+        this.clearPendingRequests(new Error('Connection closed'));
+
+        // Attempt reconnection with exponential backoff
+        this.scheduleReconnect();
       };
     } catch (error) {
-      console.error('Failed to connect to ClearNode:', error);
-      setTimeout(() => this.connect(), 5000);
+      console.error('✗ Failed to connect to ClearNode:', error);
+      this.isReconnecting = false;
+      this.scheduleReconnect();
+    }
+  }
+
+  private scheduleReconnect() {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+      console.error(`✗ Max reconnection attempts (${this.maxReconnectAttempts}) reached. Stopping reconnection.`);
+      return;
+    }
+
+    // Clear any existing reconnect timeout
+    if (this.reconnectTimeout) {
+      clearTimeout(this.reconnectTimeout);
+    }
+
+    // Calculate exponential backoff delay
+    const delay = Math.min(
+      this.retryConfig.initialDelay * Math.pow(this.retryConfig.backoffMultiplier, this.reconnectAttempts),
+      this.retryConfig.maxDelay
+    );
+
+    this.reconnectAttempts++;
+    console.log(`⟳ Scheduling reconnection attempt ${this.reconnectAttempts}/${this.maxReconnectAttempts} in ${delay}ms`);
+
+    this.reconnectTimeout = setTimeout(() => {
+      this.connect();
+    }, delay);
+  }
+
+  private clearPendingRequests(error: Error) {
+    this.pending.forEach(({ reject, timeout }) => {
+      clearTimeout(timeout);
+      reject(error);
+    });
+    this.pending.clear();
+  }
+
+  private async processRequestQueue() {
+    if (this.requestQueue.length === 0) return;
+
+    console.log(`Processing ${this.requestQueue.length} queued requests...`);
+
+    const queue = [...this.requestQueue];
+    this.requestQueue = [];
+
+    for (const queuedReq of queue) {
+      try {
+        const result = await this.sendRequest(queuedReq.request);
+        queuedReq.resolve(result);
+      } catch (error) {
+        // Retry logic
+        if (queuedReq.retryCount < this.retryConfig.maxRetries) {
+          queuedReq.retryCount++;
+          this.requestQueue.push(queuedReq);
+          console.log(`Requeuing request (attempt ${queuedReq.retryCount}/${this.retryConfig.maxRetries})`);
+        } else {
+          queuedReq.reject(error);
+        }
+      }
+    }
+  }
+
+  private incrementFailureCount() {
+    this.failureCount++;
+
+    if (this.failureCount >= this.circuitBreakerThreshold && !this.circuitOpen) {
+      console.warn(`⚠ Circuit breaker OPEN: ${this.failureCount} consecutive failures`);
+      this.circuitOpen = true;
+
+      // Auto-reset circuit breaker after timeout
+      if (this.circuitBreakerTimeout) {
+        clearTimeout(this.circuitBreakerTimeout);
+      }
+
+      this.circuitBreakerTimeout = setTimeout(() => {
+        this.resetCircuitBreaker();
+      }, this.circuitBreakerResetTime);
+    }
+  }
+
+  private resetCircuitBreaker() {
+    if (this.circuitOpen) {
+      console.log('✓ Circuit breaker CLOSED: Connection restored');
+    }
+    this.failureCount = 0;
+    this.circuitOpen = false;
+
+    if (this.circuitBreakerTimeout) {
+      clearTimeout(this.circuitBreakerTimeout);
+      this.circuitBreakerTimeout = null;
     }
   }
 
@@ -138,20 +363,84 @@ export class YellowNetworkService {
     this.ws.send(JSON.stringify(request));
   }
 
-  private request<T = any>(method: string, params?: Record<string, JSONValue>): Promise<T> {
+  private sendRequest<T = any>(request: RPCRequest): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      try {
+        this.send(request);
+        this.lastRpcTimestamp = Date.now();
+
+        const timeout = setTimeout(() => {
+          if (this.pending.has(request.id)) {
+            this.pending.delete(request.id);
+            this.incrementFailureCount();
+            reject(new Error(`RPC timeout: ${request.method}`));
+          }
+        }, 30000);
+
+        this.pending.set(request.id, { resolve, reject, timeout });
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  private async request<T = any>(
+    method: string,
+    params?: Record<string, JSONValue>,
+    retryCount = 0
+  ): Promise<T> {
+    // Check circuit breaker
+    if (this.circuitOpen) {
+      const error = new Error(`Circuit breaker is OPEN. Service temporarily unavailable.`);
+      console.warn(`⚠ ${error.message}`);
+      throw error;
+    }
+
     const id = generateRequestId();
     const req: RPCRequest = { id, method, params };
-    return new Promise<T>((resolve, reject) => {
-      this.pending.set(id, { resolve, reject });
-      this.send(req);
-      this.lastRpcTimestamp = Date.now();
-      setTimeout(() => {
-        if (this.pending.has(id)) {
-          this.pending.get(id)?.reject(new Error(`${method} timeout`));
-          this.pending.delete(id);
+
+    try {
+      // If not connected, queue the request
+      if (!this.isConnected || !this.ws || this.ws.readyState !== WebSocket.OPEN) {
+        if (retryCount === 0) {
+          console.log(`Queueing request ${method} (not connected)`);
+          return new Promise<T>((resolve, reject) => {
+            this.requestQueue.push({ request: req, resolve, reject, retryCount: 0 });
+          });
+        } else {
+          throw new Error('WebSocket not connected and max retries exceeded');
         }
-      }, 30000);
-    });
+      }
+
+      const result = await this.sendRequest<T>(req);
+
+      // Success - reset failure count for this request type
+      if (this.failureCount > 0) {
+        this.failureCount = Math.max(0, this.failureCount - 1);
+      }
+
+      return result;
+    } catch (error) {
+      this.incrementFailureCount();
+
+      // Retry logic with exponential backoff
+      if (retryCount < this.retryConfig.maxRetries) {
+        const delay = Math.min(
+          this.retryConfig.initialDelay * Math.pow(this.retryConfig.backoffMultiplier, retryCount),
+          this.retryConfig.maxDelay
+        );
+
+        console.log(
+          `⟳ Retrying ${method} (attempt ${retryCount + 1}/${this.retryConfig.maxRetries}) in ${delay}ms`
+        );
+
+        await new Promise((resolve) => setTimeout(resolve, delay));
+        return this.request<T>(method, params, retryCount + 1);
+      }
+
+      console.error(`✗ RPC request failed after ${retryCount} retries:`, error);
+      throw error;
+    }
   }
 
   private handleIncoming(payload: string) {
@@ -159,24 +448,33 @@ export class YellowNetworkService {
     try {
       msg = JSON.parse(payload);
     } catch (e) {
-      console.error('Invalid JSON from ClearNode', e);
+      console.error('✗ Invalid JSON from ClearNode:', e);
       return;
     }
 
     // Resolve request/response style
     if (msg.id && this.pending.has(msg.id)) {
-      const { resolve, reject } = this.pending.get(msg.id)!;
+      const { resolve, reject, timeout } = this.pending.get(msg.id)!;
+
+      // Clear timeout to prevent memory leak
+      clearTimeout(timeout);
       this.pending.delete(msg.id);
+
       try {
         const parsed = parseRPCResponse(msg);
         resolve(parsed);
       } catch (err) {
+        console.error('✗ Error parsing RPC response:', err);
         reject(err);
       }
       return;
     }
 
-    // Could handle subscriptions/notifications here as needed.
+    // Handle subscriptions/notifications
+    if (msg.method) {
+      console.log('📨 Received notification:', msg.method);
+      // Could emit events here for subscription handling
+    }
   }
 
   // Authentication using Nitrolite RPC
@@ -313,14 +611,15 @@ export class YellowNetworkService {
   }
 
   isYellowNetworkConnected(): boolean {
-    return this.isConnected;
+    return this.isConnected && this.sessionOpen;
   }
 
   getConnectionStatus(): 'connected' | 'connecting' | 'disconnected' {
+    if (this.circuitOpen) return 'disconnected';
     if (!this.ws) return 'disconnected';
     switch (this.ws.readyState) {
       case WebSocket.OPEN:
-        return 'connected';
+        return this.sessionOpen ? 'connected' : 'connecting';
       case WebSocket.CONNECTING:
         return 'connecting';
       default:
@@ -334,6 +633,35 @@ export class YellowNetworkService {
 
   getLastRpcTimestamp(): number | null {
     return this.lastRpcTimestamp;
+  }
+
+  getHealthStatus() {
+    return {
+      connected: this.isConnected,
+      sessionOpen: this.sessionOpen,
+      circuitOpen: this.circuitOpen,
+      failureCount: this.failureCount,
+      reconnectAttempts: this.reconnectAttempts,
+      queuedRequests: this.requestQueue.length,
+      pendingRequests: this.pending.size,
+      lastRpcTimestamp: this.lastRpcTimestamp,
+    };
+  }
+
+  // Force reconnect (useful for manual recovery)
+  async forceReconnect(): Promise<void> {
+    console.log('🔄 Forcing reconnection...');
+    this.reconnectAttempts = 0;
+    this.resetCircuitBreaker();
+
+    if (this.ws) {
+      this.ws.close();
+    }
+
+    // Wait a bit for cleanup
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    this.connect();
   }
 }
 
