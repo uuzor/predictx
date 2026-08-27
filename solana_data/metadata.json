@@ -1,0 +1,11 @@
+{
+  "lastUpdated": 1787858797216,
+  "totalRecords": 900,
+  "sources": [
+    "bitstamp",
+    "kraken"
+  ],
+  "intervals": [
+    "15m"
+  ]
+}

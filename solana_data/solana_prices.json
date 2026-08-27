@@ -1,0 +1,8102 @@
+[
+  {
+    "timestamp": 1787049000000,
+    "open": 75.744,
+    "high": 75.823,
+    "low": 75.743,
+    "close": 75.795,
+    "volume": 711.13752,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787049900000,
+    "open": 75.795,
+    "high": 75.81,
+    "low": 75.763,
+    "close": 75.765,
+    "volume": 305.90883,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787050800000,
+    "open": 75.761,
+    "high": 75.99,
+    "low": 75.753,
+    "close": 75.99,
+    "volume": 773.25485,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787051700000,
+    "open": 75.991,
+    "high": 76.378,
+    "low": 75.986,
+    "close": 76.187,
+    "volume": 5294.18868,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787052600000,
+    "open": 76.172,
+    "high": 76.36,
+    "low": 76.161,
+    "close": 76.278,
+    "volume": 2033.64473,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787053500000,
+    "open": 76.303,
+    "high": 76.318,
+    "low": 76.216,
+    "close": 76.241,
+    "volume": 680.47273,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787054400000,
+    "open": 76.244,
+    "high": 76.433,
+    "low": 76.244,
+    "close": 76.314,
+    "volume": 1846.62886,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787055300000,
+    "open": 76.295,
+    "high": 76.31,
+    "low": 76.165,
+    "close": 76.213,
+    "volume": 1143.37918,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787056200000,
+    "open": 76.218,
+    "high": 76.248,
+    "low": 76.168,
+    "close": 76.186,
+    "volume": 1110.54534,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787057100000,
+    "open": 76.182,
+    "high": 76.313,
+    "low": 76.168,
+    "close": 76.173,
+    "volume": 1741.28305,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787058000000,
+    "open": 76.156,
+    "high": 76.156,
+    "low": 76.066,
+    "close": 76.076,
+    "volume": 1067.2665,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787058900000,
+    "open": 76.074,
+    "high": 76.101,
+    "low": 76.014,
+    "close": 76.017,
+    "volume": 1857.1397,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787059800000,
+    "open": 76.024,
+    "high": 76.209,
+    "low": 75.97,
+    "close": 76.075,
+    "volume": 2636.27718,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787060700000,
+    "open": 76.054,
+    "high": 76.165,
+    "low": 75.979,
+    "close": 76.136,
+    "volume": 1997.56635,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787061600000,
+    "open": 76.134,
+    "high": 76.278,
+    "low": 76.048,
+    "close": 76.109,
+    "volume": 2047.02272,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787062500000,
+    "open": 76.11,
+    "high": 77,
+    "low": 76.11,
+    "close": 76.931,
+    "volume": 6694.94417,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787063400000,
+    "open": 76.937,
+    "high": 77.253,
+    "low": 76.712,
+    "close": 76.746,
+    "volume": 6453.3061,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787064300000,
+    "open": 76.734,
+    "high": 76.909,
+    "low": 76.706,
+    "close": 76.735,
+    "volume": 6786.84008,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787065200000,
+    "open": 76.742,
+    "high": 76.976,
+    "low": 76.732,
+    "close": 76.863,
+    "volume": 2616.87018,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787066100000,
+    "open": 76.863,
+    "high": 76.979,
+    "low": 76.809,
+    "close": 76.976,
+    "volume": 7513.94718,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787067000000,
+    "open": 76.978,
+    "high": 77.062,
+    "low": 76.941,
+    "close": 77.017,
+    "volume": 3364.57317,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787067900000,
+    "open": 77.017,
+    "high": 77.197,
+    "low": 76.987,
+    "close": 77.137,
+    "volume": 3105.53682,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787068800000,
+    "open": 77.16,
+    "high": 77.25,
+    "low": 76.991,
+    "close": 77.015,
+    "volume": 7004.65299,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787069700000,
+    "open": 77.01,
+    "high": 77.01,
+    "low": 76.8,
+    "close": 76.851,
+    "volume": 1494.54826,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787070600000,
+    "open": 76.835,
+    "high": 77.06,
+    "low": 76.796,
+    "close": 76.962,
+    "volume": 1094.33098,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787071500000,
+    "open": 76.961,
+    "high": 77.106,
+    "low": 76.924,
+    "close": 77.021,
+    "volume": 1560.47076,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787072400000,
+    "open": 77.032,
+    "high": 77.032,
+    "low": 76.879,
+    "close": 76.928,
+    "volume": 1976.53195,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787073300000,
+    "open": 76.91,
+    "high": 76.953,
+    "low": 76.844,
+    "close": 76.894,
+    "volume": 2193.45846,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787074200000,
+    "open": 76.9,
+    "high": 76.978,
+    "low": 76.842,
+    "close": 76.941,
+    "volume": 3006.50571,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787075100000,
+    "open": 76.951,
+    "high": 76.977,
+    "low": 76.851,
+    "close": 76.854,
+    "volume": 1102.46668,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787076000000,
+    "open": 76.85,
+    "high": 77.039,
+    "low": 76.832,
+    "close": 77.039,
+    "volume": 1133.90552,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787076900000,
+    "open": 77.048,
+    "high": 77.238,
+    "low": 77.048,
+    "close": 77.211,
+    "volume": 6054.71213,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787077800000,
+    "open": 77.214,
+    "high": 77.25,
+    "low": 77.079,
+    "close": 77.111,
+    "volume": 1781.94005,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787078700000,
+    "open": 77.077,
+    "high": 77.234,
+    "low": 77.077,
+    "close": 77.212,
+    "volume": 1014.50188,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787079600000,
+    "open": 77.211,
+    "high": 77.227,
+    "low": 77.119,
+    "close": 77.168,
+    "volume": 2386.67466,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787080500000,
+    "open": 77.167,
+    "high": 77.347,
+    "low": 77.136,
+    "close": 77.293,
+    "volume": 5861.18185,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787081400000,
+    "open": 77.282,
+    "high": 77.31,
+    "low": 77.131,
+    "close": 77.133,
+    "volume": 1972.28838,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787082300000,
+    "open": 77.131,
+    "high": 77.16,
+    "low": 77.031,
+    "close": 77.125,
+    "volume": 881.36928,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787083200000,
+    "open": 77.125,
+    "high": 77.169,
+    "low": 77,
+    "close": 77.145,
+    "volume": 1490.7101,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787084100000,
+    "open": 77.146,
+    "high": 77.146,
+    "low": 76.88,
+    "close": 76.942,
+    "volume": 2193.96043,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787085000000,
+    "open": 76.942,
+    "high": 77.078,
+    "low": 76.859,
+    "close": 76.859,
+    "volume": 1876.67028,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787085900000,
+    "open": 76.852,
+    "high": 76.898,
+    "low": 76.694,
+    "close": 76.831,
+    "volume": 2559.13858,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787086800000,
+    "open": 76.855,
+    "high": 77.05,
+    "low": 76.851,
+    "close": 76.939,
+    "volume": 1213.45869,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787087700000,
+    "open": 76.947,
+    "high": 76.983,
+    "low": 76.884,
+    "close": 76.904,
+    "volume": 739.50606,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787088600000,
+    "open": 76.895,
+    "high": 76.963,
+    "low": 76.874,
+    "close": 76.918,
+    "volume": 1207.9439,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787089500000,
+    "open": 76.892,
+    "high": 76.95,
+    "low": 76.865,
+    "close": 76.944,
+    "volume": 196.56974,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787090400000,
+    "open": 76.927,
+    "high": 77.109,
+    "low": 76.899,
+    "close": 77.031,
+    "volume": 757.77332,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787091300000,
+    "open": 77.029,
+    "high": 77.064,
+    "low": 76.943,
+    "close": 77.01,
+    "volume": 1080.23661,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787092200000,
+    "open": 77.01,
+    "high": 77.156,
+    "low": 76.986,
+    "close": 76.987,
+    "volume": 2696.37038,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787093100000,
+    "open": 76.987,
+    "high": 76.987,
+    "low": 76.838,
+    "close": 76.909,
+    "volume": 799.68263,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787094000000,
+    "open": 76.909,
+    "high": 77.103,
+    "low": 76.9,
+    "close": 77.042,
+    "volume": 1462.71259,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787094900000,
+    "open": 77.045,
+    "high": 77.116,
+    "low": 77.013,
+    "close": 77.083,
+    "volume": 725.32986,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787095800000,
+    "open": 77.063,
+    "high": 77.189,
+    "low": 77.063,
+    "close": 77.107,
+    "volume": 713.06665,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787096700000,
+    "open": 77.115,
+    "high": 77.143,
+    "low": 76.989,
+    "close": 77.006,
+    "volume": 623.44249,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787097600000,
+    "open": 77.016,
+    "high": 77.044,
+    "low": 76.843,
+    "close": 76.843,
+    "volume": 5648.07476,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787098500000,
+    "open": 76.838,
+    "high": 76.982,
+    "low": 76.763,
+    "close": 76.902,
+    "volume": 794.23302,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787099400000,
+    "open": 76.901,
+    "high": 76.994,
+    "low": 76.892,
+    "close": 76.926,
+    "volume": 652.16077,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787100300000,
+    "open": 76.91,
+    "high": 77.021,
+    "low": 76.852,
+    "close": 76.858,
+    "volume": 891.15277,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787101200000,
+    "open": 76.853,
+    "high": 77.013,
+    "low": 76.792,
+    "close": 76.928,
+    "volume": 1703.26357,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787102100000,
+    "open": 76.922,
+    "high": 76.922,
+    "low": 76.677,
+    "close": 76.786,
+    "volume": 9427.20626,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787103000000,
+    "open": 76.787,
+    "high": 76.787,
+    "low": 76.667,
+    "close": 76.681,
+    "volume": 213.9515,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787103900000,
+    "open": 76.683,
+    "high": 76.789,
+    "low": 76.668,
+    "close": 76.741,
+    "volume": 262.18015,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787104800000,
+    "open": 76.749,
+    "high": 76.783,
+    "low": 76.666,
+    "close": 76.743,
+    "volume": 461.56352,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787105700000,
+    "open": 76.744,
+    "high": 76.837,
+    "low": 76.651,
+    "close": 76.829,
+    "volume": 773.81341,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787106600000,
+    "open": 76.828,
+    "high": 76.864,
+    "low": 76.759,
+    "close": 76.764,
+    "volume": 316.83055,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787107500000,
+    "open": 76.739,
+    "high": 76.809,
+    "low": 76.687,
+    "close": 76.757,
+    "volume": 453.23098,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787108400000,
+    "open": 76.754,
+    "high": 76.848,
+    "low": 76.655,
+    "close": 76.848,
+    "volume": 318.52686,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787109300000,
+    "open": 76.857,
+    "high": 77.035,
+    "low": 76.857,
+    "close": 76.952,
+    "volume": 609.25132,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787110200000,
+    "open": 76.949,
+    "high": 77.02,
+    "low": 76.895,
+    "close": 76.977,
+    "volume": 5408.14344,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787111100000,
+    "open": 76.965,
+    "high": 77.017,
+    "low": 76.909,
+    "close": 76.92,
+    "volume": 1977.58967,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787112000000,
+    "open": 76.929,
+    "high": 76.964,
+    "low": 76.897,
+    "close": 76.934,
+    "volume": 154.31157,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787112900000,
+    "open": 76.934,
+    "high": 77.074,
+    "low": 76.934,
+    "close": 76.995,
+    "volume": 594.77473,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787113800000,
+    "open": 76.987,
+    "high": 77.02,
+    "low": 76.858,
+    "close": 76.868,
+    "volume": 4646.60074,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787114700000,
+    "open": 76.879,
+    "high": 76.897,
+    "low": 76.74,
+    "close": 76.792,
+    "volume": 1819.8993,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787115600000,
+    "open": 76.796,
+    "high": 76.999,
+    "low": 76.796,
+    "close": 76.954,
+    "volume": 1503.64164,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787116500000,
+    "open": 76.943,
+    "high": 76.943,
+    "low": 76.79,
+    "close": 76.886,
+    "volume": 2513.24139,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787117400000,
+    "open": 76.885,
+    "high": 76.911,
+    "low": 76.819,
+    "close": 76.819,
+    "volume": 563.5476,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787118300000,
+    "open": 76.83,
+    "high": 76.83,
+    "low": 76.724,
+    "close": 76.737,
+    "volume": 478.41167,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787119200000,
+    "open": 76.76,
+    "high": 76.771,
+    "low": 76.59,
+    "close": 76.598,
+    "volume": 874.68837,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787120100000,
+    "open": 76.6,
+    "high": 76.891,
+    "low": 76.6,
+    "close": 76.802,
+    "volume": 359.86977,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787121000000,
+    "open": 76.798,
+    "high": 76.882,
+    "low": 76.696,
+    "close": 76.864,
+    "volume": 554.4239,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787121900000,
+    "open": 76.884,
+    "high": 77.064,
+    "low": 76.884,
+    "close": 77.022,
+    "volume": 847.46668,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787122800000,
+    "open": 76.994,
+    "high": 77.009,
+    "low": 76.885,
+    "close": 77.009,
+    "volume": 575.84185,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787123700000,
+    "open": 77.016,
+    "high": 77.016,
+    "low": 76.891,
+    "close": 76.927,
+    "volume": 508.16513,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787124600000,
+    "open": 76.928,
+    "high": 76.996,
+    "low": 76.909,
+    "close": 76.91,
+    "volume": 182.45957,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787125500000,
+    "open": 76.91,
+    "high": 76.996,
+    "low": 76.9,
+    "close": 76.9,
+    "volume": 152.95629,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787126400000,
+    "open": 76.877,
+    "high": 77.042,
+    "low": 76.851,
+    "close": 76.985,
+    "volume": 1260.54114,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787127300000,
+    "open": 76.985,
+    "high": 77.139,
+    "low": 76.968,
+    "close": 77.139,
+    "volume": 591.56108,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787128200000,
+    "open": 77.107,
+    "high": 77.543,
+    "low": 77.097,
+    "close": 77.41,
+    "volume": 9747.10664,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787129100000,
+    "open": 77.399,
+    "high": 77.453,
+    "low": 77.311,
+    "close": 77.311,
+    "volume": 1236.07588,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787130000000,
+    "open": 77.305,
+    "high": 77.414,
+    "low": 77.287,
+    "close": 77.32,
+    "volume": 918.03481,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787130900000,
+    "open": 77.312,
+    "high": 77.358,
+    "low": 77.24,
+    "close": 77.246,
+    "volume": 1032.15196,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787131800000,
+    "open": 77.249,
+    "high": 77.279,
+    "low": 77.162,
+    "close": 77.2,
+    "volume": 1985.84735,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787132700000,
+    "open": 77.194,
+    "high": 77.26,
+    "low": 77.162,
+    "close": 77.259,
+    "volume": 709.05774,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787133600000,
+    "open": 77.245,
+    "high": 77.245,
+    "low": 77.164,
+    "close": 77.208,
+    "volume": 273.51083,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787134500000,
+    "open": 77.185,
+    "high": 77.254,
+    "low": 77.163,
+    "close": 77.196,
+    "volume": 554.17676,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787135400000,
+    "open": 77.194,
+    "high": 77.317,
+    "low": 77.17,
+    "close": 77.304,
+    "volume": 588.86748,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787136300000,
+    "open": 77.294,
+    "high": 77.32,
+    "low": 77.213,
+    "close": 77.32,
+    "volume": 391.67598,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787137200000,
+    "open": 77.311,
+    "high": 77.521,
+    "low": 77.311,
+    "close": 77.493,
+    "volume": 3163.79754,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787138100000,
+    "open": 77.494,
+    "high": 77.541,
+    "low": 77.431,
+    "close": 77.521,
+    "volume": 1889.482,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787139000000,
+    "open": 77.523,
+    "high": 77.526,
+    "low": 77.396,
+    "close": 77.396,
+    "volume": 1533.11919,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787139900000,
+    "open": 77.398,
+    "high": 77.49,
+    "low": 77.398,
+    "close": 77.466,
+    "volume": 1130.12666,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787140800000,
+    "open": 77.466,
+    "high": 77.48,
+    "low": 77.367,
+    "close": 77.398,
+    "volume": 898.09533,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787141700000,
+    "open": 77.389,
+    "high": 77.47,
+    "low": 77.37,
+    "close": 77.45,
+    "volume": 1940.01999,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787142600000,
+    "open": 77.452,
+    "high": 78.018,
+    "low": 77.447,
+    "close": 78.011,
+    "volume": 4376.7836,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787143500000,
+    "open": 78.004,
+    "high": 78.666,
+    "low": 77.955,
+    "close": 78.343,
+    "volume": 7495.03248,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787144400000,
+    "open": 78.333,
+    "high": 78.333,
+    "low": 78.11,
+    "close": 78.24,
+    "volume": 5496.84362,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787145300000,
+    "open": 78.236,
+    "high": 78.497,
+    "low": 78.236,
+    "close": 78.468,
+    "volume": 6834.25945,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787146200000,
+    "open": 78.464,
+    "high": 78.629,
+    "low": 78.279,
+    "close": 78.461,
+    "volume": 10596.75615,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787147100000,
+    "open": 78.437,
+    "high": 78.526,
+    "low": 78.297,
+    "close": 78.334,
+    "volume": 4257.62831,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787148000000,
+    "open": 78.352,
+    "high": 78.625,
+    "low": 78.308,
+    "close": 78.563,
+    "volume": 4562.18951,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787148900000,
+    "open": 78.558,
+    "high": 78.711,
+    "low": 78.454,
+    "close": 78.504,
+    "volume": 3211.99819,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787149800000,
+    "open": 78.487,
+    "high": 79.01,
+    "low": 78.409,
+    "close": 78.969,
+    "volume": 4238.10594,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787150700000,
+    "open": 78.969,
+    "high": 80.936,
+    "low": 78.938,
+    "close": 80.804,
+    "volume": 17188.8671,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787151600000,
+    "open": 80.818,
+    "high": 82.073,
+    "low": 80.629,
+    "close": 81.343,
+    "volume": 28540.09315,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787152500000,
+    "open": 81.327,
+    "high": 82.855,
+    "low": 80.835,
+    "close": 81.919,
+    "volume": 24369.21893,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787153400000,
+    "open": 82.05,
+    "high": 82.528,
+    "low": 81.527,
+    "close": 82.237,
+    "volume": 26335.60971,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787154300000,
+    "open": 82.246,
+    "high": 82.302,
+    "low": 81.552,
+    "close": 81.805,
+    "volume": 21038.96575,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787155200000,
+    "open": 81.805,
+    "high": 82.288,
+    "low": 81.649,
+    "close": 81.87,
+    "volume": 8963.32266,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787156100000,
+    "open": 81.871,
+    "high": 82.111,
+    "low": 81.765,
+    "close": 82.057,
+    "volume": 5439.90666,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787157000000,
+    "open": 82.002,
+    "high": 82.025,
+    "low": 81.782,
+    "close": 81.85,
+    "volume": 4882.48588,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787157900000,
+    "open": 81.839,
+    "high": 81.93,
+    "low": 81.525,
+    "close": 81.567,
+    "volume": 4851.80209,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787158800000,
+    "open": 81.553,
+    "high": 81.611,
+    "low": 81.309,
+    "close": 81.32,
+    "volume": 3365.66886,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787159700000,
+    "open": 81.328,
+    "high": 81.36,
+    "low": 81.014,
+    "close": 81.195,
+    "volume": 2855.99982,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787160600000,
+    "open": 81.208,
+    "high": 81.391,
+    "low": 80.957,
+    "close": 81.383,
+    "volume": 5649.716,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787161500000,
+    "open": 81.394,
+    "high": 81.673,
+    "low": 81.394,
+    "close": 81.621,
+    "volume": 6719.82886,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787162400000,
+    "open": 81.623,
+    "high": 81.673,
+    "low": 81.231,
+    "close": 81.49,
+    "volume": 4024.17371,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787163300000,
+    "open": 81.46,
+    "high": 81.975,
+    "low": 81.442,
+    "close": 81.95,
+    "volume": 3728.44685,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787164200000,
+    "open": 81.92,
+    "high": 82.175,
+    "low": 81.885,
+    "close": 82.12,
+    "volume": 4719.81405,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787165100000,
+    "open": 82.12,
+    "high": 82.276,
+    "low": 82.043,
+    "close": 82.258,
+    "volume": 3265.47469,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787166000000,
+    "open": 82.216,
+    "high": 82.366,
+    "low": 81.988,
+    "close": 82.05,
+    "volume": 6836.41873,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787166900000,
+    "open": 82.042,
+    "high": 82.474,
+    "low": 82.042,
+    "close": 82.166,
+    "volume": 8741.192,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787167800000,
+    "open": 82.173,
+    "high": 82.3,
+    "low": 82.081,
+    "close": 82.27,
+    "volume": 3044.37221,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787168700000,
+    "open": 82.277,
+    "high": 82.418,
+    "low": 82.198,
+    "close": 82.31,
+    "volume": 3584.19746,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787169600000,
+    "open": 82.362,
+    "high": 82.483,
+    "low": 82.261,
+    "close": 82.388,
+    "volume": 2985.83185,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787170500000,
+    "open": 82.389,
+    "high": 82.536,
+    "low": 82.297,
+    "close": 82.483,
+    "volume": 3856.75714,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787171400000,
+    "open": 82.506,
+    "high": 82.651,
+    "low": 82.448,
+    "close": 82.623,
+    "volume": 4058.16606,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787172300000,
+    "open": 82.6,
+    "high": 84.3,
+    "low": 82.561,
+    "close": 83.711,
+    "volume": 15989.23976,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787173200000,
+    "open": 83.718,
+    "high": 87.217,
+    "low": 83.714,
+    "close": 86.075,
+    "volume": 39851.58379,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787174100000,
+    "open": 86.11,
+    "high": 87.165,
+    "low": 85.921,
+    "close": 86.982,
+    "volume": 33650.49061,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787175000000,
+    "open": 86.981,
+    "high": 87.162,
+    "low": 86.194,
+    "close": 86.537,
+    "volume": 19014.01259,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787175900000,
+    "open": 86.603,
+    "high": 87.138,
+    "low": 86.405,
+    "close": 86.597,
+    "volume": 16467.72572,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787176800000,
+    "open": 86.614,
+    "high": 86.819,
+    "low": 85.562,
+    "close": 85.755,
+    "volume": 17981.04933,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787177700000,
+    "open": 85.718,
+    "high": 86.016,
+    "low": 85.283,
+    "close": 85.329,
+    "volume": 10795.43515,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787178600000,
+    "open": 85.318,
+    "high": 85.934,
+    "low": 84.921,
+    "close": 85.65,
+    "volume": 18632.50349,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787179500000,
+    "open": 85.629,
+    "high": 85.629,
+    "low": 85.064,
+    "close": 85.44,
+    "volume": 6052.40116,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787180400000,
+    "open": 85.436,
+    "high": 85.536,
+    "low": 85.276,
+    "close": 85.331,
+    "volume": 3132.26423,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787181300000,
+    "open": 85.309,
+    "high": 85.497,
+    "low": 85.242,
+    "close": 85.457,
+    "volume": 3091.27274,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787182200000,
+    "open": 85.393,
+    "high": 85.686,
+    "low": 85.097,
+    "close": 85.567,
+    "volume": 5103.01056,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787183100000,
+    "open": 85.551,
+    "high": 85.551,
+    "low": 84.997,
+    "close": 85.331,
+    "volume": 3002.82803,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787184000000,
+    "open": 85.336,
+    "high": 85.59,
+    "low": 85.264,
+    "close": 85.429,
+    "volume": 4181.28755,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787184900000,
+    "open": 85.446,
+    "high": 85.71,
+    "low": 85.383,
+    "close": 85.585,
+    "volume": 3884.8482,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787185800000,
+    "open": 85.596,
+    "high": 85.655,
+    "low": 85.345,
+    "close": 85.474,
+    "volume": 2928.54335,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787186700000,
+    "open": 85.447,
+    "high": 85.625,
+    "low": 84.858,
+    "close": 84.913,
+    "volume": 4792.51302,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787187600000,
+    "open": 84.929,
+    "high": 85.082,
+    "low": 84.614,
+    "close": 84.785,
+    "volume": 4318.93702,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787188500000,
+    "open": 84.769,
+    "high": 84.919,
+    "low": 84.626,
+    "close": 84.705,
+    "volume": 5310.56094,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787189400000,
+    "open": 84.702,
+    "high": 84.989,
+    "low": 84.648,
+    "close": 84.989,
+    "volume": 3150.86686,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787190300000,
+    "open": 85.02,
+    "high": 85.344,
+    "low": 85.02,
+    "close": 85.299,
+    "volume": 2570.30941,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787191200000,
+    "open": 85.311,
+    "high": 85.388,
+    "low": 85.114,
+    "close": 85.251,
+    "volume": 1471.09628,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787192100000,
+    "open": 85.24,
+    "high": 85.258,
+    "low": 85.009,
+    "close": 85.019,
+    "volume": 1712.07533,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787193000000,
+    "open": 85.019,
+    "high": 85.065,
+    "low": 84.813,
+    "close": 84.814,
+    "volume": 2256.53477,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787193900000,
+    "open": 84.791,
+    "high": 84.817,
+    "low": 84.64,
+    "close": 84.713,
+    "volume": 2149.13309,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787194800000,
+    "open": 84.712,
+    "high": 84.714,
+    "low": 83.917,
+    "close": 84.18,
+    "volume": 12395.05669,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787195700000,
+    "open": 84.177,
+    "high": 84.551,
+    "low": 84.177,
+    "close": 84.215,
+    "volume": 2202.48157,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787196600000,
+    "open": 84.215,
+    "high": 84.491,
+    "low": 84.215,
+    "close": 84.461,
+    "volume": 2490.06487,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787197500000,
+    "open": 84.46,
+    "high": 84.611,
+    "low": 84.438,
+    "close": 84.438,
+    "volume": 533.61784,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787198400000,
+    "open": 84.411,
+    "high": 84.651,
+    "low": 84.401,
+    "close": 84.562,
+    "volume": 1764.59808,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787199300000,
+    "open": 84.563,
+    "high": 84.638,
+    "low": 84.448,
+    "close": 84.475,
+    "volume": 2198.49306,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787200200000,
+    "open": 84.483,
+    "high": 84.549,
+    "low": 84.367,
+    "close": 84.518,
+    "volume": 927.57846,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787201100000,
+    "open": 84.528,
+    "high": 84.88,
+    "low": 84.528,
+    "close": 84.786,
+    "volume": 3867.37284,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787202000000,
+    "open": 84.776,
+    "high": 84.907,
+    "low": 84.747,
+    "close": 84.807,
+    "volume": 2804.57884,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787202900000,
+    "open": 84.801,
+    "high": 85.005,
+    "low": 84.801,
+    "close": 84.851,
+    "volume": 908.43771,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787203800000,
+    "open": 84.853,
+    "high": 84.969,
+    "low": 84.831,
+    "close": 84.939,
+    "volume": 986.0883,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787204700000,
+    "open": 84.944,
+    "high": 84.944,
+    "low": 84.757,
+    "close": 84.886,
+    "volume": 1067.39162,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787205600000,
+    "open": 84.903,
+    "high": 84.906,
+    "low": 84.654,
+    "close": 84.764,
+    "volume": 1714.01514,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787206500000,
+    "open": 84.743,
+    "high": 85.385,
+    "low": 84.719,
+    "close": 85.381,
+    "volume": 3633.13043,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787207400000,
+    "open": 85.356,
+    "high": 85.752,
+    "low": 85.231,
+    "close": 85.719,
+    "volume": 4579.11338,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787208300000,
+    "open": 85.725,
+    "high": 85.864,
+    "low": 85.654,
+    "close": 85.85,
+    "volume": 2347.36216,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787209200000,
+    "open": 85.827,
+    "high": 85.948,
+    "low": 85.751,
+    "close": 85.862,
+    "volume": 3306.80618,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787210100000,
+    "open": 85.865,
+    "high": 86.006,
+    "low": 85.717,
+    "close": 85.983,
+    "volume": 3098.26452,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787211000000,
+    "open": 85.943,
+    "high": 86.066,
+    "low": 85.73,
+    "close": 85.824,
+    "volume": 1729.72027,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787211900000,
+    "open": 85.798,
+    "high": 86.103,
+    "low": 85.734,
+    "close": 86.103,
+    "volume": 2093.73225,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787212800000,
+    "open": 86.104,
+    "high": 87.435,
+    "low": 86.018,
+    "close": 87.364,
+    "volume": 8154.3309,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787213700000,
+    "open": 87.342,
+    "high": 87.557,
+    "low": 86.996,
+    "close": 87.499,
+    "volume": 11939.9466,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787214600000,
+    "open": 87.489,
+    "high": 87.822,
+    "low": 87.314,
+    "close": 87.822,
+    "volume": 7050.62583,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787215500000,
+    "open": 87.821,
+    "high": 87.89,
+    "low": 87.432,
+    "close": 87.437,
+    "volume": 5872.26016,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787216400000,
+    "open": 87.467,
+    "high": 87.565,
+    "low": 87.213,
+    "close": 87.565,
+    "volume": 6706.85366,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787217300000,
+    "open": 87.591,
+    "high": 87.729,
+    "low": 87.467,
+    "close": 87.467,
+    "volume": 5345.68786,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787218200000,
+    "open": 87.458,
+    "high": 87.632,
+    "low": 87.282,
+    "close": 87.497,
+    "volume": 5813.96058,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787219100000,
+    "open": 87.487,
+    "high": 87.523,
+    "low": 87.023,
+    "close": 87.276,
+    "volume": 4754.93742,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787220000000,
+    "open": 87.276,
+    "high": 87.489,
+    "low": 87.158,
+    "close": 87.489,
+    "volume": 4323.2134,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787220900000,
+    "open": 87.507,
+    "high": 87.723,
+    "low": 87.308,
+    "close": 87.38,
+    "volume": 5291.8251,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787221800000,
+    "open": 87.362,
+    "high": 87.384,
+    "low": 87.03,
+    "close": 87.052,
+    "volume": 8982.13206,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787222700000,
+    "open": 87.056,
+    "high": 87.394,
+    "low": 86.955,
+    "close": 87.394,
+    "volume": 2763.89459,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787223600000,
+    "open": 87.371,
+    "high": 87.38,
+    "low": 87.035,
+    "close": 87.108,
+    "volume": 3210.27124,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787224500000,
+    "open": 87.066,
+    "high": 87.287,
+    "low": 87.05,
+    "close": 87.135,
+    "volume": 2236.50408,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787225400000,
+    "open": 87.107,
+    "high": 88.03,
+    "low": 87.1,
+    "close": 87.67,
+    "volume": 14606.66155,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787226300000,
+    "open": 87.67,
+    "high": 87.824,
+    "low": 87.214,
+    "close": 87.214,
+    "volume": 8104.44486,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787227200000,
+    "open": 87.15,
+    "high": 87.349,
+    "low": 86.547,
+    "close": 86.789,
+    "volume": 6034.18436,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787228100000,
+    "open": 86.759,
+    "high": 86.934,
+    "low": 86.69,
+    "close": 86.883,
+    "volume": 3763.18559,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787229000000,
+    "open": 86.878,
+    "high": 87.006,
+    "low": 86.635,
+    "close": 86.673,
+    "volume": 3709.45546,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787229900000,
+    "open": 86.677,
+    "high": 87.065,
+    "low": 86.488,
+    "close": 87,
+    "volume": 3582.49222,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787230800000,
+    "open": 87.011,
+    "high": 87.296,
+    "low": 86.965,
+    "close": 87.221,
+    "volume": 6506.02048,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787231700000,
+    "open": 87.216,
+    "high": 87.412,
+    "low": 86.904,
+    "close": 86.982,
+    "volume": 6262.26029,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787232600000,
+    "open": 86.93,
+    "high": 86.937,
+    "low": 86.197,
+    "close": 86.676,
+    "volume": 9940.68042,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787233500000,
+    "open": 86.7,
+    "high": 86.735,
+    "low": 86.293,
+    "close": 86.497,
+    "volume": 5504.59099,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787234400000,
+    "open": 86.491,
+    "high": 86.816,
+    "low": 86.377,
+    "close": 86.512,
+    "volume": 6396.67144,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787235300000,
+    "open": 86.522,
+    "high": 86.527,
+    "low": 86.169,
+    "close": 86.237,
+    "volume": 3841.34426,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787236200000,
+    "open": 86.236,
+    "high": 86.532,
+    "low": 86.236,
+    "close": 86.309,
+    "volume": 2936.68842,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787237100000,
+    "open": 86.327,
+    "high": 86.521,
+    "low": 86.092,
+    "close": 86.521,
+    "volume": 2358.0463,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787238000000,
+    "open": 86.552,
+    "high": 87.261,
+    "low": 86.501,
+    "close": 86.982,
+    "volume": 8152.55894,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787238900000,
+    "open": 86.978,
+    "high": 87.087,
+    "low": 86.602,
+    "close": 86.967,
+    "volume": 7275.82811,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787239800000,
+    "open": 86.989,
+    "high": 87.259,
+    "low": 86.682,
+    "close": 86.801,
+    "volume": 3959.15493,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787240700000,
+    "open": 86.8,
+    "high": 87.398,
+    "low": 86.731,
+    "close": 87.324,
+    "volume": 7995.61114,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787241600000,
+    "open": 87.327,
+    "high": 87.352,
+    "low": 87.036,
+    "close": 87.104,
+    "volume": 10415.1579,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787242500000,
+    "open": 87.114,
+    "high": 87.169,
+    "low": 86.833,
+    "close": 87.055,
+    "volume": 1881.2521,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787243400000,
+    "open": 87.069,
+    "high": 87.66,
+    "low": 86.9,
+    "close": 87.471,
+    "volume": 4902.21649,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787244300000,
+    "open": 87.45,
+    "high": 87.797,
+    "low": 87.358,
+    "close": 87.717,
+    "volume": 6938.84501,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787245200000,
+    "open": 87.706,
+    "high": 87.838,
+    "low": 87.318,
+    "close": 87.379,
+    "volume": 7833.78458,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787246100000,
+    "open": 87.38,
+    "high": 87.643,
+    "low": 87.255,
+    "close": 87.569,
+    "volume": 2159.04527,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787247000000,
+    "open": 87.571,
+    "high": 87.743,
+    "low": 87.455,
+    "close": 87.51,
+    "volume": 2483.15393,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787247900000,
+    "open": 87.491,
+    "high": 87.89,
+    "low": 87.474,
+    "close": 87.479,
+    "volume": 5037.54429,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787248800000,
+    "open": 87.469,
+    "high": 87.601,
+    "low": 86.901,
+    "close": 86.997,
+    "volume": 8266.82439,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787249700000,
+    "open": 86.976,
+    "high": 87.335,
+    "low": 86.806,
+    "close": 87.202,
+    "volume": 4879.00183,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787250600000,
+    "open": 87.181,
+    "high": 87.229,
+    "low": 86.654,
+    "close": 86.802,
+    "volume": 6754.77727,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787251500000,
+    "open": 86.833,
+    "high": 87.07,
+    "low": 86.819,
+    "close": 86.85,
+    "volume": 5380.56765,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787252400000,
+    "open": 86.843,
+    "high": 87.373,
+    "low": 86.843,
+    "close": 87.177,
+    "volume": 7808.72306,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787253300000,
+    "open": 87.162,
+    "high": 87.444,
+    "low": 87.136,
+    "close": 87.286,
+    "volume": 7497.8377,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787254200000,
+    "open": 87.28,
+    "high": 87.499,
+    "low": 87.123,
+    "close": 87.408,
+    "volume": 11283.67693,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787255100000,
+    "open": 87.408,
+    "high": 87.454,
+    "low": 87.101,
+    "close": 87.282,
+    "volume": 9173.14293,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787256000000,
+    "open": 87.292,
+    "high": 87.43,
+    "low": 87.235,
+    "close": 87.353,
+    "volume": 2350.73337,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787256900000,
+    "open": 87.338,
+    "high": 87.44,
+    "low": 87.234,
+    "close": 87.396,
+    "volume": 3487.34739,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787257800000,
+    "open": 87.397,
+    "high": 87.621,
+    "low": 87.397,
+    "close": 87.483,
+    "volume": 5397.27951,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787258700000,
+    "open": 87.484,
+    "high": 87.555,
+    "low": 87.399,
+    "close": 87.548,
+    "volume": 1979.2513,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787259600000,
+    "open": 87.556,
+    "high": 87.847,
+    "low": 87.548,
+    "close": 87.712,
+    "volume": 2167.62803,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787260500000,
+    "open": 87.677,
+    "high": 87.761,
+    "low": 87.408,
+    "close": 87.421,
+    "volume": 2695.3096,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787261400000,
+    "open": 87.436,
+    "high": 87.693,
+    "low": 87.433,
+    "close": 87.505,
+    "volume": 1178.48825,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787262300000,
+    "open": 87.509,
+    "high": 87.562,
+    "low": 87.435,
+    "close": 87.468,
+    "volume": 2263.26715,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787263200000,
+    "open": 87.443,
+    "high": 87.46,
+    "low": 87.227,
+    "close": 87.374,
+    "volume": 4624.90768,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787264100000,
+    "open": 87.37,
+    "high": 87.561,
+    "low": 87.251,
+    "close": 87.427,
+    "volume": 7073.54801,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787265000000,
+    "open": 87.427,
+    "high": 87.451,
+    "low": 87.23,
+    "close": 87.233,
+    "volume": 6247.0904,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787265900000,
+    "open": 87.233,
+    "high": 87.406,
+    "low": 87.19,
+    "close": 87.206,
+    "volume": 1973.64678,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787266800000,
+    "open": 87.217,
+    "high": 87.43,
+    "low": 87.201,
+    "close": 87.41,
+    "volume": 2491.01588,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787267700000,
+    "open": 87.41,
+    "high": 87.9,
+    "low": 87.349,
+    "close": 87.817,
+    "volume": 6799.90992,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787268600000,
+    "open": 87.828,
+    "high": 87.967,
+    "low": 87.54,
+    "close": 87.611,
+    "volume": 1806.40443,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787269500000,
+    "open": 87.588,
+    "high": 87.691,
+    "low": 87.54,
+    "close": 87.622,
+    "volume": 3611.93384,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787270400000,
+    "open": 87.622,
+    "high": 87.938,
+    "low": 87.544,
+    "close": 87.938,
+    "volume": 3792.53593,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787271300000,
+    "open": 87.917,
+    "high": 88.768,
+    "low": 87.764,
+    "close": 88.361,
+    "volume": 12090.41877,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787272200000,
+    "open": 88.345,
+    "high": 88.631,
+    "low": 87.773,
+    "close": 87.922,
+    "volume": 4990.7189,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787273100000,
+    "open": 87.913,
+    "high": 88.407,
+    "low": 87.791,
+    "close": 88.222,
+    "volume": 11210.51357,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787274000000,
+    "open": 88.194,
+    "high": 88.4,
+    "low": 88.1,
+    "close": 88.319,
+    "volume": 6214.50019,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787274900000,
+    "open": 88.344,
+    "high": 89.02,
+    "low": 88.19,
+    "close": 88.357,
+    "volume": 21334.42359,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787275800000,
+    "open": 88.357,
+    "high": 88.688,
+    "low": 88.245,
+    "close": 88.443,
+    "volume": 7043.02192,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787276700000,
+    "open": 88.446,
+    "high": 89.454,
+    "low": 88.405,
+    "close": 88.974,
+    "volume": 15672.60093,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787277600000,
+    "open": 88.971,
+    "high": 89.741,
+    "low": 88.491,
+    "close": 89.166,
+    "volume": 10366.87913,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787278500000,
+    "open": 89.163,
+    "high": 89.388,
+    "low": 88.851,
+    "close": 89.388,
+    "volume": 10304.21395,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787279400000,
+    "open": 89.377,
+    "high": 90.167,
+    "low": 88.913,
+    "close": 89.639,
+    "volume": 14765.76673,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787280300000,
+    "open": 89.653,
+    "high": 89.669,
+    "low": 89.118,
+    "close": 89.223,
+    "volume": 10268.46104,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787281200000,
+    "open": 89.229,
+    "high": 89.333,
+    "low": 88.724,
+    "close": 89.094,
+    "volume": 7312.32355,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787282100000,
+    "open": 89.097,
+    "high": 89.353,
+    "low": 88.908,
+    "close": 89.327,
+    "volume": 5848.75619,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787283000000,
+    "open": 89.322,
+    "high": 89.414,
+    "low": 89.083,
+    "close": 89.145,
+    "volume": 5446.77156,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787283900000,
+    "open": 89.146,
+    "high": 89.489,
+    "low": 89.071,
+    "close": 89.071,
+    "volume": 5451.6102,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787284800000,
+    "open": 89.067,
+    "high": 89.423,
+    "low": 89.011,
+    "close": 89.025,
+    "volume": 3067.29592,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787285700000,
+    "open": 89.033,
+    "high": 89.329,
+    "low": 88.804,
+    "close": 88.905,
+    "volume": 6884.77122,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787286600000,
+    "open": 88.896,
+    "high": 89.176,
+    "low": 88.829,
+    "close": 89.101,
+    "volume": 3496.55678,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787287500000,
+    "open": 89.066,
+    "high": 89.447,
+    "low": 89.066,
+    "close": 89.407,
+    "volume": 3865.50065,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787288400000,
+    "open": 89.385,
+    "high": 89.613,
+    "low": 89.145,
+    "close": 89.613,
+    "volume": 2250.33174,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787289300000,
+    "open": 89.578,
+    "high": 89.949,
+    "low": 89.403,
+    "close": 89.608,
+    "volume": 3697.96056,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787290200000,
+    "open": 89.592,
+    "high": 90.109,
+    "low": 89.521,
+    "close": 90.097,
+    "volume": 5300.67235,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787291100000,
+    "open": 90.104,
+    "high": 90.662,
+    "low": 90.104,
+    "close": 90.388,
+    "volume": 5560.87716,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787292000000,
+    "open": 90.4,
+    "high": 91.283,
+    "low": 90.286,
+    "close": 90.697,
+    "volume": 10011.86801,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787292900000,
+    "open": 90.711,
+    "high": 90.82,
+    "low": 89.992,
+    "close": 90.039,
+    "volume": 6100.18322,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787293800000,
+    "open": 90.03,
+    "high": 90.409,
+    "low": 90.005,
+    "close": 90.006,
+    "volume": 5263.94921,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787294700000,
+    "open": 90,
+    "high": 90.403,
+    "low": 89.725,
+    "close": 90.198,
+    "volume": 5642.03908,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787295600000,
+    "open": 90.16,
+    "high": 90.748,
+    "low": 90.16,
+    "close": 90.748,
+    "volume": 4427.72278,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787296500000,
+    "open": 90.774,
+    "high": 91.128,
+    "low": 90.148,
+    "close": 90.252,
+    "volume": 18549.75062,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787297400000,
+    "open": 90.251,
+    "high": 90.708,
+    "low": 89.924,
+    "close": 90.552,
+    "volume": 14636.31754,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787298300000,
+    "open": 90.541,
+    "high": 90.682,
+    "low": 90.271,
+    "close": 90.363,
+    "volume": 10781.04261,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787299200000,
+    "open": 90.372,
+    "high": 90.967,
+    "low": 90.325,
+    "close": 90.705,
+    "volume": 9085.64911,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787300100000,
+    "open": 90.691,
+    "high": 91.486,
+    "low": 90.691,
+    "close": 91.307,
+    "volume": 13383.67283,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787301000000,
+    "open": 91.34,
+    "high": 92.154,
+    "low": 91.233,
+    "close": 92.107,
+    "volume": 12597.294,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787301900000,
+    "open": 92.115,
+    "high": 93.367,
+    "low": 92.102,
+    "close": 93.199,
+    "volume": 16681.02524,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787302800000,
+    "open": 93.25,
+    "high": 93.283,
+    "low": 90.314,
+    "close": 91.383,
+    "volume": 31709.99168,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787303700000,
+    "open": 91.341,
+    "high": 91.526,
+    "low": 90.835,
+    "close": 91.157,
+    "volume": 14576.84615,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787304600000,
+    "open": 91.174,
+    "high": 91.944,
+    "low": 91,
+    "close": 91.858,
+    "volume": 9918.20469,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787305500000,
+    "open": 91.842,
+    "high": 92.141,
+    "low": 91.271,
+    "close": 91.676,
+    "volume": 14606.24744,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787306400000,
+    "open": 91.644,
+    "high": 91.688,
+    "low": 91.12,
+    "close": 91.262,
+    "volume": 7945.89182,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787307300000,
+    "open": 91.25,
+    "high": 91.655,
+    "low": 90.838,
+    "close": 91.236,
+    "volume": 8129.75374,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787308200000,
+    "open": 91.272,
+    "high": 91.365,
+    "low": 90.853,
+    "close": 91.35,
+    "volume": 5933.10734,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787309100000,
+    "open": 91.355,
+    "high": 91.649,
+    "low": 91.355,
+    "close": 91.469,
+    "volume": 2757.76274,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787310000000,
+    "open": 91.47,
+    "high": 91.577,
+    "low": 90.487,
+    "close": 91.055,
+    "volume": 10509.92108,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787310900000,
+    "open": 91.102,
+    "high": 91.102,
+    "low": 90.669,
+    "close": 90.957,
+    "volume": 20909.37365,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787311800000,
+    "open": 90.967,
+    "high": 90.986,
+    "low": 89.893,
+    "close": 90.439,
+    "volume": 13211.5848,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787312700000,
+    "open": 90.469,
+    "high": 90.578,
+    "low": 90.071,
+    "close": 90.26,
+    "volume": 10232.83389,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787313600000,
+    "open": 90.26,
+    "high": 90.469,
+    "low": 89.985,
+    "close": 90.433,
+    "volume": 10628.05638,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787314500000,
+    "open": 90.387,
+    "high": 90.388,
+    "low": 90.182,
+    "close": 90.267,
+    "volume": 3642.95932,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787315400000,
+    "open": 90.224,
+    "high": 91.074,
+    "low": 90.209,
+    "close": 91.045,
+    "volume": 5915.65103,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787316300000,
+    "open": 91.032,
+    "high": 91.095,
+    "low": 90.784,
+    "close": 90.814,
+    "volume": 2447.72752,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787317200000,
+    "open": 90.85,
+    "high": 90.957,
+    "low": 90.667,
+    "close": 90.852,
+    "volume": 5349.17655,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787318100000,
+    "open": 90.853,
+    "high": 90.853,
+    "low": 90.419,
+    "close": 90.713,
+    "volume": 10139.02305,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787319000000,
+    "open": 90.696,
+    "high": 90.998,
+    "low": 89.818,
+    "close": 90.935,
+    "volume": 17947.21617,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787319900000,
+    "open": 90.936,
+    "high": 91.306,
+    "low": 90.809,
+    "close": 91.1,
+    "volume": 10241.5706,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787320800000,
+    "open": 90.991,
+    "high": 91.053,
+    "low": 90.524,
+    "close": 90.907,
+    "volume": 7185.70063,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787321700000,
+    "open": 90.92,
+    "high": 91.35,
+    "low": 90.741,
+    "close": 91.257,
+    "volume": 11840.35524,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787322600000,
+    "open": 91.278,
+    "high": 91.654,
+    "low": 91.111,
+    "close": 91.461,
+    "volume": 8688.25799,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787323500000,
+    "open": 91.456,
+    "high": 91.919,
+    "low": 91.449,
+    "close": 91.868,
+    "volume": 4571.60039,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787324400000,
+    "open": 91.833,
+    "high": 92.111,
+    "low": 91.647,
+    "close": 91.834,
+    "volume": 5902.97389,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787325300000,
+    "open": 91.844,
+    "high": 91.967,
+    "low": 91.483,
+    "close": 91.545,
+    "volume": 6255.16137,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787326200000,
+    "open": 91.546,
+    "high": 91.766,
+    "low": 91.336,
+    "close": 91.566,
+    "volume": 4360.21617,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787327100000,
+    "open": 91.566,
+    "high": 91.661,
+    "low": 91.22,
+    "close": 91.286,
+    "volume": 9370.29081,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787328000000,
+    "open": 91.335,
+    "high": 91.468,
+    "low": 90.749,
+    "close": 90.749,
+    "volume": 4966.17945,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787328900000,
+    "open": 90.742,
+    "high": 91.48,
+    "low": 90.742,
+    "close": 91.479,
+    "volume": 4892.9622,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787329800000,
+    "open": 91.47,
+    "high": 91.555,
+    "low": 91.297,
+    "close": 91.365,
+    "volume": 3898.26997,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787330700000,
+    "open": 91.347,
+    "high": 91.9,
+    "low": 91.328,
+    "close": 91.602,
+    "volume": 6729.97043,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787331600000,
+    "open": 91.62,
+    "high": 91.894,
+    "low": 91.483,
+    "close": 91.7,
+    "volume": 6332.88158,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787332500000,
+    "open": 91.702,
+    "high": 91.702,
+    "low": 91.151,
+    "close": 91.506,
+    "volume": 3280.00742,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787333400000,
+    "open": 91.51,
+    "high": 91.959,
+    "low": 91.51,
+    "close": 91.566,
+    "volume": 4370.81928,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787334300000,
+    "open": 91.566,
+    "high": 91.879,
+    "low": 91.516,
+    "close": 91.756,
+    "volume": 2036.17199,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787335200000,
+    "open": 91.766,
+    "high": 92.031,
+    "low": 91.728,
+    "close": 91.841,
+    "volume": 3382.2679,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787336100000,
+    "open": 91.806,
+    "high": 92.029,
+    "low": 91.647,
+    "close": 91.874,
+    "volume": 3752.15691,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787337000000,
+    "open": 91.838,
+    "high": 91.959,
+    "low": 91.3,
+    "close": 91.396,
+    "volume": 4448.4464,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787337900000,
+    "open": 91.357,
+    "high": 91.573,
+    "low": 91.034,
+    "close": 91.543,
+    "volume": 5921.09974,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787338800000,
+    "open": 91.541,
+    "high": 91.592,
+    "low": 90.832,
+    "close": 91.291,
+    "volume": 2762.4998,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787339700000,
+    "open": 91.281,
+    "high": 91.355,
+    "low": 90.902,
+    "close": 91.284,
+    "volume": 2945.87757,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787340600000,
+    "open": 91.304,
+    "high": 91.325,
+    "low": 90.766,
+    "close": 90.83,
+    "volume": 3558.24534,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787341500000,
+    "open": 90.778,
+    "high": 91.038,
+    "low": 90.743,
+    "close": 90.901,
+    "volume": 3503.94788,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787342400000,
+    "open": 90.921,
+    "high": 91.305,
+    "low": 90.52,
+    "close": 91.181,
+    "volume": 5980.16042,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787343300000,
+    "open": 91.182,
+    "high": 91.947,
+    "low": 91.182,
+    "close": 91.778,
+    "volume": 3535.72515,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787344200000,
+    "open": 91.789,
+    "high": 91.907,
+    "low": 91.622,
+    "close": 91.838,
+    "volume": 3003.92475,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787345100000,
+    "open": 91.822,
+    "high": 91.849,
+    "low": 91.531,
+    "close": 91.839,
+    "volume": 4969.02143,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787346000000,
+    "open": 91.849,
+    "high": 92.408,
+    "low": 91.645,
+    "close": 92.282,
+    "volume": 13023.53568,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787346900000,
+    "open": 92.219,
+    "high": 92.947,
+    "low": 92.134,
+    "close": 92.785,
+    "volume": 11470.70331,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787347800000,
+    "open": 92.787,
+    "high": 93.067,
+    "low": 92.596,
+    "close": 93.024,
+    "volume": 10116.575,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787348700000,
+    "open": 93.038,
+    "high": 93.838,
+    "low": 93.038,
+    "close": 93.712,
+    "volume": 11750.43393,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787349600000,
+    "open": 93.722,
+    "high": 94.357,
+    "low": 93.569,
+    "close": 94.075,
+    "volume": 13357.32487,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787350500000,
+    "open": 94.036,
+    "high": 94.153,
+    "low": 93.452,
+    "close": 94.119,
+    "volume": 13036.03449,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787351400000,
+    "open": 94.196,
+    "high": 94.46,
+    "low": 93.289,
+    "close": 94.37,
+    "volume": 6762.54682,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787352300000,
+    "open": 94.283,
+    "high": 94.602,
+    "low": 93.601,
+    "close": 94.303,
+    "volume": 8869.52549,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787353200000,
+    "open": 94.304,
+    "high": 94.332,
+    "low": 93.874,
+    "close": 94.098,
+    "volume": 13587.66405,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787354100000,
+    "open": 94.057,
+    "high": 95,
+    "low": 94.057,
+    "close": 94.435,
+    "volume": 15579.6914,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787355000000,
+    "open": 94.429,
+    "high": 94.485,
+    "low": 93.6,
+    "close": 93.96,
+    "volume": 10426.40676,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787355900000,
+    "open": 93.984,
+    "high": 93.987,
+    "low": 93.372,
+    "close": 93.714,
+    "volume": 3162.5528,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787356800000,
+    "open": 93.715,
+    "high": 93.958,
+    "low": 92.87,
+    "close": 93.572,
+    "volume": 7634.96542,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787357700000,
+    "open": 93.553,
+    "high": 94.407,
+    "low": 93.408,
+    "close": 93.67,
+    "volume": 8069.13207,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787358600000,
+    "open": 93.638,
+    "high": 93.885,
+    "low": 93.393,
+    "close": 93.516,
+    "volume": 5706.82067,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787359500000,
+    "open": 93.524,
+    "high": 93.935,
+    "low": 93.386,
+    "close": 93.874,
+    "volume": 6323.81792,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787360400000,
+    "open": 93.857,
+    "high": 94.185,
+    "low": 93.73,
+    "close": 93.992,
+    "volume": 5344.98828,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787361300000,
+    "open": 93.999,
+    "high": 94.263,
+    "low": 93.767,
+    "close": 94.035,
+    "volume": 6297.13739,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787362200000,
+    "open": 94.029,
+    "high": 94.416,
+    "low": 93.629,
+    "close": 93.712,
+    "volume": 5730.85317,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787363100000,
+    "open": 93.726,
+    "high": 94.026,
+    "low": 93.475,
+    "close": 93.663,
+    "volume": 4506.12789,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787364000000,
+    "open": 93.673,
+    "high": 94.295,
+    "low": 93.673,
+    "close": 94.219,
+    "volume": 3077.89882,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787364900000,
+    "open": 94.222,
+    "high": 95.008,
+    "low": 94.198,
+    "close": 94.83,
+    "volume": 11570.7933,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787365800000,
+    "open": 94.83,
+    "high": 95.723,
+    "low": 94.623,
+    "close": 95.666,
+    "volume": 15383.82592,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787366700000,
+    "open": 95.656,
+    "high": 95.676,
+    "low": 95.23,
+    "close": 95.62,
+    "volume": 9072.64668,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787367600000,
+    "open": 95.614,
+    "high": 96.468,
+    "low": 95.473,
+    "close": 95.975,
+    "volume": 17406.54003,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787368500000,
+    "open": 95.981,
+    "high": 97.093,
+    "low": 95.981,
+    "close": 96.835,
+    "volume": 17694.61265,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787369400000,
+    "open": 96.824,
+    "high": 97.556,
+    "low": 96.405,
+    "close": 96.7,
+    "volume": 6109.74029,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787370300000,
+    "open": 96.68,
+    "high": 97.299,
+    "low": 96.597,
+    "close": 96.712,
+    "volume": 4535.2376,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787371200000,
+    "open": 96.794,
+    "high": 97.162,
+    "low": 96.198,
+    "close": 97.162,
+    "volume": 5899.83574,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787372100000,
+    "open": 97.186,
+    "high": 97.929,
+    "low": 96.665,
+    "close": 97.929,
+    "volume": 11588.50915,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787373000000,
+    "open": 97.96,
+    "high": 102.611,
+    "low": 97.85,
+    "close": 102.23,
+    "volume": 19061.04285,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787373900000,
+    "open": 102.086,
+    "high": 102.086,
+    "low": 98.791,
+    "close": 99.126,
+    "volume": 18117.10657,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787374800000,
+    "open": 99.126,
+    "high": 99.94,
+    "low": 87.77,
+    "close": 93.3,
+    "volume": 14755.48396,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787375700000,
+    "open": 93.427,
+    "high": 94.451,
+    "low": 90.737,
+    "close": 94.013,
+    "volume": 17684.47965,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787376600000,
+    "open": 94.033,
+    "high": 94.738,
+    "low": 92.912,
+    "close": 93.575,
+    "volume": 12993.84943,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787377500000,
+    "open": 93.57,
+    "high": 94.8,
+    "low": 93.386,
+    "close": 94.171,
+    "volume": 8410.26154,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787378400000,
+    "open": 94.154,
+    "high": 94.444,
+    "low": 93.443,
+    "close": 93.571,
+    "volume": 9468.96111,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787379300000,
+    "open": 93.56,
+    "high": 94.312,
+    "low": 93.554,
+    "close": 93.886,
+    "volume": 7437.00332,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787380200000,
+    "open": 93.854,
+    "high": 95.1,
+    "low": 93.054,
+    "close": 94.58,
+    "volume": 7362.0298,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787381100000,
+    "open": 94.566,
+    "high": 94.819,
+    "low": 94.066,
+    "close": 94.257,
+    "volume": 9085.10568,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787382000000,
+    "open": 94.243,
+    "high": 95.117,
+    "low": 94.108,
+    "close": 94.403,
+    "volume": 12601.2964,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787382900000,
+    "open": 94.431,
+    "high": 95.014,
+    "low": 94.046,
+    "close": 95,
+    "volume": 5125.79705,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787383800000,
+    "open": 95.008,
+    "high": 95.454,
+    "low": 94.385,
+    "close": 94.819,
+    "volume": 5398.71142,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787384700000,
+    "open": 94.775,
+    "high": 94.897,
+    "low": 94.376,
+    "close": 94.427,
+    "volume": 4416.00449,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787385600000,
+    "open": 94.476,
+    "high": 94.946,
+    "low": 94.047,
+    "close": 94.872,
+    "volume": 5271.35136,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787386500000,
+    "open": 94.89,
+    "high": 94.984,
+    "low": 93.688,
+    "close": 93.777,
+    "volume": 8883.74175,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787387400000,
+    "open": 93.788,
+    "high": 93.799,
+    "low": 93.063,
+    "close": 93.649,
+    "volume": 8729.10879,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787388300000,
+    "open": 93.614,
+    "high": 94.103,
+    "low": 93.245,
+    "close": 94.084,
+    "volume": 4068.28432,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787389200000,
+    "open": 94.099,
+    "high": 94.19,
+    "low": 92.918,
+    "close": 94.18,
+    "volume": 4712.242,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787390100000,
+    "open": 94.248,
+    "high": 94.508,
+    "low": 93.938,
+    "close": 94.273,
+    "volume": 5123.0306,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787391000000,
+    "open": 94.188,
+    "high": 94.396,
+    "low": 94.042,
+    "close": 94.257,
+    "volume": 3103.85955,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787391900000,
+    "open": 94.257,
+    "high": 94.283,
+    "low": 93.62,
+    "close": 93.887,
+    "volume": 5677.35833,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787392800000,
+    "open": 93.893,
+    "high": 93.975,
+    "low": 92.104,
+    "close": 92.144,
+    "volume": 8197.43333,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787393700000,
+    "open": 92.161,
+    "high": 92.462,
+    "low": 91.33,
+    "close": 92.389,
+    "volume": 13714.82817,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787394600000,
+    "open": 92.432,
+    "high": 93.338,
+    "low": 92.288,
+    "close": 93.232,
+    "volume": 3542.2434,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787395500000,
+    "open": 93.293,
+    "high": 93.307,
+    "low": 92.665,
+    "close": 92.861,
+    "volume": 6762.06432,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787396400000,
+    "open": 92.862,
+    "high": 93.195,
+    "low": 92.562,
+    "close": 92.784,
+    "volume": 9347.78606,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787397300000,
+    "open": 92.761,
+    "high": 93.075,
+    "low": 92.567,
+    "close": 92.994,
+    "volume": 10796.1134,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787398200000,
+    "open": 92.975,
+    "high": 93.458,
+    "low": 92.884,
+    "close": 93.433,
+    "volume": 7453.17135,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787399100000,
+    "open": 93.442,
+    "high": 93.508,
+    "low": 93.136,
+    "close": 93.28,
+    "volume": 5401.66566,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787400000000,
+    "open": 93.295,
+    "high": 93.935,
+    "low": 93.142,
+    "close": 93.838,
+    "volume": 9022.71923,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787400900000,
+    "open": 93.87,
+    "high": 94.321,
+    "low": 93.849,
+    "close": 94.208,
+    "volume": 6935.60861,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787401800000,
+    "open": 94.208,
+    "high": 94.231,
+    "low": 93.83,
+    "close": 94.212,
+    "volume": 5172.3105,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787402700000,
+    "open": 94.202,
+    "high": 94.265,
+    "low": 93.828,
+    "close": 93.828,
+    "volume": 4304.13842,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787403600000,
+    "open": 93.819,
+    "high": 93.971,
+    "low": 93.529,
+    "close": 93.897,
+    "volume": 6129.12144,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787404500000,
+    "open": 93.907,
+    "high": 94.181,
+    "low": 93.609,
+    "close": 93.824,
+    "volume": 7550.51009,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787405400000,
+    "open": 93.85,
+    "high": 93.964,
+    "low": 93.565,
+    "close": 93.778,
+    "volume": 6096.03455,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787406300000,
+    "open": 93.786,
+    "high": 94.226,
+    "low": 93.725,
+    "close": 94.096,
+    "volume": 2757.45835,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787407200000,
+    "open": 94.113,
+    "high": 94.284,
+    "low": 93.618,
+    "close": 93.772,
+    "volume": 4532.7736,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787408100000,
+    "open": 93.802,
+    "high": 93.901,
+    "low": 93.44,
+    "close": 93.846,
+    "volume": 5173.79464,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787409000000,
+    "open": 93.838,
+    "high": 94.018,
+    "low": 93.272,
+    "close": 93.296,
+    "volume": 5031.95267,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787409900000,
+    "open": 93.274,
+    "high": 93.457,
+    "low": 92.891,
+    "close": 93.238,
+    "volume": 8557.213,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787410800000,
+    "open": 93.235,
+    "high": 93.465,
+    "low": 92.939,
+    "close": 92.951,
+    "volume": 7147.10269,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787411700000,
+    "open": 92.888,
+    "high": 93.334,
+    "low": 92.809,
+    "close": 93.237,
+    "volume": 4352.24686,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787412600000,
+    "open": 93.232,
+    "high": 93.544,
+    "low": 93.169,
+    "close": 93.252,
+    "volume": 3588.029,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787413500000,
+    "open": 93.261,
+    "high": 93.343,
+    "low": 92.978,
+    "close": 93.07,
+    "volume": 3687.78082,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787414400000,
+    "open": 93.059,
+    "high": 93.5,
+    "low": 93.059,
+    "close": 93.415,
+    "volume": 1509.74405,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787415300000,
+    "open": 93.398,
+    "high": 94.03,
+    "low": 93.398,
+    "close": 93.907,
+    "volume": 3727.01626,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787416200000,
+    "open": 93.86,
+    "high": 94.618,
+    "low": 93.859,
+    "close": 94.496,
+    "volume": 10200.00615,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787417100000,
+    "open": 94.491,
+    "high": 94.631,
+    "low": 94.264,
+    "close": 94.283,
+    "volume": 3378.78338,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787418000000,
+    "open": 94.303,
+    "high": 94.514,
+    "low": 94.092,
+    "close": 94.208,
+    "volume": 4335.68975,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787418900000,
+    "open": 94.214,
+    "high": 94.377,
+    "low": 93.761,
+    "close": 93.784,
+    "volume": 1996.13389,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787419800000,
+    "open": 93.82,
+    "high": 94.28,
+    "low": 93.82,
+    "close": 94.255,
+    "volume": 2610.52731,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787420700000,
+    "open": 94.259,
+    "high": 94.531,
+    "low": 94.213,
+    "close": 94.246,
+    "volume": 1239.64813,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787421600000,
+    "open": 94.246,
+    "high": 94.363,
+    "low": 94.042,
+    "close": 94.15,
+    "volume": 1871.53874,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787422500000,
+    "open": 94.138,
+    "high": 94.516,
+    "low": 94.138,
+    "close": 94.364,
+    "volume": 1894.0059,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787423400000,
+    "open": 94.369,
+    "high": 94.503,
+    "low": 94.159,
+    "close": 94.159,
+    "volume": 934.49255,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787424300000,
+    "open": 94.189,
+    "high": 94.453,
+    "low": 94.011,
+    "close": 94.442,
+    "volume": 2217.8144,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787425200000,
+    "open": 94.44,
+    "high": 94.565,
+    "low": 94.266,
+    "close": 94.553,
+    "volume": 1326.99675,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787426100000,
+    "open": 94.553,
+    "high": 94.682,
+    "low": 94.309,
+    "close": 94.389,
+    "volume": 1434.73741,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787427000000,
+    "open": 94.402,
+    "high": 94.813,
+    "low": 94.402,
+    "close": 94.739,
+    "volume": 8222.53426,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787427900000,
+    "open": 94.739,
+    "high": 94.764,
+    "low": 94.477,
+    "close": 94.499,
+    "volume": 2006.81582,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787428800000,
+    "open": 94.491,
+    "high": 94.777,
+    "low": 94.401,
+    "close": 94.706,
+    "volume": 2474.70235,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787429700000,
+    "open": 94.684,
+    "high": 94.767,
+    "low": 94.395,
+    "close": 94.501,
+    "volume": 728.03772,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787430600000,
+    "open": 94.479,
+    "high": 94.645,
+    "low": 94.338,
+    "close": 94.496,
+    "volume": 1354.03083,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787431500000,
+    "open": 94.498,
+    "high": 94.544,
+    "low": 94.303,
+    "close": 94.402,
+    "volume": 1130.26835,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787432400000,
+    "open": 94.367,
+    "high": 94.367,
+    "low": 93.482,
+    "close": 93.504,
+    "volume": 3636.26855,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787433300000,
+    "open": 93.504,
+    "high": 93.933,
+    "low": 93.504,
+    "close": 93.826,
+    "volume": 1605.07703,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787434200000,
+    "open": 93.825,
+    "high": 93.831,
+    "low": 93.065,
+    "close": 93.325,
+    "volume": 1479.44203,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787435100000,
+    "open": 93.351,
+    "high": 93.351,
+    "low": 92.72,
+    "close": 92.873,
+    "volume": 2852.00268,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787436000000,
+    "open": 92.786,
+    "high": 93.659,
+    "low": 92.598,
+    "close": 93.586,
+    "volume": 4561.53809,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787436900000,
+    "open": 93.586,
+    "high": 93.965,
+    "low": 93.504,
+    "close": 93.897,
+    "volume": 4229.82319,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787437800000,
+    "open": 93.895,
+    "high": 93.999,
+    "low": 93.514,
+    "close": 93.748,
+    "volume": 3497.33921,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787438700000,
+    "open": 93.748,
+    "high": 93.966,
+    "low": 93.558,
+    "close": 93.606,
+    "volume": 1898.33519,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787439600000,
+    "open": 93.608,
+    "high": 93.779,
+    "low": 93.345,
+    "close": 93.586,
+    "volume": 2481.92128,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787440500000,
+    "open": 93.608,
+    "high": 93.74,
+    "low": 93.534,
+    "close": 93.579,
+    "volume": 2170.94069,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787441400000,
+    "open": 93.58,
+    "high": 93.69,
+    "low": 93.346,
+    "close": 93.645,
+    "volume": 2695.14664,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787442300000,
+    "open": 93.641,
+    "high": 93.972,
+    "low": 93.634,
+    "close": 93.842,
+    "volume": 1302.00199,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787443200000,
+    "open": 93.801,
+    "high": 93.999,
+    "low": 93.571,
+    "close": 93.801,
+    "volume": 2344.72423,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787444100000,
+    "open": 93.754,
+    "high": 94.291,
+    "low": 93.708,
+    "close": 94.281,
+    "volume": 1655.40897,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787445000000,
+    "open": 94.283,
+    "high": 97.173,
+    "low": 94.283,
+    "close": 96.366,
+    "volume": 15690.47403,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787445900000,
+    "open": 96.356,
+    "high": 97.2,
+    "low": 96.093,
+    "close": 96.302,
+    "volume": 10770.93761,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787446800000,
+    "open": 96.352,
+    "high": 96.352,
+    "low": 95.756,
+    "close": 96.238,
+    "volume": 6497.10302,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787447700000,
+    "open": 96.238,
+    "high": 96.238,
+    "low": 95.775,
+    "close": 96.065,
+    "volume": 2539.85322,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787448600000,
+    "open": 96.069,
+    "high": 96.242,
+    "low": 95.67,
+    "close": 96.131,
+    "volume": 2035.84531,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787449500000,
+    "open": 96.085,
+    "high": 96.558,
+    "low": 95.768,
+    "close": 96.035,
+    "volume": 7900.05475,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787450400000,
+    "open": 96.04,
+    "high": 96.239,
+    "low": 94.029,
+    "close": 94.39,
+    "volume": 5079.20845,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787451300000,
+    "open": 94.375,
+    "high": 94.882,
+    "low": 94.144,
+    "close": 94.47,
+    "volume": 3978.08839,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787452200000,
+    "open": 94.45,
+    "high": 94.836,
+    "low": 94.45,
+    "close": 94.487,
+    "volume": 2892.15005,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787453100000,
+    "open": 94.478,
+    "high": 96.508,
+    "low": 94.32,
+    "close": 94.9,
+    "volume": 14658.8874,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787454000000,
+    "open": 94.884,
+    "high": 95,
+    "low": 94.497,
+    "close": 94.855,
+    "volume": 2802.64752,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787454900000,
+    "open": 94.88,
+    "high": 94.998,
+    "low": 94.185,
+    "close": 94.255,
+    "volume": 3093.39072,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787455800000,
+    "open": 94.219,
+    "high": 94.219,
+    "low": 93.418,
+    "close": 93.515,
+    "volume": 4979.81563,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787456700000,
+    "open": 93.496,
+    "high": 93.956,
+    "low": 93.496,
+    "close": 93.687,
+    "volume": 1710.51581,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787457600000,
+    "open": 93.697,
+    "high": 94.059,
+    "low": 93.161,
+    "close": 94.05,
+    "volume": 3529.71462,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787458500000,
+    "open": 94.082,
+    "high": 94.082,
+    "low": 93.252,
+    "close": 93.565,
+    "volume": 4571.82246,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787459400000,
+    "open": 93.588,
+    "high": 93.588,
+    "low": 92.82,
+    "close": 92.921,
+    "volume": 5721.8836,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787460300000,
+    "open": 92.979,
+    "high": 92.981,
+    "low": 92.216,
+    "close": 92.553,
+    "volume": 5952.35761,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787461200000,
+    "open": 92.525,
+    "high": 92.893,
+    "low": 92.139,
+    "close": 92.194,
+    "volume": 7881.93158,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787462100000,
+    "open": 92.184,
+    "high": 93.269,
+    "low": 91.557,
+    "close": 93.003,
+    "volume": 9194.96847,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787463000000,
+    "open": 93.018,
+    "high": 93.197,
+    "low": 92.546,
+    "close": 92.661,
+    "volume": 5326.42733,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787463900000,
+    "open": 92.689,
+    "high": 92.795,
+    "low": 92.312,
+    "close": 92.312,
+    "volume": 1613.88343,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787464800000,
+    "open": 92.259,
+    "high": 92.466,
+    "low": 91.794,
+    "close": 92.331,
+    "volume": 3968.08652,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787465700000,
+    "open": 92.277,
+    "high": 92.505,
+    "low": 92.104,
+    "close": 92.27,
+    "volume": 3669.5049,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787466600000,
+    "open": 92.377,
+    "high": 92.755,
+    "low": 92.342,
+    "close": 92.428,
+    "volume": 2376.52985,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787467500000,
+    "open": 92.489,
+    "high": 92.559,
+    "low": 91.993,
+    "close": 92.232,
+    "volume": 2431.6065,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787468400000,
+    "open": 92.191,
+    "high": 92.618,
+    "low": 92.139,
+    "close": 92.601,
+    "volume": 2106.99102,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787469300000,
+    "open": 92.611,
+    "high": 92.928,
+    "low": 92.611,
+    "close": 92.717,
+    "volume": 1677.22683,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787470200000,
+    "open": 92.686,
+    "high": 92.7,
+    "low": 92.406,
+    "close": 92.475,
+    "volume": 1393.87725,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787471100000,
+    "open": 92.546,
+    "high": 92.725,
+    "low": 92.337,
+    "close": 92.423,
+    "volume": 1928.08394,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787472000000,
+    "open": 92.449,
+    "high": 92.96,
+    "low": 92.331,
+    "close": 92.784,
+    "volume": 4044.39686,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787472900000,
+    "open": 92.806,
+    "high": 92.934,
+    "low": 92.774,
+    "close": 92.87,
+    "volume": 2129.42954,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787473800000,
+    "open": 92.878,
+    "high": 93.502,
+    "low": 92.809,
+    "close": 93.296,
+    "volume": 3804.6918,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787474700000,
+    "open": 93.289,
+    "high": 93.337,
+    "low": 93.024,
+    "close": 93.158,
+    "volume": 3077.24132,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787475600000,
+    "open": 93.163,
+    "high": 93.396,
+    "low": 93.106,
+    "close": 93.235,
+    "volume": 1080.10728,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787476500000,
+    "open": 93.299,
+    "high": 93.34,
+    "low": 93.111,
+    "close": 93.237,
+    "volume": 2048.3282,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787477400000,
+    "open": 93.196,
+    "high": 93.255,
+    "low": 92.882,
+    "close": 93.241,
+    "volume": 1625.14321,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787478300000,
+    "open": 93.21,
+    "high": 93.51,
+    "low": 93.135,
+    "close": 93.32,
+    "volume": 1164.63623,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787479200000,
+    "open": 93.272,
+    "high": 93.774,
+    "low": 93.272,
+    "close": 93.686,
+    "volume": 2320.23234,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787480100000,
+    "open": 93.796,
+    "high": 94.089,
+    "low": 93.676,
+    "close": 93.682,
+    "volume": 3096.98738,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787481000000,
+    "open": 93.737,
+    "high": 93.889,
+    "low": 93.637,
+    "close": 93.788,
+    "volume": 1833.5051,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787481900000,
+    "open": 93.765,
+    "high": 93.831,
+    "low": 93.575,
+    "close": 93.625,
+    "volume": 1552.33172,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787482800000,
+    "open": 93.632,
+    "high": 93.867,
+    "low": 93.542,
+    "close": 93.867,
+    "volume": 1547.74769,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787483700000,
+    "open": 93.845,
+    "high": 94.539,
+    "low": 93.726,
+    "close": 94.318,
+    "volume": 2775.9136,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787484600000,
+    "open": 94.284,
+    "high": 94.781,
+    "low": 94.284,
+    "close": 94.683,
+    "volume": 2646.27306,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787485500000,
+    "open": 94.672,
+    "high": 94.703,
+    "low": 94.512,
+    "close": 94.62,
+    "volume": 2031.34143,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787486400000,
+    "open": 94.622,
+    "high": 94.622,
+    "low": 94.085,
+    "close": 94.234,
+    "volume": 2340.40272,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787487300000,
+    "open": 94.316,
+    "high": 94.56,
+    "low": 94.281,
+    "close": 94.475,
+    "volume": 947.64133,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787488200000,
+    "open": 94.486,
+    "high": 94.779,
+    "low": 94.453,
+    "close": 94.716,
+    "volume": 1853.69931,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787489100000,
+    "open": 94.712,
+    "high": 94.712,
+    "low": 94.402,
+    "close": 94.568,
+    "volume": 969.41543,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787490000000,
+    "open": 94.559,
+    "high": 94.917,
+    "low": 94.559,
+    "close": 94.89,
+    "volume": 2795.47828,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787490900000,
+    "open": 94.873,
+    "high": 95.793,
+    "low": 94.873,
+    "close": 95.018,
+    "volume": 9185.30166,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787491800000,
+    "open": 95.04,
+    "high": 95.274,
+    "low": 94.848,
+    "close": 95.274,
+    "volume": 2254.64673,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787492700000,
+    "open": 95.288,
+    "high": 95.528,
+    "low": 95.154,
+    "close": 95.383,
+    "volume": 3191.02741,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787493600000,
+    "open": 95.374,
+    "high": 95.669,
+    "low": 95.076,
+    "close": 95.508,
+    "volume": 4393.93636,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787494500000,
+    "open": 95.51,
+    "high": 95.651,
+    "low": 95.173,
+    "close": 95.359,
+    "volume": 4325.82759,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787495400000,
+    "open": 95.356,
+    "high": 95.488,
+    "low": 93.4,
+    "close": 94.402,
+    "volume": 9547.56346,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787496300000,
+    "open": 94.423,
+    "high": 95.16,
+    "low": 94.423,
+    "close": 95.024,
+    "volume": 6601.50359,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787497200000,
+    "open": 95.044,
+    "high": 95.433,
+    "low": 94.672,
+    "close": 95.271,
+    "volume": 6013.25264,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787498100000,
+    "open": 95.265,
+    "high": 95.453,
+    "low": 94.855,
+    "close": 95.413,
+    "volume": 6062.88665,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787499000000,
+    "open": 95.442,
+    "high": 95.858,
+    "low": 95.442,
+    "close": 95.7,
+    "volume": 5258.31238,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787499900000,
+    "open": 95.668,
+    "high": 95.738,
+    "low": 95.293,
+    "close": 95.357,
+    "volume": 3838.59376,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787500800000,
+    "open": 95.383,
+    "high": 95.526,
+    "low": 95.264,
+    "close": 95.435,
+    "volume": 3342.97744,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787501700000,
+    "open": 95.408,
+    "high": 95.415,
+    "low": 95.16,
+    "close": 95.392,
+    "volume": 1878.56577,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787502600000,
+    "open": 95.406,
+    "high": 95.686,
+    "low": 95.373,
+    "close": 95.538,
+    "volume": 5210.18912,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787503500000,
+    "open": 95.523,
+    "high": 95.608,
+    "low": 95.292,
+    "close": 95.384,
+    "volume": 5311.51046,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787504400000,
+    "open": 95.437,
+    "high": 95.459,
+    "low": 94.83,
+    "close": 95.366,
+    "volume": 4356.31875,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787505300000,
+    "open": 95.365,
+    "high": 95.506,
+    "low": 95.089,
+    "close": 95.15,
+    "volume": 2653.2592,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787506200000,
+    "open": 95.162,
+    "high": 95.21,
+    "low": 94.807,
+    "close": 95.104,
+    "volume": 4557.26133,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787507100000,
+    "open": 95.132,
+    "high": 95.26,
+    "low": 95.054,
+    "close": 95.109,
+    "volume": 1011.76765,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787508000000,
+    "open": 95.094,
+    "high": 95.351,
+    "low": 94.929,
+    "close": 95.214,
+    "volume": 1675.96795,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787508900000,
+    "open": 95.217,
+    "high": 95.433,
+    "low": 95.109,
+    "close": 95.378,
+    "volume": 2483.09151,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787509800000,
+    "open": 95.353,
+    "high": 95.385,
+    "low": 95.106,
+    "close": 95.281,
+    "volume": 2534.7016,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787510700000,
+    "open": 95.248,
+    "high": 95.33,
+    "low": 95.101,
+    "close": 95.262,
+    "volume": 1486.88318,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787511600000,
+    "open": 95.305,
+    "high": 95.414,
+    "low": 94.924,
+    "close": 95.039,
+    "volume": 2924.74007,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787512500000,
+    "open": 95.036,
+    "high": 95.116,
+    "low": 94.954,
+    "close": 95.054,
+    "volume": 1354.20593,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787513400000,
+    "open": 95.056,
+    "high": 95.307,
+    "low": 94.825,
+    "close": 95.307,
+    "volume": 3209.66993,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787514300000,
+    "open": 95.283,
+    "high": 95.448,
+    "low": 95.033,
+    "close": 95.033,
+    "volume": 3125.52748,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787515200000,
+    "open": 95.011,
+    "high": 95.124,
+    "low": 94.784,
+    "close": 95.028,
+    "volume": 5647.45687,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787516100000,
+    "open": 95.01,
+    "high": 95.367,
+    "low": 95.01,
+    "close": 95.235,
+    "volume": 1916.29614,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787517000000,
+    "open": 95.253,
+    "high": 95.333,
+    "low": 95.126,
+    "close": 95.148,
+    "volume": 3338.21285,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787517900000,
+    "open": 95.174,
+    "high": 95.174,
+    "low": 95.016,
+    "close": 95.055,
+    "volume": 1132.90166,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787518800000,
+    "open": 95.082,
+    "high": 95.725,
+    "low": 95.081,
+    "close": 95.614,
+    "volume": 5394.38999,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787519700000,
+    "open": 95.641,
+    "high": 96.176,
+    "low": 95.641,
+    "close": 96.136,
+    "volume": 6770.2992,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787520600000,
+    "open": 96.136,
+    "high": 96.261,
+    "low": 95.199,
+    "close": 95.266,
+    "volume": 6762.10336,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787521500000,
+    "open": 95.329,
+    "high": 95.664,
+    "low": 95.233,
+    "close": 95.35,
+    "volume": 4914.2776,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787522400000,
+    "open": 95.358,
+    "high": 95.695,
+    "low": 94.814,
+    "close": 95.289,
+    "volume": 5869.71767,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787523300000,
+    "open": 95.251,
+    "high": 95.74,
+    "low": 95.086,
+    "close": 95.553,
+    "volume": 3179.74528,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787524200000,
+    "open": 95.551,
+    "high": 95.68,
+    "low": 95.4,
+    "close": 95.532,
+    "volume": 2692.96821,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787525100000,
+    "open": 95.528,
+    "high": 95.7,
+    "low": 95.324,
+    "close": 95.59,
+    "volume": 3568.76421,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787526000000,
+    "open": 95.595,
+    "high": 95.647,
+    "low": 95.039,
+    "close": 95.161,
+    "volume": 2840.53934,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787526900000,
+    "open": 95.177,
+    "high": 95.632,
+    "low": 95.018,
+    "close": 95.472,
+    "volume": 4625.12656,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787527800000,
+    "open": 95.502,
+    "high": 95.87,
+    "low": 95.014,
+    "close": 95.189,
+    "volume": 4464.38244,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787528700000,
+    "open": 95.197,
+    "high": 95.593,
+    "low": 95.164,
+    "close": 95.408,
+    "volume": 7184.89721,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787529600000,
+    "open": 95.437,
+    "high": 95.501,
+    "low": 94.934,
+    "close": 95.176,
+    "volume": 4650.40678,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787530500000,
+    "open": 95.212,
+    "high": 95.212,
+    "low": 93.855,
+    "close": 94.498,
+    "volume": 8477.52315,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787531400000,
+    "open": 94.523,
+    "high": 95.074,
+    "low": 94.347,
+    "close": 94.36,
+    "volume": 5866.26551,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787532300000,
+    "open": 94.355,
+    "high": 95.51,
+    "low": 94.162,
+    "close": 95.51,
+    "volume": 9293.78335,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787533200000,
+    "open": 95.534,
+    "high": 95.534,
+    "low": 94.891,
+    "close": 94.937,
+    "volume": 5028.83026,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787534100000,
+    "open": 94.884,
+    "high": 94.923,
+    "low": 94.505,
+    "close": 94.518,
+    "volume": 2891.58189,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787535000000,
+    "open": 94.462,
+    "high": 94.646,
+    "low": 94.19,
+    "close": 94.21,
+    "volume": 3292.44182,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787535900000,
+    "open": 94.23,
+    "high": 94.287,
+    "low": 93.737,
+    "close": 93.863,
+    "volume": 7251.81828,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787536800000,
+    "open": 93.841,
+    "high": 94.523,
+    "low": 93.688,
+    "close": 94.427,
+    "volume": 2526.25264,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787537700000,
+    "open": 94.483,
+    "high": 94.764,
+    "low": 94.483,
+    "close": 94.721,
+    "volume": 5970.37185,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787538600000,
+    "open": 94.778,
+    "high": 95.01,
+    "low": 94.622,
+    "close": 94.698,
+    "volume": 1915.10159,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787539500000,
+    "open": 94.703,
+    "high": 94.703,
+    "low": 94.027,
+    "close": 94.571,
+    "volume": 5870.77195,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787540400000,
+    "open": 94.583,
+    "high": 94.635,
+    "low": 93.857,
+    "close": 93.867,
+    "volume": 8884.15489,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787541300000,
+    "open": 93.851,
+    "high": 94.236,
+    "low": 93.768,
+    "close": 93.79,
+    "volume": 3458.30813,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787542200000,
+    "open": 93.757,
+    "high": 94.001,
+    "low": 93.443,
+    "close": 93.742,
+    "volume": 4643.20697,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787543100000,
+    "open": 93.734,
+    "high": 94.088,
+    "low": 93.67,
+    "close": 93.67,
+    "volume": 6084.83017,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787544000000,
+    "open": 93.67,
+    "high": 94.053,
+    "low": 93.67,
+    "close": 93.957,
+    "volume": 5649.04646,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787544900000,
+    "open": 93.968,
+    "high": 94.304,
+    "low": 93.968,
+    "close": 94.284,
+    "volume": 2736.3623,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787545800000,
+    "open": 94.29,
+    "high": 94.323,
+    "low": 93.972,
+    "close": 94.228,
+    "volume": 6374.44577,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787546700000,
+    "open": 94.259,
+    "high": 94.345,
+    "low": 93.675,
+    "close": 94.216,
+    "volume": 6708.0036,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787547600000,
+    "open": 94.182,
+    "high": 94.556,
+    "low": 93.891,
+    "close": 94.507,
+    "volume": 7497.669,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787548500000,
+    "open": 94.547,
+    "high": 94.65,
+    "low": 93.984,
+    "close": 94.043,
+    "volume": 6993.53848,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787549400000,
+    "open": 94.056,
+    "high": 94.369,
+    "low": 93.48,
+    "close": 94.133,
+    "volume": 5367.49953,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787550300000,
+    "open": 94.142,
+    "high": 94.33,
+    "low": 94.003,
+    "close": 94.292,
+    "volume": 2656.66777,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787551200000,
+    "open": 94.322,
+    "high": 94.389,
+    "low": 93.82,
+    "close": 94.352,
+    "volume": 5384.49341,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787552100000,
+    "open": 94.338,
+    "high": 94.444,
+    "low": 94.134,
+    "close": 94.3,
+    "volume": 4800.28393,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787553000000,
+    "open": 94.216,
+    "high": 94.244,
+    "low": 93.875,
+    "close": 93.989,
+    "volume": 780.49975,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787553900000,
+    "open": 93.954,
+    "high": 94.65,
+    "low": 93.954,
+    "close": 94.502,
+    "volume": 3213.66726,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787554800000,
+    "open": 94.516,
+    "high": 95.443,
+    "low": 94.516,
+    "close": 95.327,
+    "volume": 5621.31776,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787555700000,
+    "open": 95.316,
+    "high": 95.316,
+    "low": 94.336,
+    "close": 94.364,
+    "volume": 2181.27782,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787556600000,
+    "open": 94.308,
+    "high": 94.378,
+    "low": 93.973,
+    "close": 94.026,
+    "volume": 1978.79074,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787557500000,
+    "open": 94.102,
+    "high": 94.427,
+    "low": 94.031,
+    "close": 94.1,
+    "volume": 2868.62378,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787558400000,
+    "open": 94.1,
+    "high": 94.335,
+    "low": 93.939,
+    "close": 94.036,
+    "volume": 2485.88586,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787559300000,
+    "open": 93.995,
+    "high": 93.995,
+    "low": 93.234,
+    "close": 93.358,
+    "volume": 15190.27043,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787560200000,
+    "open": 93.351,
+    "high": 93.891,
+    "low": 93.34,
+    "close": 93.891,
+    "volume": 2343.16511,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787561100000,
+    "open": 93.964,
+    "high": 94.064,
+    "low": 93.806,
+    "close": 93.93,
+    "volume": 3345.84419,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787562000000,
+    "open": 93.863,
+    "high": 94.542,
+    "low": 93.863,
+    "close": 94.531,
+    "volume": 3325.38313,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787562900000,
+    "open": 94.543,
+    "high": 94.66,
+    "low": 94.307,
+    "close": 94.608,
+    "volume": 1381.70641,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787563800000,
+    "open": 94.609,
+    "high": 94.869,
+    "low": 94.609,
+    "close": 94.663,
+    "volume": 1225.43348,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787564700000,
+    "open": 94.682,
+    "high": 94.793,
+    "low": 94.638,
+    "close": 94.648,
+    "volume": 1086.44238,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787565600000,
+    "open": 94.608,
+    "high": 95.054,
+    "low": 94.573,
+    "close": 95,
+    "volume": 5445.34918,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787566500000,
+    "open": 95.017,
+    "high": 95.017,
+    "low": 94.762,
+    "close": 94.762,
+    "volume": 2672.85951,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787567400000,
+    "open": 94.846,
+    "high": 94.965,
+    "low": 94.724,
+    "close": 94.791,
+    "volume": 2071.4005,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787568300000,
+    "open": 94.781,
+    "high": 94.863,
+    "low": 94.561,
+    "close": 94.671,
+    "volume": 1207.41862,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787569200000,
+    "open": 94.684,
+    "high": 94.701,
+    "low": 94.234,
+    "close": 94.665,
+    "volume": 1830.58963,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787570100000,
+    "open": 94.655,
+    "high": 94.915,
+    "low": 94.506,
+    "close": 94.863,
+    "volume": 1802.52925,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787571000000,
+    "open": 94.881,
+    "high": 96.237,
+    "low": 94.836,
+    "close": 96.223,
+    "volume": 7672.12175,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787571900000,
+    "open": 96.23,
+    "high": 96.282,
+    "low": 95.466,
+    "close": 95.851,
+    "volume": 7460.64738,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787572800000,
+    "open": 95.801,
+    "high": 95.801,
+    "low": 95.247,
+    "close": 95.304,
+    "volume": 4321.10537,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787573700000,
+    "open": 95.319,
+    "high": 95.584,
+    "low": 94.278,
+    "close": 95.42,
+    "volume": 6915.64518,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787574600000,
+    "open": 95.394,
+    "high": 96.089,
+    "low": 95.3,
+    "close": 95.963,
+    "volume": 8057.2383,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787575500000,
+    "open": 95.936,
+    "high": 96.616,
+    "low": 95.933,
+    "close": 96.244,
+    "volume": 8943.25751,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787576400000,
+    "open": 96.272,
+    "high": 96.523,
+    "low": 95.869,
+    "close": 96.356,
+    "volume": 7467.38458,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787577300000,
+    "open": 96.366,
+    "high": 96.416,
+    "low": 95.994,
+    "close": 96.024,
+    "volume": 4107.34528,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787578200000,
+    "open": 96.06,
+    "high": 96.06,
+    "low": 94.541,
+    "close": 94.854,
+    "volume": 37473.04606,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787579100000,
+    "open": 94.798,
+    "high": 95.073,
+    "low": 94.267,
+    "close": 95.018,
+    "volume": 16014.81876,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787580000000,
+    "open": 94.991,
+    "high": 95.649,
+    "low": 94.814,
+    "close": 95.633,
+    "volume": 10402.17791,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787580900000,
+    "open": 95.633,
+    "high": 96.092,
+    "low": 95.28,
+    "close": 95.748,
+    "volume": 5585.46895,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787581800000,
+    "open": 95.749,
+    "high": 96.669,
+    "low": 95.721,
+    "close": 96.453,
+    "volume": 6922.64101,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787582700000,
+    "open": 96.457,
+    "high": 96.535,
+    "low": 95.745,
+    "close": 96.057,
+    "volume": 9143.41988,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787583600000,
+    "open": 96.074,
+    "high": 96.515,
+    "low": 96,
+    "close": 96.281,
+    "volume": 3495.03779,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787584500000,
+    "open": 96.231,
+    "high": 97.559,
+    "low": 96.231,
+    "close": 97.297,
+    "volume": 8056.01482,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787585400000,
+    "open": 97.297,
+    "high": 97.297,
+    "low": 96.214,
+    "close": 96.496,
+    "volume": 10195.26421,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787586300000,
+    "open": 96.481,
+    "high": 96.83,
+    "low": 96.167,
+    "close": 96.438,
+    "volume": 8046.61025,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787587200000,
+    "open": 96.438,
+    "high": 97.088,
+    "low": 96.438,
+    "close": 96.818,
+    "volume": 4979.95457,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787588100000,
+    "open": 96.793,
+    "high": 97.565,
+    "low": 96.713,
+    "close": 97.043,
+    "volume": 5982.095,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787589000000,
+    "open": 97.051,
+    "high": 97.353,
+    "low": 96.618,
+    "close": 96.715,
+    "volume": 6528.33672,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787589900000,
+    "open": 96.716,
+    "high": 96.768,
+    "low": 95.8,
+    "close": 96.05,
+    "volume": 11165.08628,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787590800000,
+    "open": 96.056,
+    "high": 96.177,
+    "low": 95.267,
+    "close": 95.903,
+    "volume": 20470.45537,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787591700000,
+    "open": 95.903,
+    "high": 96.098,
+    "low": 94.829,
+    "close": 94.901,
+    "volume": 16267.18693,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787592600000,
+    "open": 94.923,
+    "high": 95.337,
+    "low": 94.862,
+    "close": 94.862,
+    "volume": 7184.83514,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787593500000,
+    "open": 94.852,
+    "high": 95.395,
+    "low": 94.815,
+    "close": 95.385,
+    "volume": 5044.45895,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787594400000,
+    "open": 95.412,
+    "high": 96.064,
+    "low": 95.409,
+    "close": 95.982,
+    "volume": 5279.33009,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787595300000,
+    "open": 95.996,
+    "high": 96.42,
+    "low": 95.981,
+    "close": 96.277,
+    "volume": 4682.50536,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787596200000,
+    "open": 96.292,
+    "high": 96.425,
+    "low": 95.79,
+    "close": 96.198,
+    "volume": 4112.38815,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787597100000,
+    "open": 96.231,
+    "high": 96.338,
+    "low": 95.759,
+    "close": 95.923,
+    "volume": 2438.9684,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787598000000,
+    "open": 95.949,
+    "high": 96.271,
+    "low": 95.414,
+    "close": 95.82,
+    "volume": 7836.10887,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787598900000,
+    "open": 95.807,
+    "high": 95.946,
+    "low": 95.43,
+    "close": 95.927,
+    "volume": 6590.64651,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787599800000,
+    "open": 95.938,
+    "high": 96.512,
+    "low": 95.872,
+    "close": 96.253,
+    "volume": 4780.04342,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787600700000,
+    "open": 96.252,
+    "high": 96.628,
+    "low": 96.076,
+    "close": 96.505,
+    "volume": 7667.73968,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787601600000,
+    "open": 96.534,
+    "high": 96.608,
+    "low": 96.075,
+    "close": 96.223,
+    "volume": 2428.86611,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787602500000,
+    "open": 96.195,
+    "high": 96.195,
+    "low": 95.777,
+    "close": 95.949,
+    "volume": 1504.70287,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787603400000,
+    "open": 95.951,
+    "high": 96.735,
+    "low": 95.875,
+    "close": 96.592,
+    "volume": 3463.41224,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787604300000,
+    "open": 96.547,
+    "high": 96.576,
+    "low": 96.333,
+    "close": 96.516,
+    "volume": 747.23593,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787605200000,
+    "open": 96.536,
+    "high": 96.975,
+    "low": 96.536,
+    "close": 96.884,
+    "volume": 3869.10791,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787606100000,
+    "open": 96.876,
+    "high": 96.876,
+    "low": 96.598,
+    "close": 96.76,
+    "volume": 1770.70053,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787607000000,
+    "open": 96.844,
+    "high": 96.952,
+    "low": 96.768,
+    "close": 96.908,
+    "volume": 397.5164,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787607900000,
+    "open": 96.881,
+    "high": 97.558,
+    "low": 96.857,
+    "close": 97.502,
+    "volume": 5653.56083,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787608800000,
+    "open": 97.476,
+    "high": 97.821,
+    "low": 97.207,
+    "close": 97.431,
+    "volume": 2587.69501,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787609700000,
+    "open": 97.431,
+    "high": 97.674,
+    "low": 97.377,
+    "close": 97.484,
+    "volume": 1576.10189,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787610600000,
+    "open": 97.536,
+    "high": 98.644,
+    "low": 97.532,
+    "close": 97.681,
+    "volume": 7431.85632,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787611500000,
+    "open": 97.662,
+    "high": 97.962,
+    "low": 97.35,
+    "close": 97.432,
+    "volume": 3169.5217,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787612400000,
+    "open": 97.433,
+    "high": 97.89,
+    "low": 97.267,
+    "close": 97.554,
+    "volume": 1977.16134,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787613300000,
+    "open": 97.593,
+    "high": 98.457,
+    "low": 97.51,
+    "close": 98.219,
+    "volume": 1774.52195,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787614200000,
+    "open": 98.318,
+    "high": 98.807,
+    "low": 98.054,
+    "close": 98.573,
+    "volume": 3437.10639,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787615100000,
+    "open": 98.533,
+    "high": 98.961,
+    "low": 98.226,
+    "close": 98.961,
+    "volume": 8475.4519,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787616000000,
+    "open": 98.934,
+    "high": 101.764,
+    "low": 98.564,
+    "close": 100.524,
+    "volume": 21081.75369,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787616900000,
+    "open": 100.524,
+    "high": 100.525,
+    "low": 99.416,
+    "close": 99.697,
+    "volume": 8669.95879,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787617800000,
+    "open": 99.722,
+    "high": 102.029,
+    "low": 99.553,
+    "close": 101.882,
+    "volume": 11730.91989,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787618700000,
+    "open": 101.844,
+    "high": 102.765,
+    "low": 101.377,
+    "close": 101.699,
+    "volume": 6655.96895,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787619600000,
+    "open": 101.801,
+    "high": 102.351,
+    "low": 101.562,
+    "close": 101.81,
+    "volume": 2681.17308,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787620500000,
+    "open": 101.748,
+    "high": 102.5,
+    "low": 101.454,
+    "close": 102.082,
+    "volume": 5254.99299,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787621400000,
+    "open": 102.085,
+    "high": 102.293,
+    "low": 100.887,
+    "close": 100.957,
+    "volume": 3793.83843,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787622300000,
+    "open": 100.933,
+    "high": 101.274,
+    "low": 100.111,
+    "close": 100.459,
+    "volume": 5152.20578,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787623200000,
+    "open": 100.469,
+    "high": 100.621,
+    "low": 100.242,
+    "close": 100.378,
+    "volume": 4830.35252,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787624100000,
+    "open": 100.354,
+    "high": 102.26,
+    "low": 100.25,
+    "close": 102.255,
+    "volume": 7106.50887,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787625000000,
+    "open": 102.207,
+    "high": 102.235,
+    "low": 101.595,
+    "close": 101.655,
+    "volume": 3696.00624,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787625900000,
+    "open": 101.598,
+    "high": 101.716,
+    "low": 100.749,
+    "close": 100.932,
+    "volume": 2148.12433,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787626800000,
+    "open": 100.876,
+    "high": 101.573,
+    "low": 100.874,
+    "close": 101.439,
+    "volume": 3406.48577,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787627700000,
+    "open": 101.437,
+    "high": 101.76,
+    "low": 101.243,
+    "close": 101.558,
+    "volume": 5190.20196,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787628600000,
+    "open": 101.578,
+    "high": 102.018,
+    "low": 101.428,
+    "close": 101.428,
+    "volume": 2316.81286,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787629500000,
+    "open": 101.426,
+    "high": 101.795,
+    "low": 101.224,
+    "close": 101.426,
+    "volume": 1759.50255,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787630400000,
+    "open": 101.544,
+    "high": 101.703,
+    "low": 100.995,
+    "close": 101.533,
+    "volume": 5430.17311,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787631300000,
+    "open": 101.532,
+    "high": 101.701,
+    "low": 101.216,
+    "close": 101.415,
+    "volume": 7777.65195,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787632200000,
+    "open": 101.401,
+    "high": 101.52,
+    "low": 100.846,
+    "close": 100.931,
+    "volume": 10312.42421,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787633100000,
+    "open": 100.833,
+    "high": 101.326,
+    "low": 100.8,
+    "close": 101.308,
+    "volume": 3390.38253,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787634000000,
+    "open": 101.296,
+    "high": 102.014,
+    "low": 101.217,
+    "close": 101.866,
+    "volume": 6343.77307,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787634900000,
+    "open": 101.805,
+    "high": 102.971,
+    "low": 101.75,
+    "close": 102.588,
+    "volume": 3513.8046,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787635800000,
+    "open": 102.613,
+    "high": 102.613,
+    "low": 101.7,
+    "close": 101.708,
+    "volume": 7869.21504,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787636700000,
+    "open": 101.683,
+    "high": 102.437,
+    "low": 101.683,
+    "close": 101.863,
+    "volume": 3582.47466,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787637600000,
+    "open": 101.883,
+    "high": 101.997,
+    "low": 101.395,
+    "close": 101.697,
+    "volume": 3105.24206,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787638500000,
+    "open": 101.706,
+    "high": 102.061,
+    "low": 101.519,
+    "close": 101.584,
+    "volume": 3936.00002,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787639400000,
+    "open": 101.493,
+    "high": 101.493,
+    "low": 101.04,
+    "close": 101.1,
+    "volume": 4910.97478,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787640300000,
+    "open": 101.106,
+    "high": 101.118,
+    "low": 100.431,
+    "close": 100.687,
+    "volume": 2075.64607,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787641200000,
+    "open": 100.691,
+    "high": 101.626,
+    "low": 100.587,
+    "close": 101.413,
+    "volume": 5486.80044,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787642100000,
+    "open": 101.394,
+    "high": 101.887,
+    "low": 101.265,
+    "close": 101.625,
+    "volume": 4270.85563,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787643000000,
+    "open": 101.61,
+    "high": 101.653,
+    "low": 101.353,
+    "close": 101.653,
+    "volume": 2531.4118,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787643900000,
+    "open": 101.668,
+    "high": 101.723,
+    "low": 99.548,
+    "close": 100.248,
+    "volume": 4899.69489,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787644800000,
+    "open": 100.222,
+    "high": 100.394,
+    "low": 99.732,
+    "close": 100.229,
+    "volume": 3371.30227,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787645700000,
+    "open": 100.24,
+    "high": 101.058,
+    "low": 100.24,
+    "close": 101.001,
+    "volume": 3816.479,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787646600000,
+    "open": 101.07,
+    "high": 101.07,
+    "low": 100.225,
+    "close": 100.668,
+    "volume": 3228.86625,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787647500000,
+    "open": 100.73,
+    "high": 100.737,
+    "low": 100.343,
+    "close": 100.343,
+    "volume": 3211.24245,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787648400000,
+    "open": 100.387,
+    "high": 100.44,
+    "low": 99.982,
+    "close": 100.334,
+    "volume": 2795.11311,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787649300000,
+    "open": 100.331,
+    "high": 100.516,
+    "low": 100.022,
+    "close": 100.121,
+    "volume": 2215.99761,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787650200000,
+    "open": 100.127,
+    "high": 100.632,
+    "low": 100.127,
+    "close": 100.423,
+    "volume": 2506.57273,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787651100000,
+    "open": 100.415,
+    "high": 100.536,
+    "low": 99.3,
+    "close": 99.76,
+    "volume": 8867.73269,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787652000000,
+    "open": 99.831,
+    "high": 99.861,
+    "low": 99.157,
+    "close": 99.399,
+    "volume": 4191.10251,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787652900000,
+    "open": 99.451,
+    "high": 99.741,
+    "low": 99.271,
+    "close": 99.514,
+    "volume": 3252.70566,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787653800000,
+    "open": 99.53,
+    "high": 99.646,
+    "low": 99.296,
+    "close": 99.574,
+    "volume": 2725.25228,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787654700000,
+    "open": 99.575,
+    "high": 99.848,
+    "low": 99.51,
+    "close": 99.629,
+    "volume": 2673.58122,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787655600000,
+    "open": 99.625,
+    "high": 99.68,
+    "low": 98.828,
+    "close": 98.964,
+    "volume": 5511.93107,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787656500000,
+    "open": 98.98,
+    "high": 99.101,
+    "low": 98.523,
+    "close": 98.82,
+    "volume": 2834.88662,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787657400000,
+    "open": 98.9,
+    "high": 99.198,
+    "low": 98.709,
+    "close": 98.709,
+    "volume": 2787.98632,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787658300000,
+    "open": 98.664,
+    "high": 98.811,
+    "low": 98.532,
+    "close": 98.568,
+    "volume": 3511.87511,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787659200000,
+    "open": 98.641,
+    "high": 98.794,
+    "low": 97.824,
+    "close": 98.519,
+    "volume": 5705.14886,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787660100000,
+    "open": 98.489,
+    "high": 98.489,
+    "low": 97.468,
+    "close": 98.165,
+    "volume": 6689.6673,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787661000000,
+    "open": 98.185,
+    "high": 98.342,
+    "low": 97.828,
+    "close": 98.242,
+    "volume": 3043.88527,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787661900000,
+    "open": 98.258,
+    "high": 98.704,
+    "low": 98.224,
+    "close": 98.613,
+    "volume": 2510.95374,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787662800000,
+    "open": 98.578,
+    "high": 98.791,
+    "low": 98.066,
+    "close": 98.094,
+    "volume": 6041.52475,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787663700000,
+    "open": 98.096,
+    "high": 98.123,
+    "low": 96.653,
+    "close": 96.961,
+    "volume": 8051.69083,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787664600000,
+    "open": 96.892,
+    "high": 98.143,
+    "low": 96.892,
+    "close": 97.448,
+    "volume": 7319.56301,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787665500000,
+    "open": 97.527,
+    "high": 97.527,
+    "low": 96.232,
+    "close": 97.095,
+    "volume": 10173.17945,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787666400000,
+    "open": 97.138,
+    "high": 97.935,
+    "low": 96.888,
+    "close": 97.718,
+    "volume": 6385.59353,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787667300000,
+    "open": 97.742,
+    "high": 98.193,
+    "low": 97.384,
+    "close": 98.046,
+    "volume": 7621.08781,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787668200000,
+    "open": 97.983,
+    "high": 98.402,
+    "low": 97.686,
+    "close": 97.999,
+    "volume": 10482.22747,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787669100000,
+    "open": 98,
+    "high": 98.356,
+    "low": 98,
+    "close": 98.199,
+    "volume": 4167.70944,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787670000000,
+    "open": 98.235,
+    "high": 98.299,
+    "low": 97.755,
+    "close": 97.805,
+    "volume": 4284.43283,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787670900000,
+    "open": 97.728,
+    "high": 98.09,
+    "low": 97.631,
+    "close": 97.964,
+    "volume": 3785.97155,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787671800000,
+    "open": 97.969,
+    "high": 98.451,
+    "low": 97.867,
+    "close": 98.087,
+    "volume": 5023.26845,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787672700000,
+    "open": 98.077,
+    "high": 98.413,
+    "low": 97.841,
+    "close": 98.378,
+    "volume": 2869.48249,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787673600000,
+    "open": 98.388,
+    "high": 98.575,
+    "low": 98.019,
+    "close": 98.082,
+    "volume": 2799.4608,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787674500000,
+    "open": 98.056,
+    "high": 98.277,
+    "low": 97.78,
+    "close": 98.074,
+    "volume": 3423.58189,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787675400000,
+    "open": 98.054,
+    "high": 98.647,
+    "low": 98.022,
+    "close": 98.392,
+    "volume": 2823.98435,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787676300000,
+    "open": 98.396,
+    "high": 98.592,
+    "low": 98.122,
+    "close": 98.209,
+    "volume": 5374.40917,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787677200000,
+    "open": 98.21,
+    "high": 98.22,
+    "low": 97.459,
+    "close": 97.668,
+    "volume": 4373.99547,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787678100000,
+    "open": 97.674,
+    "high": 98.011,
+    "low": 97.525,
+    "close": 97.598,
+    "volume": 2904.46847,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787679000000,
+    "open": 97.619,
+    "high": 98.105,
+    "low": 97.619,
+    "close": 98.019,
+    "volume": 2992.60892,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787679900000,
+    "open": 98.042,
+    "high": 98.21,
+    "low": 97.986,
+    "close": 98.181,
+    "volume": 2887.79084,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787680800000,
+    "open": 98.194,
+    "high": 98.534,
+    "low": 98.067,
+    "close": 98.485,
+    "volume": 3739.78609,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787681700000,
+    "open": 98.468,
+    "high": 98.826,
+    "low": 98.412,
+    "close": 98.711,
+    "volume": 2232.21913,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787682600000,
+    "open": 98.707,
+    "high": 98.711,
+    "low": 98.459,
+    "close": 98.646,
+    "volume": 2151.37936,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787683500000,
+    "open": 98.692,
+    "high": 98.771,
+    "low": 98.367,
+    "close": 98.487,
+    "volume": 1595.19957,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787684400000,
+    "open": 98.521,
+    "high": 98.632,
+    "low": 98.268,
+    "close": 98.51,
+    "volume": 986.51979,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787685300000,
+    "open": 98.504,
+    "high": 98.59,
+    "low": 97.878,
+    "close": 97.906,
+    "volume": 1672.58747,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787686200000,
+    "open": 97.855,
+    "high": 97.991,
+    "low": 97.467,
+    "close": 97.517,
+    "volume": 3493.71319,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787687100000,
+    "open": 97.586,
+    "high": 97.965,
+    "low": 97.576,
+    "close": 97.948,
+    "volume": 3103.3129,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787688000000,
+    "open": 97.97,
+    "high": 98.047,
+    "low": 97.073,
+    "close": 97.725,
+    "volume": 4326.2102,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787688900000,
+    "open": 97.701,
+    "high": 98.027,
+    "low": 97.697,
+    "close": 97.712,
+    "volume": 4235.74912,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787689800000,
+    "open": 97.675,
+    "high": 97.724,
+    "low": 96.8,
+    "close": 96.968,
+    "volume": 3517.09901,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787690700000,
+    "open": 96.989,
+    "high": 97.124,
+    "low": 96.638,
+    "close": 96.665,
+    "volume": 6518.19453,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787691600000,
+    "open": 96.673,
+    "high": 96.932,
+    "low": 95.38,
+    "close": 96.511,
+    "volume": 5585.58742,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787692500000,
+    "open": 96.511,
+    "high": 96.745,
+    "low": 96.146,
+    "close": 96.707,
+    "volume": 3105.11099,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787693400000,
+    "open": 96.711,
+    "high": 97.254,
+    "low": 96.63,
+    "close": 97.074,
+    "volume": 2400.02793,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787694300000,
+    "open": 97.064,
+    "high": 97.269,
+    "low": 97.027,
+    "close": 97.259,
+    "volume": 1377.10296,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787695200000,
+    "open": 97.183,
+    "high": 97.637,
+    "low": 97.183,
+    "close": 97.637,
+    "volume": 1569.42053,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787696100000,
+    "open": 97.634,
+    "high": 97.761,
+    "low": 97.172,
+    "close": 97.343,
+    "volume": 2389.44629,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787697000000,
+    "open": 97.344,
+    "high": 97.531,
+    "low": 97.216,
+    "close": 97.27,
+    "volume": 889.62582,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787697900000,
+    "open": 97.257,
+    "high": 97.373,
+    "low": 97.203,
+    "close": 97.212,
+    "volume": 1343.5374,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787698800000,
+    "open": 97.209,
+    "high": 97.404,
+    "low": 96.986,
+    "close": 97.161,
+    "volume": 1531.00745,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787699700000,
+    "open": 97.175,
+    "high": 97.287,
+    "low": 96.863,
+    "close": 97.088,
+    "volume": 1078.25239,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787700600000,
+    "open": 97.072,
+    "high": 97.072,
+    "low": 96.553,
+    "close": 96.741,
+    "volume": 3375.95483,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787701500000,
+    "open": 96.723,
+    "high": 96.757,
+    "low": 96.388,
+    "close": 96.576,
+    "volume": 2333.48087,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787702400000,
+    "open": 96.63,
+    "high": 96.781,
+    "low": 96.195,
+    "close": 96.231,
+    "volume": 3233.58426,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787703300000,
+    "open": 96.22,
+    "high": 96.52,
+    "low": 96.219,
+    "close": 96.52,
+    "volume": 4048.9435,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787704200000,
+    "open": 96.532,
+    "high": 96.716,
+    "low": 96.185,
+    "close": 96.516,
+    "volume": 2646.3122,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787705100000,
+    "open": 96.518,
+    "high": 96.931,
+    "low": 96.434,
+    "close": 96.657,
+    "volume": 1708.5618,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787706000000,
+    "open": 96.659,
+    "high": 97.25,
+    "low": 96.646,
+    "close": 96.909,
+    "volume": 1525.14539,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787706900000,
+    "open": 96.907,
+    "high": 97.081,
+    "low": 96.779,
+    "close": 96.807,
+    "volume": 1749.44976,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787707800000,
+    "open": 96.779,
+    "high": 97.25,
+    "low": 96.77,
+    "close": 97.043,
+    "volume": 1476.4054,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787708700000,
+    "open": 97.058,
+    "high": 97.081,
+    "low": 96.926,
+    "close": 96.988,
+    "volume": 1192.65186,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787709600000,
+    "open": 97.032,
+    "high": 97.067,
+    "low": 96.798,
+    "close": 96.913,
+    "volume": 1775.84745,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787710500000,
+    "open": 96.952,
+    "high": 97.523,
+    "low": 96.912,
+    "close": 97.518,
+    "volume": 1222.12066,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787711400000,
+    "open": 97.531,
+    "high": 97.531,
+    "low": 97.311,
+    "close": 97.401,
+    "volume": 2175.15968,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787712300000,
+    "open": 97.349,
+    "high": 97.415,
+    "low": 97.159,
+    "close": 97.28,
+    "volume": 1175.9147,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787713200000,
+    "open": 97.195,
+    "high": 97.348,
+    "low": 97.087,
+    "close": 97.113,
+    "volume": 1488.74422,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787714100000,
+    "open": 97.086,
+    "high": 97.231,
+    "low": 96.887,
+    "close": 97.067,
+    "volume": 671.05297,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787715000000,
+    "open": 97.028,
+    "high": 97.165,
+    "low": 96.807,
+    "close": 97.093,
+    "volume": 1063.60461,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787715900000,
+    "open": 97.089,
+    "high": 97.129,
+    "low": 96.9,
+    "close": 97.048,
+    "volume": 1343.65484,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787716800000,
+    "open": 97.02,
+    "high": 97.214,
+    "low": 96.844,
+    "close": 96.926,
+    "volume": 1350.93669,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787717700000,
+    "open": 96.969,
+    "high": 97.224,
+    "low": 96.879,
+    "close": 97.05,
+    "volume": 1171.87516,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787718600000,
+    "open": 97.11,
+    "high": 97.296,
+    "low": 96.947,
+    "close": 97.112,
+    "volume": 1017.10674,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787719500000,
+    "open": 97.088,
+    "high": 97.088,
+    "low": 96.555,
+    "close": 96.612,
+    "volume": 1773.2229,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787720400000,
+    "open": 96.633,
+    "high": 96.7,
+    "low": 96.267,
+    "close": 96.621,
+    "volume": 3443.11202,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787721300000,
+    "open": 96.586,
+    "high": 96.934,
+    "low": 96.368,
+    "close": 96.819,
+    "volume": 1628.22898,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787722200000,
+    "open": 96.771,
+    "high": 97.179,
+    "low": 96.77,
+    "close": 97.138,
+    "volume": 704.41894,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787723100000,
+    "open": 97.168,
+    "high": 97.168,
+    "low": 96.984,
+    "close": 97.064,
+    "volume": 1622.66785,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787724000000,
+    "open": 97.061,
+    "high": 97.268,
+    "low": 96.985,
+    "close": 97.023,
+    "volume": 1271.41398,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787724900000,
+    "open": 97.013,
+    "high": 97.079,
+    "low": 96.644,
+    "close": 96.712,
+    "volume": 951.97216,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787725800000,
+    "open": 96.695,
+    "high": 96.827,
+    "low": 96.509,
+    "close": 96.734,
+    "volume": 978.70385,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787726700000,
+    "open": 96.741,
+    "high": 96.817,
+    "low": 96.647,
+    "close": 96.793,
+    "volume": 1877.14217,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787727600000,
+    "open": 96.774,
+    "high": 97.045,
+    "low": 96.686,
+    "close": 96.921,
+    "volume": 1295.53396,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787728500000,
+    "open": 96.934,
+    "high": 97.131,
+    "low": 96.851,
+    "close": 96.968,
+    "volume": 892.68966,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787729400000,
+    "open": 96.947,
+    "high": 97.138,
+    "low": 96.94,
+    "close": 97.035,
+    "volume": 1158.66802,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787730300000,
+    "open": 97.026,
+    "high": 97.101,
+    "low": 96.929,
+    "close": 96.934,
+    "volume": 555.12755,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787731200000,
+    "open": 96.932,
+    "high": 97.319,
+    "low": 96.915,
+    "close": 97.223,
+    "volume": 1238.57246,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787732100000,
+    "open": 97.205,
+    "high": 97.371,
+    "low": 96.998,
+    "close": 97.178,
+    "volume": 665.32007,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787733000000,
+    "open": 97.154,
+    "high": 97.19,
+    "low": 96.977,
+    "close": 97.164,
+    "volume": 494.51262,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787733900000,
+    "open": 97.205,
+    "high": 97.206,
+    "low": 96.692,
+    "close": 96.807,
+    "volume": 1063.3857,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787734800000,
+    "open": 96.828,
+    "high": 97.007,
+    "low": 96.808,
+    "close": 96.828,
+    "volume": 1897.98815,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787735700000,
+    "open": 96.781,
+    "high": 96.781,
+    "low": 96.242,
+    "close": 96.295,
+    "volume": 1489.98422,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787736600000,
+    "open": 96.296,
+    "high": 96.468,
+    "low": 95.965,
+    "close": 95.965,
+    "volume": 1466.42816,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787737500000,
+    "open": 95.966,
+    "high": 96.245,
+    "low": 95.784,
+    "close": 96.172,
+    "volume": 1647.00985,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787738400000,
+    "open": 96.166,
+    "high": 96.167,
+    "low": 95.999,
+    "close": 96.134,
+    "volume": 1035.26509,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787739300000,
+    "open": 96.137,
+    "high": 96.72,
+    "low": 96.137,
+    "close": 96.656,
+    "volume": 1407.01185,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787740200000,
+    "open": 96.606,
+    "high": 97.407,
+    "low": 96.538,
+    "close": 97.376,
+    "volume": 2066.58748,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787741100000,
+    "open": 97.387,
+    "high": 97.84,
+    "low": 97.374,
+    "close": 97.493,
+    "volume": 3130.55232,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787742000000,
+    "open": 97.48,
+    "high": 97.637,
+    "low": 97.311,
+    "close": 97.521,
+    "volume": 1728.03362,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787742900000,
+    "open": 97.524,
+    "high": 97.574,
+    "low": 97.235,
+    "close": 97.266,
+    "volume": 1593.38693,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787743800000,
+    "open": 97.257,
+    "high": 97.338,
+    "low": 96.664,
+    "close": 96.963,
+    "volume": 1039.54088,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787744700000,
+    "open": 96.958,
+    "high": 97.2,
+    "low": 96.775,
+    "close": 97.017,
+    "volume": 1292.68038,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787745600000,
+    "open": 97.021,
+    "high": 97.099,
+    "low": 96.609,
+    "close": 96.777,
+    "volume": 1839.95512,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787746500000,
+    "open": 96.747,
+    "high": 97.55,
+    "low": 96.633,
+    "close": 97.531,
+    "volume": 2179.06349,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787747400000,
+    "open": 97.517,
+    "high": 97.517,
+    "low": 96.162,
+    "close": 96.826,
+    "volume": 4612.4209,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787748300000,
+    "open": 96.811,
+    "high": 97.256,
+    "low": 96.811,
+    "close": 97.027,
+    "volume": 6352.13616,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787749200000,
+    "open": 96.958,
+    "high": 97.222,
+    "low": 96.452,
+    "close": 96.458,
+    "volume": 3272.40725,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787750100000,
+    "open": 96.549,
+    "high": 96.555,
+    "low": 95.878,
+    "close": 96.034,
+    "volume": 4847.2271,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787751000000,
+    "open": 96.017,
+    "high": 96.731,
+    "low": 96.017,
+    "close": 96.63,
+    "volume": 4462.34057,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787751900000,
+    "open": 96.684,
+    "high": 96.848,
+    "low": 96.077,
+    "close": 96.567,
+    "volume": 4717.89886,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787752800000,
+    "open": 96.534,
+    "high": 96.962,
+    "low": 96.323,
+    "close": 96.65,
+    "volume": 2747.27239,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787753700000,
+    "open": 96.644,
+    "high": 96.891,
+    "low": 96.1,
+    "close": 96.293,
+    "volume": 2852.61287,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787754600000,
+    "open": 96.209,
+    "high": 96.348,
+    "low": 95.585,
+    "close": 95.82,
+    "volume": 8572.44322,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787755500000,
+    "open": 95.8,
+    "high": 95.84,
+    "low": 95.397,
+    "close": 95.468,
+    "volume": 3349.08246,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787756400000,
+    "open": 95.461,
+    "high": 95.707,
+    "low": 94.909,
+    "close": 95.566,
+    "volume": 4593.00277,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787757300000,
+    "open": 95.588,
+    "high": 96.275,
+    "low": 95.329,
+    "close": 96.249,
+    "volume": 3439.38832,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787758200000,
+    "open": 96.244,
+    "high": 96.345,
+    "low": 95.772,
+    "close": 96.039,
+    "volume": 3356.86087,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787759100000,
+    "open": 96.029,
+    "high": 96.269,
+    "low": 95.923,
+    "close": 95.934,
+    "volume": 1401.15277,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787760000000,
+    "open": 95.932,
+    "high": 96.168,
+    "low": 95.756,
+    "close": 95.882,
+    "volume": 1411.91261,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787760900000,
+    "open": 95.859,
+    "high": 96.065,
+    "low": 95.614,
+    "close": 95.796,
+    "volume": 1541.76783,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787761800000,
+    "open": 95.776,
+    "high": 96.044,
+    "low": 95.483,
+    "close": 95.528,
+    "volume": 2258.05914,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787762700000,
+    "open": 95.519,
+    "high": 96.084,
+    "low": 95.519,
+    "close": 95.933,
+    "volume": 2403.31191,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787763600000,
+    "open": 95.946,
+    "high": 96.354,
+    "low": 95.876,
+    "close": 96.354,
+    "volume": 2368.73853,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787764500000,
+    "open": 96.344,
+    "high": 97.204,
+    "low": 96.341,
+    "close": 97.093,
+    "volume": 2722.87888,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787765400000,
+    "open": 97.07,
+    "high": 97.24,
+    "low": 96.935,
+    "close": 97.192,
+    "volume": 7128.25523,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787766300000,
+    "open": 97.192,
+    "high": 97.287,
+    "low": 96.916,
+    "close": 96.977,
+    "volume": 9683.43188,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787767200000,
+    "open": 96.943,
+    "high": 97.1,
+    "low": 96.78,
+    "close": 96.912,
+    "volume": 2914.49029,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787768100000,
+    "open": 96.919,
+    "high": 96.982,
+    "low": 96.706,
+    "close": 96.762,
+    "volume": 1200.91816,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787769000000,
+    "open": 96.763,
+    "high": 96.915,
+    "low": 96.639,
+    "close": 96.711,
+    "volume": 1670.68769,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787769900000,
+    "open": 96.713,
+    "high": 96.923,
+    "low": 96.694,
+    "close": 96.844,
+    "volume": 1291.57898,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787770800000,
+    "open": 96.813,
+    "high": 96.839,
+    "low": 96.477,
+    "close": 96.521,
+    "volume": 4491.39534,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787771700000,
+    "open": 96.488,
+    "high": 96.895,
+    "low": 96.337,
+    "close": 96.796,
+    "volume": 2564.30464,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787772600000,
+    "open": 96.784,
+    "high": 96.901,
+    "low": 96.516,
+    "close": 96.532,
+    "volume": 4142.78785,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787773500000,
+    "open": 96.533,
+    "high": 96.825,
+    "low": 96.533,
+    "close": 96.823,
+    "volume": 3020.28183,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787774400000,
+    "open": 96.796,
+    "high": 97.041,
+    "low": 96.627,
+    "close": 96.852,
+    "volume": 1806.10367,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787775300000,
+    "open": 96.837,
+    "high": 96.92,
+    "low": 96.299,
+    "close": 96.754,
+    "volume": 2596.76744,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787776200000,
+    "open": 96.718,
+    "high": 96.749,
+    "low": 96.435,
+    "close": 96.647,
+    "volume": 1401.47853,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787777100000,
+    "open": 96.624,
+    "high": 96.939,
+    "low": 96.62,
+    "close": 96.928,
+    "volume": 1133.88839,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787778000000,
+    "open": 96.932,
+    "high": 97.505,
+    "low": 96.892,
+    "close": 97.48,
+    "volume": 5275.59532,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787778900000,
+    "open": 97.494,
+    "high": 97.854,
+    "low": 97.454,
+    "close": 97.721,
+    "volume": 5635.13183,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787779800000,
+    "open": 97.712,
+    "high": 97.954,
+    "low": 97.565,
+    "close": 97.637,
+    "volume": 3120.63979,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787780700000,
+    "open": 97.613,
+    "high": 98.34,
+    "low": 97.601,
+    "close": 98.258,
+    "volume": 3430.69368,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787781600000,
+    "open": 98.236,
+    "high": 98.991,
+    "low": 98.087,
+    "close": 98.991,
+    "volume": 4109.48114,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787782500000,
+    "open": 98.99,
+    "high": 100.913,
+    "low": 98.988,
+    "close": 100.046,
+    "volume": 14268.56063,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787783400000,
+    "open": 100.004,
+    "high": 100.253,
+    "low": 99.539,
+    "close": 100.164,
+    "volume": 7202.92235,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787784300000,
+    "open": 100.073,
+    "high": 100.197,
+    "low": 99.564,
+    "close": 99.673,
+    "volume": 5345.80845,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787785200000,
+    "open": 99.687,
+    "high": 100.46,
+    "low": 99.503,
+    "close": 100.386,
+    "volume": 5424.6492,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787786100000,
+    "open": 100.316,
+    "high": 100.973,
+    "low": 100.311,
+    "close": 100.872,
+    "volume": 4776.9432,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787787000000,
+    "open": 100.879,
+    "high": 101.508,
+    "low": 100.639,
+    "close": 101.375,
+    "volume": 7204.97048,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787787900000,
+    "open": 101.428,
+    "high": 102.43,
+    "low": 101.253,
+    "close": 102.078,
+    "volume": 8174.8306,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787788800000,
+    "open": 102.124,
+    "high": 102.124,
+    "low": 100.999,
+    "close": 101.193,
+    "volume": 6641.07813,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787789700000,
+    "open": 101.124,
+    "high": 101.722,
+    "low": 100.99,
+    "close": 101.218,
+    "volume": 3765.96767,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787790600000,
+    "open": 101.216,
+    "high": 101.216,
+    "low": 100.921,
+    "close": 101.036,
+    "volume": 2268.74205,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787791500000,
+    "open": 101.044,
+    "high": 101.256,
+    "low": 100.583,
+    "close": 100.583,
+    "volume": 2337.99778,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787792400000,
+    "open": 100.558,
+    "high": 100.857,
+    "low": 100.522,
+    "close": 100.766,
+    "volume": 2537.10997,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787793300000,
+    "open": 100.716,
+    "high": 101.688,
+    "low": 100.543,
+    "close": 101.611,
+    "volume": 3955.57422,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787794200000,
+    "open": 101.616,
+    "high": 101.884,
+    "low": 101.228,
+    "close": 101.232,
+    "volume": 3497.88495,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787795100000,
+    "open": 101.233,
+    "high": 101.893,
+    "low": 101.228,
+    "close": 101.45,
+    "volume": 3362.33053,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787796000000,
+    "open": 101.453,
+    "high": 101.926,
+    "low": 101.453,
+    "close": 101.698,
+    "volume": 1642.43825,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787796900000,
+    "open": 101.686,
+    "high": 101.706,
+    "low": 101.097,
+    "close": 101.13,
+    "volume": 3038.03457,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787797800000,
+    "open": 101.131,
+    "high": 101.329,
+    "low": 100.874,
+    "close": 100.881,
+    "volume": 1654.26221,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787798700000,
+    "open": 100.901,
+    "high": 101.414,
+    "low": 100.869,
+    "close": 101.141,
+    "volume": 1871.17846,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787799600000,
+    "open": 101.137,
+    "high": 101.232,
+    "low": 100.978,
+    "close": 101.013,
+    "volume": 1246.22815,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787800500000,
+    "open": 101.03,
+    "high": 101.775,
+    "low": 100.953,
+    "close": 101.659,
+    "volume": 3843.09302,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787801400000,
+    "open": 101.615,
+    "high": 101.656,
+    "low": 101.293,
+    "close": 101.293,
+    "volume": 2761.38126,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787802300000,
+    "open": 101.279,
+    "high": 101.542,
+    "low": 100.886,
+    "close": 101.062,
+    "volume": 1724.31977,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787803200000,
+    "open": 101.094,
+    "high": 101.397,
+    "low": 101.047,
+    "close": 101.367,
+    "volume": 587.58384,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787804100000,
+    "open": 101.462,
+    "high": 101.515,
+    "low": 101.093,
+    "close": 101.202,
+    "volume": 1472.87616,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787805000000,
+    "open": 101.194,
+    "high": 101.489,
+    "low": 100.68,
+    "close": 101.311,
+    "volume": 3499.37086,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787805900000,
+    "open": 101.306,
+    "high": 101.331,
+    "low": 100.85,
+    "close": 101.068,
+    "volume": 1309.35623,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787806800000,
+    "open": 101.075,
+    "high": 101.357,
+    "low": 100.829,
+    "close": 101.006,
+    "volume": 2586.99402,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787807700000,
+    "open": 100.971,
+    "high": 101.289,
+    "low": 100.815,
+    "close": 100.969,
+    "volume": 1206.30984,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787808600000,
+    "open": 100.973,
+    "high": 101.469,
+    "low": 100.748,
+    "close": 101.259,
+    "volume": 1860.81198,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787809500000,
+    "open": 101.237,
+    "high": 102.222,
+    "low": 101.181,
+    "close": 102.017,
+    "volume": 2299.47754,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787810400000,
+    "open": 102.023,
+    "high": 102.023,
+    "low": 101.129,
+    "close": 101.394,
+    "volume": 2443.18495,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787811300000,
+    "open": 101.379,
+    "high": 101.396,
+    "low": 100.884,
+    "close": 100.949,
+    "volume": 2732.43919,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787812200000,
+    "open": 100.987,
+    "high": 101.235,
+    "low": 100.987,
+    "close": 101.105,
+    "volume": 2118.63129,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787813100000,
+    "open": 101.162,
+    "high": 101.326,
+    "low": 101.162,
+    "close": 101.291,
+    "volume": 1745.52915,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787814000000,
+    "open": 101.257,
+    "high": 101.338,
+    "low": 101.128,
+    "close": 101.26,
+    "volume": 1808.50794,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787814900000,
+    "open": 101.25,
+    "high": 101.325,
+    "low": 100.998,
+    "close": 101.126,
+    "volume": 2933.87837,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787815800000,
+    "open": 101.102,
+    "high": 101.503,
+    "low": 101.047,
+    "close": 101.426,
+    "volume": 1341.33294,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787816700000,
+    "open": 101.417,
+    "high": 102.083,
+    "low": 101.372,
+    "close": 101.767,
+    "volume": 3649.83362,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787817600000,
+    "open": 101.809,
+    "high": 104.135,
+    "low": 101.715,
+    "close": 102.948,
+    "volume": 10874.17969,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787818500000,
+    "open": 102.948,
+    "high": 104.157,
+    "low": 102.69,
+    "close": 104.135,
+    "volume": 9323.69883,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787819400000,
+    "open": 104.171,
+    "high": 104.749,
+    "low": 103.784,
+    "close": 104.239,
+    "volume": 6573.41899,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787820300000,
+    "open": 104.333,
+    "high": 105.036,
+    "low": 104.31,
+    "close": 104.658,
+    "volume": 6909.39654,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787821200000,
+    "open": 104.656,
+    "high": 104.954,
+    "low": 104.115,
+    "close": 104.945,
+    "volume": 3674.79102,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787822100000,
+    "open": 104.947,
+    "high": 105.731,
+    "low": 104.659,
+    "close": 105.375,
+    "volume": 8238.91245,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787823000000,
+    "open": 105.375,
+    "high": 105.412,
+    "low": 104.652,
+    "close": 104.892,
+    "volume": 2633.59586,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787823900000,
+    "open": 104.877,
+    "high": 105.013,
+    "low": 104.223,
+    "close": 104.374,
+    "volume": 4741.87553,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787824800000,
+    "open": 104.374,
+    "high": 104.993,
+    "low": 104.252,
+    "close": 104.507,
+    "volume": 5339.48128,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787825700000,
+    "open": 104.518,
+    "high": 104.674,
+    "low": 103.099,
+    "close": 103.951,
+    "volume": 8897.88334,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787826600000,
+    "open": 103.971,
+    "high": 104.173,
+    "low": 103.321,
+    "close": 104.11,
+    "volume": 5483.30349,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787827500000,
+    "open": 104.11,
+    "high": 104.248,
+    "low": 103.877,
+    "close": 104.102,
+    "volume": 2995.44363,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787828400000,
+    "open": 104.025,
+    "high": 104.674,
+    "low": 103.974,
+    "close": 104.377,
+    "volume": 4489.45618,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787829300000,
+    "open": 104.388,
+    "high": 104.862,
+    "low": 103.997,
+    "close": 104.037,
+    "volume": 4661.44911,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787830200000,
+    "open": 104.067,
+    "high": 104.175,
+    "low": 103.641,
+    "close": 103.913,
+    "volume": 5165.365,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787831100000,
+    "open": 103.867,
+    "high": 103.988,
+    "low": 103.402,
+    "close": 103.944,
+    "volume": 6499.88027,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787832000000,
+    "open": 103.942,
+    "high": 104.422,
+    "low": 103.942,
+    "close": 104.275,
+    "volume": 9736.91327,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787832900000,
+    "open": 104.255,
+    "high": 104.689,
+    "low": 104.123,
+    "close": 104.499,
+    "volume": 5240.05893,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787833800000,
+    "open": 104.507,
+    "high": 104.604,
+    "low": 104.074,
+    "close": 104.284,
+    "volume": 4855.38786,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787834700000,
+    "open": 104.264,
+    "high": 104.739,
+    "low": 104.264,
+    "close": 104.424,
+    "volume": 2448.68444,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787835600000,
+    "open": 104.383,
+    "high": 104.759,
+    "low": 104.383,
+    "close": 104.462,
+    "volume": 3679.00324,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787836500000,
+    "open": 104.509,
+    "high": 104.944,
+    "low": 104.509,
+    "close": 104.853,
+    "volume": 10520.99693,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787837400000,
+    "open": 104.837,
+    "high": 104.889,
+    "low": 104.164,
+    "close": 104.633,
+    "volume": 10244.75522,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787838300000,
+    "open": 104.679,
+    "high": 106.291,
+    "low": 104.43,
+    "close": 106.073,
+    "volume": 11894.65959,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787839200000,
+    "open": 106.05,
+    "high": 106.655,
+    "low": 105.245,
+    "close": 105.459,
+    "volume": 15688.04762,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787840100000,
+    "open": 105.49,
+    "high": 106.234,
+    "low": 105.237,
+    "close": 106.019,
+    "volume": 7407.38613,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787841000000,
+    "open": 106.03,
+    "high": 107.952,
+    "low": 105.895,
+    "close": 107.5,
+    "volume": 19942.65583,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787841900000,
+    "open": 107.476,
+    "high": 107.476,
+    "low": 106.574,
+    "close": 106.794,
+    "volume": 17707.74006,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787842800000,
+    "open": 106.794,
+    "high": 107.959,
+    "low": 106.697,
+    "close": 107.257,
+    "volume": 20799.44317,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787843700000,
+    "open": 107.257,
+    "high": 107.656,
+    "low": 107.083,
+    "close": 107.438,
+    "volume": 5384.92696,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787844600000,
+    "open": 107.472,
+    "high": 107.483,
+    "low": 106.584,
+    "close": 107.163,
+    "volume": 11056.53265,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787845500000,
+    "open": 107.19,
+    "high": 107.41,
+    "low": 106.844,
+    "close": 107.21,
+    "volume": 3856.70208,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787846400000,
+    "open": 107.209,
+    "high": 107.531,
+    "low": 106.902,
+    "close": 107.181,
+    "volume": 4525.88817,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787847300000,
+    "open": 107.156,
+    "high": 108.5,
+    "low": 107.123,
+    "close": 107.953,
+    "volume": 19165.48792,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787848200000,
+    "open": 107.983,
+    "high": 108.96,
+    "low": 107.85,
+    "close": 108.796,
+    "volume": 14708.1637,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787849100000,
+    "open": 108.796,
+    "high": 109.447,
+    "low": 108.558,
+    "close": 108.956,
+    "volume": 17110.06856,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787850000000,
+    "open": 108.963,
+    "high": 109.55,
+    "low": 108.602,
+    "close": 109.298,
+    "volume": 16810.42051,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787850900000,
+    "open": 109.306,
+    "high": 109.649,
+    "low": 108.087,
+    "close": 108.179,
+    "volume": 8406.90466,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787851800000,
+    "open": 108.172,
+    "high": 108.472,
+    "low": 107.829,
+    "close": 107.871,
+    "volume": 9607.52595,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787852700000,
+    "open": 107.871,
+    "high": 108.506,
+    "low": 107.752,
+    "close": 108.205,
+    "volume": 4538.5267,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787853600000,
+    "open": 108.197,
+    "high": 108.301,
+    "low": 107.116,
+    "close": 107.464,
+    "volume": 8949.43789,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787854500000,
+    "open": 107.462,
+    "high": 107.725,
+    "low": 106.683,
+    "close": 107.12,
+    "volume": 4429.96605,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787855400000,
+    "open": 107.121,
+    "high": 107.687,
+    "low": 107.121,
+    "close": 107.509,
+    "volume": 3348.94518,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787856300000,
+    "open": 107.492,
+    "high": 108.343,
+    "low": 107.432,
+    "close": 108.335,
+    "volume": 3666.00534,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787857200000,
+    "open": 108.391,
+    "high": 109.024,
+    "low": 108.291,
+    "close": 108.976,
+    "volume": 4121.60421,
+    "source": "bitstamp"
+  },
+  {
+    "timestamp": 1787858100000,
+    "open": 108.995,
+    "high": 109.229,
+    "low": 108.783,
+    "close": 108.983,
+    "volume": 3721.83934,
+    "source": "bitstamp"
+  }
+]
